@@ -1,0 +1,2 @@
+class BaselineProcessPage < Page
+end

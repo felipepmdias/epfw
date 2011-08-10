@@ -1,0 +1,10 @@
+Openup
+======
+
+This plugin was created to allow a test Wiki to be created easily. 
+The code and OpenUP content was orginally in the test folder.
+
+rake db:fixtures:load
+ruby script/runner 'create_oup_wiki'
+
+Copyright (c) 2008 Onno van der Straaten, released under the EPL License

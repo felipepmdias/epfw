@@ -1,0 +1,8 @@
+Templates
+======
+
+This plugin contains a templates site for EPF Wiki. 
+
+ruby script/runner -e production 'create_templates'
+
+Copyright (c) 2008 Onno van der Straaten, released under the EPL License

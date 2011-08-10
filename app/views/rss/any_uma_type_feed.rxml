@@ -1,0 +1,68 @@
+#--######################################################################
+# Copyright (c) 2008 IBM
+# 
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+#
+# Contributors:
+# 
+# Ricardo Balduino:: Initial implementation, based on design discussions with Onno van der Straaten
+#++######################################################################
+# {Copyright (c) 2008 IBM}[link:files/COPYRIGHT.html]
+
+records = (@umaElements).uniq
+imageSrc = ""
+imageSrcTag = ""
+
+
+xml.instruct!
+  #xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+  xml.rss "version" => "2.0", "xmlns:atom" => "http://www.w3.org/2005/Atom" do
+  
+  scope = @wiki.title + " Wiki" if @wiki
+  scope = ENV['EPFWIKI_APP_NAME'] unless @wiki
+  
+  xml.channel do
+    xml.title "#{scope}"
+    if @wiki
+      xml.link @wiki.url(true) 
+      xml.atom:link, :href => "http://#{ENV['EPFWIKI_HOST']}/rss/#{@wiki.folder}/#{@umaType}", :rel => 'self', :type => 'application/rss+xml'      
+    end
+    xml.pubDate CGI.rfc1123_date(Time.now.gmtime) 
+    xml.description h("All #{@umaType} elements in '#{scope}'")
+    records.sort_by{|record| [record.presentation_name]}.each do |record| # can sort on more columns but we have the baseline_updated_on column
+      xml.item do
+        logger.debug("RSS item for #{record.class.to_s} with ID #{record.id}")
+        wiki_page = record
+
+        # extracts the image for each item
+        match1 = /<td width="50">(.*?)<\/td>/m.match(wiki_page.html)
+        if(match1)
+          match2 = /src="(.*?)"/m.match(match1[1])
+          if match2
+            imageSrc = match2[1]
+            imageSrc = imageSrc.gsub("../", '')
+            imageSrc = imageSrc.gsub("./", '')
+            imageSrc = "http://" + ENV['EPFWIKI_HOST'] + "/" + "#{ENV['EPFWIKI_WIKIS_FOLDER']}/" + wiki_page.site.folder + "/" + imageSrc # uses this to show an image by the channel title
+            imageSrcTag = '<img src="'+imageSrc+'" width="16" height="16" />' # uses this to show an image by the brief description
+          end      
+        end       
+        xml.guid "WikiPage#{wiki_page.id.to_s}", :isPermaLink => false
+        xml.title "#{wiki_page.presentation_name}"
+        xml.link wiki_page.url(true)
+        xml.description imageSrcTag+" "+wiki_page.overview_table
+        xml.pubDate CGI.rfc1123_date(Time.now.gmtime)
+        #xml.dc_creator h(wiki_page.user.name) # this is raising an exception -> user is nil
+      end
+    end
+   
+    # shows the image with link on the channel section
+    xml.image do
+      xml.url imageSrc
+      xml.link @wiki.url(true)
+      xml.title @wiki.title
+    end  
+  end
+end
