@@ -31,7 +31,7 @@ Execute the following commands to install the key components using
 {Rails Ready}[https://github.com/joshfng/railsready] 
 
  wget --no-check-certificate https://github.com/joshfng/railsready/raw/master/railsready.sh 
-	bash railsready.sh
+ bash railsready.sh
 
 The script contains a bug, the fix is to add the following line to .bash_profile
 
@@ -46,8 +46,9 @@ Logout and login and check if you have Ruby, RVM and Rails working, for example
  ostraaten@epfw-vbox:~$ rvm -v
  rvm 1.6.32 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]
 
-For almost all if not all purposes Rails Ready will suffice but if your requirement fo further you might want to take
-a look at {Rails Ready Ready}[https://github.com/3months/railsready-ready] as well. 
+For almost all if not all purposes Rails Ready will suffice but if your requirements 
+for this EPF Wiki server go further you might want to take a look at 
+{Rails Ready Ready}[https://github.com/3months/railsready-ready] as well. 
 
 === MySQL
 
@@ -62,17 +63,12 @@ Install the MySQL development headers files and libraries,they are also needed.
 
 === EPF Wiki
 
-Use Use <tt>git clone</tt> to get EPF Wiki.	The command will prompt for a password, you can just 
+Use <tt>git clone</tt> to get EPF Wiki.	The command will prompt for a password, you can just 
 ignore this by pressing enter.
 	
  git clone https://ostraaten@github.com/ostraaten/epfw.git
 
 This command creates folder epfw which we will refer to as the EPF Wiki root. 
-You can always update to the latest version of EPW Wiki by executing git pull 
-from the EPF Wiki root.	 
-
- cd ~/epfw
- git pull
 
 Now we install all EPF Wiki specific Ruby gems using the new gem tool 
 {bundler}[http://gembundler.com/] with a single command: 
@@ -99,7 +95,7 @@ You exit the MySQL console with <tt>exit</tt>. Now create a database configurati
 	
 Now you can change the database settings in you config file database.yml to match 
 your mysql-server setup. If you created the MySQL database exactly as was described 
-above, you can skip the following skip.
+above, you can skip the following step.
 
  vi config/database.yml
 
@@ -114,16 +110,19 @@ Now you can create the database
  cd ~/epfw
  rake db:create db:migrate RAILS_ENV=production
 
+
+
  rm -r rubygems-1.3.5/sftp://ostraaten@192.168.1.42/home/ostraaten/.rvm/gems/ruby-1.9.2-p290@global
 
 === Email
 
 If you don't change the default email settings, EPF Wiki will try to use sendmail. But there is also 
-the option of using SMTP or to use no email.
+the option of using SMTP or to use 'no' email.
 	
  cd ~/epfw/config/initializers
  cp setup_mail.rb.example setup_mail.rb 
 
+For SMTP add a entry similar to the one below to setup_mail.rb
 
  ActionMailer::Base.smtp_settings = {  
    :address              => "smtp.gmail.com",  
@@ -134,7 +133,10 @@ the option of using SMTP or to use no email.
    :authentication       => "plain",  
    :enable_starttls_auto => true  
  }
- #ActionMailer::Base.delivery_method = :test
+ 
+ To not use email at all add the following entry to setup_mail.rb
+  
+  ActionMailer::Base.delivery_method = :test
 	
 	
 
@@ -148,17 +150,18 @@ Some extra Apache bits For Phusion Passenger
 
  sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
 
-Phusion Passenger
+Phusion Passenger is installed with the following command. The command will output some vital
+Apache2 configuration for you environment that you want to take note of.
 	
-	passenger-install-apache2-module
+ passenger-install-apache2-module
 
-This command outputs some vital configuration information that you want to take note of
+Depending on the current version the command outputs something like 
 
 	LoadModule passenger_module /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8/ext/apache2/mod_passenger.so
 	PassengerRoot /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8
 	PassengerRuby /home/ostraaten/.rvm/wrappers/ruby-1.9.2-p290/ruby
 
-And
+And something like
 
    <VirtualHost *:80>
       ServerName www.yourhost.com
@@ -168,7 +171,6 @@ And
          Options -MultiViews            # <-- MultiViews must be turned off
       </Directory>
    </VirtualHost>
-
 
 Open ports configuration file
 
