@@ -1,5 +1,5 @@
 <%= render :partial => 'header' %>
-<p><%= @introduction %></p>
+<p><%= raw @introduction %></p>
 <% unless @body.blank? %><p><table width=100% border=1><tr><td>
 <%= @body %>
 </td></tr></table></p>

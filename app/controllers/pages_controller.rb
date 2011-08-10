@@ -61,7 +61,7 @@ class PagesController < ApplicationController
         users = (User.find(:all, :conditions => ['notify_immediate=?', 1]) + Notification.find_all_users(@page, Page.name)).uniq
         unless users.empty?
           subject = "New comment about #{@page.presentation_name}"
-          introduction = raw "User #{@comment.user.name} created a comment about <a href=\"#{@comment.page.url(true, request.host + (request.port == 80 ? '' : ':' + request.port.to_s))}\">#{@comment.page.presentation_name}</a> in site #{@comment.site.title}<br>"
+          introduction = "User #{@comment.user.name} created a comment about <a href=\"#{@comment.page.url(true, request.host + (request.port == 80 ? '' : ':' + request.port.to_s))}\">#{@comment.page.presentation_name}</a> in site #{@comment.site.title}<br>"
           Notifier.notification(users,subject,introduction, @comment.text, request.host + (request.port == 80 ? '' : ':' + request.port.to_s)).deliver
         end
       end
