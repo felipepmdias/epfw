@@ -207,6 +207,14 @@ Now you should be able to see EPF Wiki when you navigate to http://localhost:300
 
 NOTE: The passenger version number may be different, currently it is 2.2.7. You may have to change it in the paths above.
 
+=== Editor ===
+
+
+=== Jobs ===
+
+ rake epfw:update RAILS_ENV=production
+
+
 
 == EPF Wiki as a virtual appliance
 
@@ -216,7 +224,7 @@ to EPF Wiki from a different machine.
 
 You can find out the IP address that gets assigned to the machine with
 
-	ifconfig
+ ifconfig
 	
 After that you can easily <tt>ssh</tt> to the machine to perform adminstration tasks from any other machine. You can also open
 a file explorer like nautilus to browse the file system of the VM.  	
@@ -232,9 +240,9 @@ http://192.168.1.42:3000/login/new_cadmin
 
 Logon the machine do a <tt>git pull</tt> and then touch the restart.txt file to restart EPF Wiki
 
-	cd ~\
-	git pull
-	touch tmp\restart.txt
+ cd ~\
+ git pull
+ touch tmp\restart.txt
 
 
 == Contributing
