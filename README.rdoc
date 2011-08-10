@@ -19,126 +19,126 @@ guide or EPF Wiki please use the
 of course create {Github issues}[https://github.com/ostraaten/epfw/issues] if you have an account. 
 More information on EPW Wiki can be found in the [EPF Wiki User Guide]] and the EPF Wiki Development Guide. 
 
-=== Ubuntu Server 10.04 LTS 32-bit ===
+=== Ubuntu Server 10.04 LTS 32-bit
 
 Download and install Ubuntu server. Install the following options for your convenience
 * OpenSSH server
 * Samba file server 
 
-2. Rails Ready
+=== Rails Ready
 
 Execute the following commands to install the key components using 
 {Rails Ready}[https://github.com/joshfng/railsready] 
 
-	wget --no-check-certificate https://github.com/joshfng/railsready/raw/master/railsready.sh 
+ wget --no-check-certificate https://github.com/joshfng/railsready/raw/master/railsready.sh 
 	bash railsready.sh
 
-The script contains a bug, the fix is to add the following line to <strong>.bash_profile</strong>
+The script contains a bug, the fix is to add the following line to .bash_profile
 
-	 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+ [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 Logout and login and check if you have Ruby, RVM and Rails working, for example
 	
-	ostraaten@epfw-vbox:~$ ruby -v
-	ruby 1.9.2p290 (2011-07-09 revision 32553) [i686-linux]
-	ostraaten@epfw-vbox:~$ rails -v
-	Rails 3.0.9
-	ostraaten@epfw-vbox:~$ rvm -v
-	rvm 1.6.32 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]
+ ostraaten@epfw-vbox:~$ ruby -v
+ ruby 1.9.2p290 (2011-07-09 revision 32553) [i686-linux]
+ ostraaten@epfw-vbox:~$ rails -v
+ Rails 3.0.9
+ ostraaten@epfw-vbox:~$ rvm -v
+ rvm 1.6.32 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]
 
 For almost all if not all purposes Rails Ready will suffice but if your requirement fo further you might want to take
 a look at {Rails Ready Ready}[https://github.com/3months/railsready-ready] as well. 
 
-=== MySQL === 
+=== MySQL
 
 Open a terminal window to install MySQL client and server. 
 Provide the recommended root password when you are prompted for it.
 	
-	sudo apt-get install mysql-client mysql-server
+ sudo apt-get install mysql-client mysql-server
 
 Install the MySQL development headers files and libraries,they are also needed.
 
-	sudo apt-get install libmysqlclient15-dev
+ sudo apt-get install libmysqlclient15-dev
 
-=== EPF Wiki ===
+=== EPF Wiki
 
 Use Use <tt>git clone</tt> to get EPF Wiki.	The command will prompt for a password, you can just 
 ignore this by pressing enter.
 	
-	git clone https://ostraaten@github.com/ostraaten/epfw.git
+ git clone https://ostraaten@github.com/ostraaten/epfw.git
 
 This command creates folder epfw which we will refer to as the EPF Wiki root. 
-You can always update to the latest version of EPW Wiki by executing git pull
- from the EPF Wiki root.	 
+You can always update to the latest version of EPW Wiki by executing git pull 
+from the EPF Wiki root.	 
 
-	cd ~/epfw
-	git pull
+ cd ~/epfw
+ git pull
 
 Now we install all EPF Wiki specific Ruby gems using the new gem tool 
 {bundler}[http://gembundler.com/] with a single command: 
 
-	cd ~/epfw
-	bundle install
+ cd ~/epfw
+ bundle install
 
 Create database user for EPF Wiki
 
-	mysql -u root -p
-	create user 'epfwiki'@'localhost' identified by 'ikiwpur';
-	grant all privileges on *.* to 'epfwiki'@'localhost';
-	grant usage on *.* to 'epfwiki'@'localhost';
-	exit
+ mysql -u root -p
+ create user 'epfwiki'@'localhost' identified by 'ikiwpur';
+ grant all privileges on *.* to 'epfwiki'@'localhost';
+ grant usage on *.* to 'epfwiki'@'localhost';
+ exit
 
 You can check the resulting privileges with
 
-	show grants for 'epfwiki'@'localhost';
+ show grants for 'epfwiki'@'localhost';
 
-Create a database configuration file for your installation
+You exit the MySQL console with <tt>exit</tt>. Now create a database configuration file for your installation
 
-	cd ~/epf
-	cp database.yml.example database.yml
+ cd ~/epf/config
+ cp database.yml.example database.yml
 	
 Now you can change the database settings in you config file database.yml to match 
 your mysql-server setup. If you created the MySQL database exactly as was described 
 above, you can skip the following skip.
 
-	vi config/database.yml
+ vi config/database.yml
 
 If you don't want to use vi you can also open the config file from another computer that
 has a different editor. From a different computer that is running plain Ubuntu 
 you can for instance browse the config files by running the following command such as: 
 
-	nautilus sftp://ostraaten@192.168.1.42/home/ostraaten/epfw/config
+ nautilus sftp://ostraaten@192.168.1.42/home/ostraaten/epfw/config
 
 Now you can create the database 
 
-	cd ~/epfw
-	rake db:create db:migrate RAILS_ENV=production
+ cd ~/epfw
+ rake db:create db:migrate RAILS_ENV=production
 
-rm -r rubygems-1.3.5/sftp://ostraaten@192.168.1.42/home/ostraaten/.rvm/gems/ruby-1.9.2-p290@global
+ rm -r rubygems-1.3.5/sftp://ostraaten@192.168.1.42/home/ostraaten/.rvm/gems/ruby-1.9.2-p290@global
 
-=== Email === 
+=== Email
 
-If you don't change the default email settings, EPF Wiki will try to use sendmail. But there is also
- the option of using SMTP or to use no email.
+If you don't change the default email settings, EPF Wiki will try to use sendmail. But there is also 
+the option of using SMTP or to use no email.
 	
-	cd ~/epfw/config/initializers
-	cp setup_mail.rb.example setup_mail.rb 
+ cd ~/epfw/config/initializers
+ cp setup_mail.rb.example setup_mail.rb 
 
 
-ActionMailer::Base.smtp_settings = {  
-  :address              => "smtp.gmail.com",  
-  :port                 => 587,  
-  :domain               => "epf.eclipse.org",  
-  :user_name            => "onno.van.der.straaten@gmail.com",  
-  :password             => "****",  
-  :authentication       => "plain",  
-  :enable_starttls_auto => true  
-}
-#ActionMailer::Base.delivery_method = :test
+ ActionMailer::Base.smtp_settings = {  
+   :address              => "smtp.gmail.com",  
+   :port                 => 587,  
+   :domain               => "epf.eclipse.org",  
+   :user_name            => "onno.van.der.straaten@gmail.com",  
+   :password             => "****",  
+   :authentication       => "plain",  
+   :enable_starttls_auto => true  
+ }
+ #ActionMailer::Base.delivery_method = :test
 	
 	
 
-=== Apache2 and Phusion Passenger (aka mod_rails) ===
+=== Apache2 and Phusion Passenger (aka mod_rails)
 
 Install Apache2
 
@@ -207,7 +207,7 @@ Now you should be able to see EPF Wiki when you navigate to http://epfwiki:3000
 NOTE: The passenger version number may be different, currently it is 2.2.7. You may have to change it in the paths above.
 
 
-== EPF Wiki as a virtual appliance ==
+== EPF Wiki as a virtual appliance
 
 You can easily create EPF Wiki as a {virtual applicance} using the above instructions using {VirtualBox}[http://www.virtualbox.org/]. 
 The key thing is then to use {bridged networking}[http://www.virtualbox.org/manual/ch06.html#idp12173808]. This will allow you access
@@ -227,7 +227,7 @@ It works!
 http://192.168.1.42:3000/login/new_cadmin
 
 
-== Update EPF Wiki ==
+== Update EPF Wiki
 
 Logon the machine do a <tt>git pull</tt> and then touch the restart.txt file to restart EPF Wiki
 
