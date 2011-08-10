@@ -133,7 +133,7 @@ For SMTP add a entry similar to the one below to setup_mail.rb
    :enable_starttls_auto => true  
  }
  
- To not use email at all add the following entry to setup_mail.rb
+To not use email at all add the following entry to setup_mail.rb
   
   ActionMailer::Base.delivery_method = :test
 	
@@ -173,16 +173,16 @@ And something like
 
 Open ports configuration file
 
-	sudo nano /etc/apache2/ports.conf
+ sudo nano /etc/apache2/ports.conf
 
 And add the following entry above the *:80 NameVirtualHost configuration: 
 
-	NameVirtualHost *:3000
-	Listen 3000
+ NameVirtualHost *:3000
+ Listen 3000
 
 Open Apache2 configuration file 
 
-	sudo nano /etc/apache2/sites-enabled/000-default
+ sudo nano /etc/apache2/sites-enabled/000-default
 
 Add for example the following to this file
  LoadModule passenger_module /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8/ext/apache2/mod_passenger.so
@@ -203,7 +203,7 @@ If you are just testing and don't have a proper domain name for your server you 
  sudo gedit /etc/hosts
 Restart apache to activate changes
  sudo /etc/init.d/apache2 restart
-Now you should be able to see EPF Wiki when you navigate to http://epfwiki:3000
+Now you should be able to see EPF Wiki when you navigate to http://localhost:3000
 
 NOTE: The passenger version number may be different, currently it is 2.2.7. You may have to change it in the paths above.
 
