@@ -2,8 +2,9 @@
 
 EPF Wiki is Wiki technology designed to be used together with {Eclipse Process Framework (EPF)}[http://www.eclipse.org/epf]. 
 This offers the best of two distinct worlds: the worlds of powerful process frameworks and Wikis.
- It offers an process engineering infrastructure that combines a modular method construction 
- approach and the flexibility and ease of use that is the defining characteristic of a Wiki.
+
+It offers an process engineering infrastructure that combines a modular method construction 
+approach and the flexibility and ease of use that is the defining characteristic of a Wiki.
 
 EPF Wiki is technology that adds Wiki features to the hypertext process descriptions 
 created with EPF Composer.
@@ -15,10 +16,10 @@ This remainder of this document describes how to install EPF Wiki on
 Apache2 and Phusion Passenger (a.k.a mod_rails). If you have any questions about this 
 guide or EPF Wiki please use the 
 {Eclipse Process Framework Project Developers List}[mailto:epf-dev@eclipse.org]. Or you can
-of course use Github if you have a Github account. More information on EPW Wiki can be found in 
-the [EPF Wiki User Guide]] and the EPF Wiki Development Guide. 
+of course create {Github issues}[https://github.com/ostraaten/epfw/issues] if you have an account. 
+More information on EPW Wiki can be found in the [EPF Wiki User Guide]] and the EPF Wiki Development Guide. 
 
-1. Ubuntu Server 10.04 LTS 32-bit
+=== Ubuntu Server 10.04 LTS 32-bit ===
 
 Download and install Ubuntu server. Install the following options for your convenience
 * OpenSSH server
@@ -48,7 +49,7 @@ Logout and login and check if you have Ruby, RVM and Rails working, for example
 For almost all if not all purposes Rails Ready will suffice but if your requirement fo further you might want to take
 a look at {Rails Ready Ready}[https://github.com/3months/railsready-ready] as well. 
 
-3. MySQL 
+=== MySQL === 
 
 Open a terminal window to install MySQL client and server. 
 Provide the recommended root password when you are prompted for it.
@@ -59,7 +60,7 @@ Install the MySQL development headers files and libraries,they are also needed.
 
 	sudo apt-get install libmysqlclient15-dev
 
-4. EPF Wiki
+=== EPF Wiki ===
 
 Use Use <tt>git clone</tt> to get EPF Wiki.	The command will prompt for a password, you can just 
 ignore this by pressing enter.
@@ -115,7 +116,7 @@ Now you can create the database
 
 rm -r rubygems-1.3.5/sftp://ostraaten@192.168.1.42/home/ostraaten/.rvm/gems/ruby-1.9.2-p290@global
 
-Email 
+=== Email === 
 
 If you don't change the default email settings, EPF Wiki will try to use sendmail. But there is also
  the option of using SMTP or to use no email.
@@ -137,7 +138,7 @@ ActionMailer::Base.smtp_settings = {
 	
 	
 
-5. Apache2 and Phusion Passenger (aka mod_rails)
+=== Apache2 and Phusion Passenger (aka mod_rails) ===
 
 Install Apache2
 
@@ -206,7 +207,7 @@ Now you should be able to see EPF Wiki when you navigate to http://epfwiki:3000
 NOTE: The passenger version number may be different, currently it is 2.2.7. You may have to change it in the paths above.
 
 
-6. EPF Wiki as a virtual appliance
+== EPF Wiki as a virtual appliance ==
 
 You can easily create EPF Wiki as a {virtual applicance} using the above instructions using {VirtualBox}[http://www.virtualbox.org/]. 
 The key thing is then to use {bridged networking}[http://www.virtualbox.org/manual/ch06.html#idp12173808]. This will allow you access
