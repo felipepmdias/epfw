@@ -1,0 +1,245 @@
+== Welcome to EPF Wiki
+
+EPF Wiki is Wiki technology designed to be used together with {Eclipse Process Framework (EPF)}[http://www.eclipse.org/epf]. 
+This offers the best of two distinct worlds: the worlds of powerful process frameworks and Wikis.
+ It offers an process engineering infrastructure that combines a modular method construction 
+ approach and the flexibility and ease of use that is the defining characteristic of a Wiki.
+
+EPF Wiki is technology that adds Wiki features to the hypertext process descriptions 
+created with EPF Composer.
+
+== Getting Started
+
+This remainder of this document describes how to install EPF Wiki on 
+{Ubuntu Server 10.04 LTS 32-bit}[http://www.ubuntu.com/download/server/download] using 
+Apache2 and Phusion Passenger (a.k.a mod_rails). If you have any questions about this 
+guide or EPF Wiki please use the 
+{Eclipse Process Framework Project Developers List}[mailto:epf-dev@eclipse.org]. Or you can
+of course use Github if you have a Github account. More information on EPW Wiki can be found in 
+the [EPF Wiki User Guide]] and the EPF Wiki Development Guide. 
+
+1. Ubuntu Server 10.04 LTS 32-bit
+
+Download and install Ubuntu server. Install the following options for your convenience
+* OpenSSH server
+* Samba file server 
+
+2. Rails Ready
+
+Execute the following commands to install the key components using 
+{Rails Ready}[https://github.com/joshfng/railsready] 
+
+	wget --no-check-certificate https://github.com/joshfng/railsready/raw/master/railsready.sh 
+	bash railsready.sh
+
+The script contains a bug, the fix is to add the following line to <strong>.bash_profile</strong>
+
+	 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+Logout and login and check if you have Ruby, RVM and Rails working, for example
+	
+	ostraaten@epfw-vbox:~$ ruby -v
+	ruby 1.9.2p290 (2011-07-09 revision 32553) [i686-linux]
+	ostraaten@epfw-vbox:~$ rails -v
+	Rails 3.0.9
+	ostraaten@epfw-vbox:~$ rvm -v
+	rvm 1.6.32 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]
+
+For almost all if not all purposes Rails Ready will suffice but if your requirement fo further you might want to take
+a look at {Rails Ready Ready}[https://github.com/3months/railsready-ready] as well. 
+
+3. MySQL 
+
+Open a terminal window to install MySQL client and server. 
+Provide the recommended root password when you are prompted for it.
+	
+	sudo apt-get install mysql-client mysql-server
+
+Install the MySQL development headers files and libraries,they are also needed.
+
+	sudo apt-get install libmysqlclient15-dev
+
+4. EPF Wiki
+
+Use Use <tt>git clone</tt> to get EPF Wiki.	The command will prompt for a password, you can just 
+ignore this by pressing enter.
+	
+	git clone https://ostraaten@github.com/ostraaten/epfw.git
+
+This command creates folder epfw which we will refer to as the EPF Wiki root. 
+You can always update to the latest version of EPW Wiki by executing git pull
+ from the EPF Wiki root.	 
+
+	cd ~/epfw
+	git pull
+
+Now we install all EPF Wiki specific Ruby gems using the new gem tool 
+{bundler}[http://gembundler.com/] with a single command: 
+
+	cd ~/epfw
+	bundle install
+
+Create database user for EPF Wiki
+
+	mysql -u root -p
+	create user 'epfwiki'@'localhost' identified by 'ikiwpur';
+	grant all privileges on *.* to 'epfwiki'@'localhost';
+	grant usage on *.* to 'epfwiki'@'localhost';
+	exit
+
+You can check the resulting privileges with
+
+	show grants for 'epfwiki'@'localhost';
+
+Create a database configuration file for your installation
+
+	cd ~/epf
+	cp database.yml.example database.yml
+	
+Now you can change the database settings in you config file database.yml to match 
+your mysql-server setup. If you created the MySQL database exactly as was described 
+above, you can skip the following skip.
+
+	vi config/database.yml
+
+If you don't want to use vi you can also open the config file from another computer that
+has a different editor. From a different computer that is running plain Ubuntu 
+you can for instance browse the config files by running the following command such as: 
+
+	nautilus sftp://ostraaten@192.168.1.42/home/ostraaten/epfw/config
+
+Now you can create the database 
+
+	cd ~/epfw
+	rake db:create db:migrate RAILS_ENV=production
+
+rm -r rubygems-1.3.5/sftp://ostraaten@192.168.1.42/home/ostraaten/.rvm/gems/ruby-1.9.2-p290@global
+
+Email 
+
+If you don't change the default email settings, EPF Wiki will try to use sendmail. But there is also
+ the option of using SMTP or to use no email.
+	
+	cd ~/epfw/config/initializers
+	cp setup_mail.rb.example setup_mail.rb 
+
+
+ActionMailer::Base.smtp_settings = {  
+  :address              => "smtp.gmail.com",  
+  :port                 => 587,  
+  :domain               => "epf.eclipse.org",  
+  :user_name            => "onno.van.der.straaten@gmail.com",  
+  :password             => "****",  
+  :authentication       => "plain",  
+  :enable_starttls_auto => true  
+}
+#ActionMailer::Base.delivery_method = :test
+	
+	
+
+5. Apache2 and Phusion Passenger (aka mod_rails)
+
+Install Apache2
+
+ sudo apt-get install apache2
+
+Some extra Apache bits For Phusion Passenger
+
+ sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
+
+Phusion Passenger
+	
+	passenger-install-apache2-module
+
+This command outputs some vital configuration information that you want to take note of
+
+	LoadModule passenger_module /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8/ext/apache2/mod_passenger.so
+	PassengerRoot /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8
+	PassengerRuby /home/ostraaten/.rvm/wrappers/ruby-1.9.2-p290/ruby
+
+And
+
+   <VirtualHost *:80>
+      ServerName www.yourhost.com
+      DocumentRoot /somewhere/public    # <-- be sure to point to 'public'!
+      <Directory /somewhere/public>
+         AllowOverride all              # <-- relax Apache security settings
+         Options -MultiViews            # <-- MultiViews must be turned off
+      </Directory>
+   </VirtualHost>
+
+
+Open ports configuration file
+
+	sudo nano /etc/apache2/ports.conf
+
+And add the following entry above the *:80 NameVirtualHost configuration: 
+
+	NameVirtualHost *:3000
+	Listen 3000
+
+Open Apache2 configuration file 
+
+	sudo nano /etc/apache2/sites-enabled/000-default
+
+Add for example the following to this file
+ LoadModule passenger_module /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8/ext/apache2/mod_passenger.so
+ PassengerRoot /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8
+ PassengerRuby /home/ostraaten/.rvm/rubies/ruby-1.9.2-p290/bin/ruby
+ <VirtualHost *:3000>
+   ServerName localhost
+   DocumentRoot /home/ostraaten/epfwiki/public    
+ </VirtualHost>
+
+Make sure the settings match your environment. Where Ruby is
+ which ruby
+Where your gems are
+ echo $GEM_HOME
+Also the paths depend on the passenger version as you can see above. The above configuration assumes you have 3.0.8 installed.
+
+If you are just testing and don't have a proper domain name for your server you can just add anything to the hosts file
+ sudo gedit /etc/hosts
+Restart apache to activate changes
+ sudo /etc/init.d/apache2 restart
+Now you should be able to see EPF Wiki when you navigate to http://epfwiki:3000
+
+NOTE: The passenger version number may be different, currently it is 2.2.7. You may have to change it in the paths above.
+
+
+6. EPF Wiki as a virtual appliance
+
+You can easily create EPF Wiki as a {virtual applicance} using the above instructions using {VirtualBox}[http://www.virtualbox.org/]. 
+The key thing is then to use {bridged networking}[http://www.virtualbox.org/manual/ch06.html#idp12173808]. This will allow you access
+to EPF Wiki from a different machine. 
+
+You can find out the IP address that gets assigned to the machine with
+
+	ifconfig
+	
+After that you can easily <tt>ssh</tt> to the machine to perform adminstration tasks from any other machine. You can also open
+a file explorer like nautilus to browse the file system of the VM.  	
+
+http://192.168.1.42/
+
+It works!
+
+http://192.168.1.42:3000/login/new_cadmin
+
+
+== Update EPF Wiki ==
+
+Logon the machine do a <tt>git pull</tt> and then touch the restart.txt file to restart EPF Wiki
+
+	cd ~\
+	git pull
+	touch tmp\restart.txt
+
+
+== Contributing
+
+
+== License
+
+EPF Wiki is released under the MIT license.
+
+
