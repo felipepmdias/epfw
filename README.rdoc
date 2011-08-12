@@ -12,17 +12,28 @@ Wiki features to the hypertext process descriptions created with EPF Composer.
 
 This remainder of this document describes how to install EPF Wiki on 
 {Ubuntu Server 10.04 LTS 32-bit}[http://www.ubuntu.com/download/server/download] using 
-Apache2 and Phusion Passenger (a.k.a mod_rails). If you have any questions about this 
-guide or EPF Wiki please use the 
+Apache2 and Phusion Passenger (a.k.a mod_rails). 
+
+If you have any questions about this guide or EPF Wiki please use the 
 {Eclipse Process Framework Project Developers List}[mailto:epf-dev@eclipse.org]. Or you can
 of course create {Github issues}[https://github.com/ostraaten/epfw/issues] if you have an account. 
-More information on EPW Wiki can be found in the [EPF Wiki User Guide]] and the EPF Wiki Development Guide. 
+More information on EPW Wiki can be found in the {EPF Wiki User Guide}[http://wiki.eclipse.org/EPF_Wiki_User_Guide]. 
 
 === Ubuntu Server 10.04 LTS 32-bit
 
 Download and install Ubuntu server. Install the following options for your convenience
 * OpenSSH server
 * Samba file server 
+
+You can easily create EPF Wiki as a {virtual applicance}[http://en.wikipedia.org/wiki/Virtual_appliance] 
+using for example {VirtualBox}[http://www.virtualbox.org/] using the instructions in this document.
+This is the recommended approach for using EPF Wiki.
+
+When you enable {bridged networking}[http://www.virtualbox.org/manual/ch06.html#idp12173808] this 
+will allow easy access to EPF Wiki box for administration tasks. Also you can access EPF Wiki
+from anywhere on the network. The command <tt>ifconfig</tt> will show the IP
+address that is assigned to the machine on your network. After that you can easily creat http, ssh or
+sftp connections to the machine. 
 
 === Rails Ready
 
@@ -133,12 +144,10 @@ For SMTP add a entry similar to the one below to setup_mail.rb
    :enable_starttls_auto => true  
  }
  
-To not use email at all add the following entry to setup_mail.rb
+If you don't want to use email setup_mail.rb should have the following entry
   
   ActionMailer::Base.delivery_method = :test
 	
-	
-
 === Apache2 and Phusion Passenger (aka mod_rails)
 
 Install Apache2
@@ -150,15 +159,16 @@ Some extra Apache bits For Phusion Passenger
  sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
 
 Phusion Passenger is installed with the following command. The command will output some vital
-Apache2 configuration for you environment that you want to take note of.
+Apache2 configuration for you environment that you want to take note of. Copy paste it somewhere
+as it will be needed to confire Apache2.
 	
  passenger-install-apache2-module
 
-Depending on the current version the command outputs something like 
+Depending on the current version of Ruby and Passenger the command outputs something like 
 
-	LoadModule passenger_module /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8/ext/apache2/mod_passenger.so
-	PassengerRoot /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8
-	PassengerRuby /home/ostraaten/.rvm/wrappers/ruby-1.9.2-p290/ruby
+ LoadModule passenger_module /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8/ext/apache2/mod_passenger.so
+ PassengerRoot /home/ostraaten/.rvm/gems/ruby-1.9.2-p290/gems/passenger-3.0.8
+ PassengerRuby /home/ostraaten/.rvm/wrappers/ruby-1.9.2-p290/ruby
 
 And something like
 
@@ -193,70 +203,95 @@ Add for example the following to this file
    DocumentRoot /home/ostraaten/epfwiki/public    
  </VirtualHost>
 
-Make sure the settings match your environment. Where Ruby is
+The entry above shows the <b>localhost</b> as the server name. Assuming you are using EPF Wiki as a virtual appliance
+you will be using the assigned IP address to access it from other machines on the netwerk. How to assign a proper
+domain name is not described in this document. Also the paths depend on the passenger version as you can see above. 
+The above configuration assumes you have 3.0.8 installed.
+
+Make sure the settings match your environment. You can always retrieve this information with the following commands:
  which ruby
-Where your gems are
- echo $GEM_HOME
-Also the paths depend on the passenger version as you can see above. The above configuration assumes you have 3.0.8 installed.
+ gem environment
 
-If you are just testing and don't have a proper domain name for your server you can just add anything to the hosts file
- sudo gedit /etc/hosts
-Restart apache to activate changes
+=== Restart Apache2
+
+The Apache2 configuration is now finished. Restart apache to activate changes
  sudo /etc/init.d/apache2 restart
-Now you should be able to see EPF Wiki when you navigate to http://localhost:3000
 
-NOTE: The passenger version number may be different, currently it is 2.2.7. You may have to change it in the paths above.
+After restart you should be able to see EPF Wiki when you navigate to http://<ip-address>:3000. 
+You should now see the form for creating the administrators account. It is recommended to do that
+now because anyone that accesses that resource can create the first account. But the installation
+is not finished untill you complete the remaining steps.
 
 === Tidy
 
-Install HTML Tidy. This is used for making nice visual difference analysis 
+Install HTML Tidy. This is used for cleaning up HTML so that nice visual difference analysis of
+versions of pages that have been edited in the Wiki. 
 
  sudo apt-get install tidy
 
 Test that it is working
 
- ~/epfw$ tidy -v
+ ~/epfw$ <b>tidy -v</b>
  HTML Tidy for Linux/x86 released on 25 March 2009
  
-=== HTML Editor (tinyMCE)
+=== HTML Editor (TinyMCE)
 
-We need unzip
+Download TinyMCE from {tinymce.moxiecode.com}[http://tinymce.moxiecode.com/download.php]. EPF Wiki
+was confirmed to work with versions 3.2.0.2 and 
+{3.4.4}[http://www.tinymce.com/track.php?url=http%3A%2F%2Fgithub.com%2Fdownloads%2Ftinymce%2Ftinymce%2Ftinymce_3.4.4.zip]. 
+Extract the contents and copy the folder tinymce\jscripts\tiny_mce to epfw\public\javascripts. 
 
+Install unzip utility
  sudo apt-get install unzip
 
-Download TODO
-
- cd ~/Downloads</b>
+Unzip and install TinyMCE in the EPF Wiki root directory ~/epfw
+ cd ~/Downloads
  unzip tinymce_3.4.4.zip
  cp -r -u tinymce/jscripts/tiny_mce/ ~/epfw/public/javascripts
 
-Check: navigate
+The folder javascripts\tiny_mce should now contain the TinyMCE Javascript libraries for example
+<b>tiny_mce.js</b>
+
+ ostraaten@epfw-vbox:~$ <b>ls ~/epfw/public/javascripts/tiny_mce/</b>
+ langs	     plugins  tiny_mce.js	 tiny_mce_src.js
+ license.txt  themes   tiny_mce_popup.js  utils
 
 === Jobs
 
+There are now two <tt>rake --tasks</tt> that you need to schedule as {Cron}[http://en.wikipedia.org/wiki/Cron]
+jobs.
+
+To update Wikis with new baselines
  rake epfw:update RAILS_ENV=production
+To send the daily, weekly, monthly reports 
+ rake epfw:reports RAILS_ENV=production
 
+The task <b>epfw:reports</b> should only run 'once' each day, at the end of the working day. It will send the daily report 
+and, depending on the day of the week or month, also a weekly and/or monthly report.
 
+The task <b>epfw:update</b> can run multiple times a day but you should enough time for it to complete a job. When
+jobs overlap things get messy.
 
-== EPF Wiki as a virtual appliance
+The following command is used to create cron jobs
+ crontab -e
 
-You can easily create EPF Wiki as a {virtual applicance} using the above instructions using {VirtualBox}[http://www.virtualbox.org/]. 
-The key thing is then to use {bridged networking}[http://www.virtualbox.org/manual/ch06.html#idp12173808]. This will allow you access
-to EPF Wiki from a different machine. 
+You can use an online tool {Crobtab Generator}[http://cron.nmonitoring.com/cron-generator.html] to 
+generate the exact command to enter.
 
-You can find out the IP address that gets assigned to the machine with
+This job will send reports (daily, weekly, monthly) and will update Wiki sites if updates have been scheduled. 
+It should run from the EPF Wiki Application root
 
- ifconfig
-	
-After that you can easily <tt>ssh</tt> to the machine to perform adminstration tasks from any other machine. You can also open
-a file explorer like nautilus to browse the file system of the VM.  	
+A command like the following runs the daily job
 
-http://192.168.1.42/
+ cd /home/user/epfwiki && ruby script/runner -e production 'job_daily'
 
-It works!
+The crontab entry that runs the job each night 20:00 hours would be
 
-http://192.168.1.42:3000/login/new_cadmin
+ * 20 * * * cd /home/user/epfwiki && ruby script/runner -e production 'job_daily'
 
+Or you can run the job each hour
+
+ 0 * * * * cd /home/user/epfwiki && ruby script/runner -e production 'job_daily'
 
 == Update EPF Wiki
 
