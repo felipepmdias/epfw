@@ -8,8 +8,8 @@ approach and the flexibility and ease of use that is the defining characteristic
 EPF Wiki is technology built on top of {Ruby on Rails}[http://www.rubyonrails.org] that adds
 Wiki features to the hypertext process descriptions created with EPF Composer.
 
-This release of EPF Wiki is based on {EPF Wiki 1.5}[http://www.eclipse.org/downloads/download.php?file=/technology/epf/wiki/epfwiki_r1_5_20081021_0316.zip]
-from the {Eclipse Process Framework (EPF)}[http://www.eclipse.org/epf] project.
+This release of EPF Wiki is a fork of {EPF Wiki 1.5}[http://www.eclipse.org/downloads/download.php?file=/technology/epf/wiki/epfwiki_r1_5_20081021_0316.zip]
+as was released by the {Eclipse Process Framework (EPF)}[http://www.eclipse.org/epf] project.
  
 
 == Getting Started
