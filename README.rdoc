@@ -79,21 +79,21 @@ ignore this by pressing enter.
 	
  git clone https://ostraaten@github.com/ostraaten/epfw.git
 
-This command creates folder epfw which we will refer to as the EPF Wiki root. 
+This command creates folder <b>epfw</b> which we will refer to as the <b>EPF Wiki root</b>. 
 Now we install all EPF Wiki specific Ruby gems using the new gem tool 
 {bundler}[http://gembundler.com/] with a single command <tt>bundle install</tt>: 
 
  cd ~/epfw
  bundle install
 
-Create the database
+Next we create the database
 
  mysql -u root -p
  create user 'epfwiki'@'localhost' identified by 'ikiwpur';
  grant all privileges on *.* to 'epfwiki'@'localhost';
  grant usage on *.* to 'epfwiki'@'localhost';
 
-You can check the resulting privileges with
+You can check the resulting privileges of this MySQL user with
 
  show grants for 'epfwiki'@'localhost';
 
@@ -102,27 +102,27 @@ You exit the MySQL console with <tt>exit</tt>. Now create a database configurati
  cd ~/epf/config
  cp database.yml.example database.yml
 	
-If necessary change the database settings in you config file database.yml to match 
-your mysql-server setup. If you created the MySQL database exactly as was described 
-above, you can skip the following step.
+If necessary change the database settings in you configuration file <b>database.yml</b> to match 
+your MySQL server setup. But if you created the MySQL database exactly as was described 
+above you can skip the following step.
 
  vi config/database.yml
 
-If you don't want to use vi you can also open the config file from another computer that
-has a different editor. From a different computer that is running plain Ubuntu 
-you can for instance browse, open, edit and save the config files by using nautilus: 
+If you want to use a different editor than vi you can also open the configuration files
+from another computer that has a different editor. From a different desktop computer that is 
+running plain Ubuntu you can for example browse, open, edit and save the config files by using nautilus: 
 
  nautilus sftp://ostraaten@192.168.1.42/home/ostraaten/epfw/config
 
-Now you can create the database 
+Now you can create the database schema
 
  cd ~/epfw
  rake db:create db:migrate RAILS_ENV=production
 
-If this command fails with message ...
-
-	
- rm -r sftp://ostraaten@192.168.1.42/home/ostraaten/.rvm/gems/ruby-1.9.2-p290@global
+If this command fails with message that constants are initialized multiple times this is caused by
+the presence of a folder <b>ruby-1.9.2-p290@global</b> in the gems directory. You can remove this
+directory and try again
+ rm -r ~/.rvm/gems/ruby-1.9.2-p290@global
 
 === Email
 
