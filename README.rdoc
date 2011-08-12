@@ -9,8 +9,8 @@ EPF Wiki is technology built on top of {Ruby on Rails}[http://www.rubyonrails.or
 Wiki features to the hypertext process descriptions created with EPF Composer.
 
 This release of EPF Wiki is a fork of {EPF Wiki 1.5}[http://www.eclipse.org/downloads/download.php?file=/technology/epf/wiki/epfwiki_r1_5_20081021_0316.zip]
-as was released by the {Eclipse Process Framework (EPF)}[http://www.eclipse.org/epf] project. It is now maintained as
-the 'edge' version, so the current master branch of EPF Wiki which will refer to as <b>Edge EPF Wiki</b>.
+as was released by the {Eclipse Process Framework (EPF)}[http://www.eclipse.org/epf] project. It is now maintained
+here on Github as 'edge' version, so the current master branch of EPF Wiki which will refer to as <b>Edge EPF Wiki</b>.
 
 == Getting Started
 
@@ -302,7 +302,7 @@ Crontab entry to do updates every hour
 
 == Update and/or restart EPF Wiki
 
-Logon the machine do a <tt>git pull</tt> and then touch the restart.txt file to restart EPF Wiki
+Logon the machine do a <tt>git pull</tt> and then touch the <b>restart.txt</b> file to restart EPF Wiki
 
  cd ~\
  git pull
