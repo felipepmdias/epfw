@@ -250,7 +250,7 @@ Test that it is working
 Download TinyMCE from {tinymce.moxiecode.com}[http://tinymce.moxiecode.com/download.php]. EPF Wiki
 was confirmed to work with versions 3.2.0.2 and 
 {3.4.4}[http://www.tinymce.com/track.php?url=http%3A%2F%2Fgithub.com%2Fdownloads%2Ftinymce%2Ftinymce%2Ftinymce_3.4.4.zip]. 
-Extract the contents and copy the folder tinymce\jscripts\tiny_mce to epfw\public\javascripts. 
+Extract the contents and copy the folder <b>tinymce/jscripts/tiny_mce</b> to <b>epfw/public/javascripts</b>. 
 
 Install unzip utility
  sudo apt-get install unzip
