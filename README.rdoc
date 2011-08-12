@@ -263,7 +263,7 @@ Unzip and install TinyMCE in the EPF Wiki root directory ~/epfw
 The folder javascripts\tiny_mce should now contain the TinyMCE Javascript libraries for example
 <b>tiny_mce.js</b>
 
- ostraaten@epfw-vbox:~$ <b>ls ~/epfw/public/javascripts/tiny_mce/</b>
+ ostraaten@epfw-vbox:~$ ls ~/epfw/public/javascripts/tiny_mce/
  langs	     plugins  tiny_mce.js	 tiny_mce_src.js
  license.txt  themes   tiny_mce_popup.js  utils
 
@@ -289,8 +289,7 @@ The following command is used to create cron jobs
 You can use an online tool {Crobtab Generator}[http://cron.nmonitoring.com/cron-generator.html] to 
 generate the exact command to enter.
 
-This job will send reports (daily, weekly, monthly) and will update Wiki sites if updates have been scheduled. 
-It should run from the <b>EPF Wiki root</b>
+The jobs should run from the <b>EPF Wiki root</b>
 
 A command like the following updates the wiki with new baselines
  cd ~/epfw && rake epfw:update RAILS_ENV=production
@@ -322,6 +321,6 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html
 
 Contributors:
-* Onno van der Straaten:: initial implementation
-* Ricardo Balduino:: additions for feed generation (practices and UMA types)
-* Onno van der Straaten:: upgrade to Rails 3
+* Onno van der Straaten - initial implementation
+* Ricardo Balduino - additions for feed generation (practices and UMA types)
+* Onno van der Straaten - upgrade to Rails 3
