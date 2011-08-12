@@ -187,6 +187,7 @@
 			<% unless @privacypolicy.blank? %>
 			| <%= link_to 'Privacy Policy', :controller => 'portal', :action => 'privacypolicy' %>
 			<% end %>
+			<%= render :partial => 'other/img' %>
         </p>
         </div>
     </div>

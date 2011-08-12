@@ -307,6 +307,21 @@ Logon the machine do a <tt>git pull</tt> and then touch the <b>restart.txt</b> f
  cd ~\
  git pull
  touch tmp\restart.txt
+ 
+== Contributing
+
+You can contribute to EPF Wiki in many ways. At a minimum an open source initiative needs
+some feedback from the user community. 
+
+For this reason some very basic usage statistics are collected automatically when you
+deploy EPF Wiki. This is done using a {web bug}[http://en.wikipedia.org/wiki/Web_bug]. 
+This EPF Wiki 'web bug' embeds a invisible image in a deployed website. Request for this
+image are logged and provide information about browser, OS and so forth. 
+
+If you don't want  usage statistics te be collected add the following entry to your
+configuration file
+
+ ENV['EPFWIKI_USAGE_STATISTICS'] = 'N'
 
 == License
 

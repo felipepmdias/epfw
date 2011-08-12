@@ -1,11 +1,13 @@
 # Filters added to this controller will be run for all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
-
-
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
+  # http://mrchrisadams.tumblr.com/post/333036266/catching-errors-in-rails-with-rescue-from
+  # http://techoctave.com/c7/posts/36-rails-3-0-rescue-from-routing-error-solution
+  #rescue_from ActionController::RoutingError, :with => :render_404
+  
   #########
   protected   
   #########
@@ -43,31 +45,31 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def log_error(exception) #:doc:
-    super(exception)
-    begin
+  #def log_error(exception) #:doc:
+  #  super(exception)
+  #  begin
       # ENHANCEMENT don't send error email when action error causes an error 
-      Notifier.deliver_error_report(exception, clean_backtrace(exception), 
-      session.instance_variable_get("@data"), 
-      params, 
-      request.env)
-    rescue => e
-      logger.error(e)
-    end
-  end
+  #    Notifier.deliver_error_report(exception, clean_backtrace(exception), 
+  #    session.instance_variable_get("@data"), 
+  #    params, 
+  #   request.env)
+  #  rescue => e
+  #    logger.error(e)
+  #  end
+  #end
   
   # all exceptions are redirected to OtherController.error
-  def rescue_action_in_public(exception) #:doc:
-    flash['error'] = exception.message
-    flash['notice'] = "An application error occurred while processing your request. This error was logged and an email was sent to notify the administrator."
-    flash['notice'] = 'We\'re sorry, but something went wrong. We\'ve been notified about this issue and we\'ll take a look at it shortly.'
-    redirect_to :controller => 'other', :action => 'error'
-  end
+  #d#ef rescue_action_in_public(exception) #:doc:
+   # flash['error'] = exception.message
+  #  flash['notice'] = "An application error occurred while processing your request. This error was logged and an email was sent to notify the administrator."
+  #  flash['notice'] = 'We\'re sorry, but something went wrong. We\'ve been notified about this issue and we\'ll take a look at it shortly.'
+  #  redirect_to :controller => 'other', :action => 'error'
+  #end
   
   # instead of an error stack we want to display a nice user friendly error message
-  def local_request? #:doc:
-    false
-  end
+  #def local_request? #:doc:
+  #  false
+  #end
   
   # The #authenticate method is used as a <tt>before_hook</tt> in
   # controllers that require the user to be authenticated. If the
