@@ -83,7 +83,7 @@ Install the MySQL development headers files and libraries,they are also needed.
 
 === EPF Wiki
 
-You can now use <tt>git clone</tt> to get EPF Wiki on your box.	
+You can now use <tt>git clone</tt> to get <b>Edge EPF Wiki</b> on your box.	
 The command will prompt for a password, you can just 
 ignore this by pressing enter.
 	
@@ -227,7 +227,8 @@ Make sure the settings match your environment. You can always retrieve this info
 The Apache2 configuration is now finished. Restart apache to activate changes
  sudo /etc/init.d/apache2 restart
 
-After restart you should be able to see EPF Wiki when you navigate to http://<ip-address>:3000. 
+After restart you should be able to see EPF Wiki when you navigate to http://your-ip-address:3000. 
+
 You should now see the form for creating the administrators account. It is recommended to do that
 now because anyone that accesses that resource can create the first account. But the installation
 is not finished untill you complete the remaining steps.
@@ -241,7 +242,7 @@ versions of pages that have been edited in the Wiki.
 
 Test that it is working
 
- ~/epfw$ <b>tidy -v</b>
+ ~/epfw$ tidy -v
  HTML Tidy for Linux/x86 released on 25 March 2009
  
 === HTML Editor (TinyMCE)
