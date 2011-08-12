@@ -278,10 +278,9 @@ To send the daily, weekly, monthly reports
  rake epfw:reports RAILS_ENV=production
 
 The task <b>epfw:reports</b> should only run 'once' each day, at the end of the working day. It will send the daily report 
-and, depending on the day of the week or month, also a weekly and/or monthly report.
-
-The task <b>epfw:update</b> can run multiple times a day but you should enough time for it to complete a job. When
-jobs overlap things get messy.
+and, depending on the day of the week or month, also a weekly and/or monthly report. The task <b>epfw:update</b> 
+can run multiple times a day but you should enough time for it to complete a job. When those jobs overlap 
+things get messy. The jobs should run from the <b>EPF Wiki root</b>
 
 The following command is used to create cron jobs
  crontab -e
@@ -289,18 +288,16 @@ The following command is used to create cron jobs
 You can use an online tool {Crobtab Generator}[http://cron.nmonitoring.com/cron-generator.html] to 
 generate the exact command to enter.
 
-The jobs should run from the <b>EPF Wiki root</b>
-
 A command like the following updates the wiki with new baselines
  cd ~/epfw && rake epfw:update RAILS_ENV=production
 
 The crontab entry that runs a job each night 20:00 hours would be
  * 20 * * * cd ~/epfw && rake epfw:update RAILS_ENV=production
 
-Do the update 'and' send the reports
+Crontab entry to do the update 'and' send the reports
  * 20 * * * cd ~/epfw && rake epfw:update epfw:reports RAILS_ENV=production
 
-Do updates every hour
+Crontab entry to do updates every hour
  0 * * * * cd ~/epfw && rake epfw:update RAILS_ENV=production
 
 == Update and/or restart EPF Wiki
