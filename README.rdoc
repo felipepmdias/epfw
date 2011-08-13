@@ -336,4 +336,4 @@ Contributors:
 * Onno van der Straaten - initial implementation and upgrade to Rails 3
 * Ricardo Balduino - additions for feed generation (practices and UMA types)
 
-http://epfw.vanderstraaten.net/t1x1.gif
+[http://epfw.vanderstraaten.net/t1x1.gif]
