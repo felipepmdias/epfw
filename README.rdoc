@@ -16,7 +16,8 @@ here on Github as 'edge' version, so the current master branch of EPF Wiki which
 
 This remainder of this document describes how to install EPF Wiki on 
 {Ubuntu Server 10.04 LTS 32-bit}[http://www.ubuntu.com/download/server/download] using 
-Apache2 and Phusion Passenger (a.k.a mod_rails). 
+Apache2 and Phusion Passenger (a.k.a mod_rails). If you want to upgrade your existing EPF Wiki
+installation, there is a instruction on the {Eclipse Wiki}[http://wiki.eclipse.org/EPF_Wiki_Upgrade_to_Edge].
 
 If you have any questions about this guide or EPF Wiki please use the 
 {Eclipse Process Framework Project Developers List}[mailto:epf-dev@eclipse.org]. Or you can
