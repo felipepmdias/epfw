@@ -335,5 +335,3 @@ http://www.eclipse.org/legal/epl-v10.html
 Contributors:
 * Onno van der Straaten - initial implementation and upgrade to Rails 3
 * Ricardo Balduino - additions for feed generation (practices and UMA types)
-
-delete by github: {image}[http://epfw.vanderstraaten.net/t1x1.gif]
