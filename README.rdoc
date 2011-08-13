@@ -133,6 +133,28 @@ If this command fails with message that constants are initialized multiple times
 the presence of a folder <b>ruby-1.9.2-p290@global</b> in the gems directory. You can remove this
 directory and try again
  rm -r ~/.rvm/gems/ruby-1.9.2-p290@global
+ 
+== Environment configuration file
+
+Create the environment configuration file using the template
+ cd ~/epfw/config/environments
+ cp production.rb.example production.rb
+
+Edit the file 
+ vi production.rb
+
+There are two environment variables you want to consider changing
+  ENV['EPFWIKI_APP_NAME'] = 'EPF Wiki'
+  ENV['EPFWIKI_REPLY_ADDRESS'] = "no-reply@epf.eclipse.org"
+
+Then there is a variable that you need to change. EPF Wiki uses jobs to send reports and update Wiki
+sites. Such a job is or course unaware of the Web server configuration as no Web server is involved
+in the operation. So we have to tell EPF Wiki the host and port the Web server is using. 
+ ENV['EPFWIKI_HOST'] = "localhost" # used for jobs, when there is no host variable in the environment
+
+Replace <tt>ENV['EPFWIKI_HOST'] = "localhost"</tt> with the right hostname e.g. 
+<tt>ENV['EPFWIKI_HOST'] = "myepfwiki"</tt>. You have include a port number if you are not 
+using the default port 80 e.g. <tt>ENV['EPFWIKI_HOST'] = "myepfwiki:8080"</tt> 
 
 === Email
 

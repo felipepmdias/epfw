@@ -2,10 +2,12 @@ EPFWikiRails3::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   ENV['EPFWIKI_APP_NAME'] = 'EPF Wiki'
+  ENV['EPFWIKI_REPLY_ADDRESS'] = "no-reply@epf.eclipse.org"
+  ENV['EPFWIKI_HOST'] = "localhost" # used for jobs, when there is no host variable in the environment
+  
   ENV['EPFWIKI_PUBLIC_FOLDER'] = 'public'
   ENV['EPFWIKI_EDITOR'] = 'tinymce' # TODO Bug 218832 - RTE
   ENV['EPFWIKI_ROOT_DIR'] = File.expand_path(Rails.root) + '/'
-  ENV['EPFWIKI_HOST'] = "localhost" # used for jobs, when there is no host variable in the environment
   ENV['EPFWIKI_SITES_FOLDER'] = 'bp'
   ENV['EPFWIKI_SITES_PATH'] = ENV['EPFWIKI_ROOT_DIR'] + ENV['EPFWIKI_PUBLIC_FOLDER'] + '/' + ENV['EPFWIKI_SITES_FOLDER']
   ENV['EPFWIKI_WIKIS_FOLDER'] = 'wikis' 
@@ -13,7 +15,6 @@ EPFWikiRails3::Application.configure do
   ENV['EPFWIKI_DIFFS_PATH'] = ENV['EPFWIKI_ROOT_DIR'] + ENV['EPFWIKI_PUBLIC_FOLDER'] + "/#{Rails.env}_diffs/"
   #ENV['EPFWIKI_DOMAINS'] = "@epfwiki.org @openup.org" # specify to restrict valid emails to these domains. Uncomment to allow all.
   
-  ENV['EPFWIKI_REPLY_ADDRESS'] = "no-reply@epf.eclipse.org"
   ENV['EPFWIKI_TEMPLATES_DIR'] = "#{ENV['EPFWIKI_ROOT_DIR']}#{ENV['EPFWIKI_PUBLIC_FOLDER']}/templates/"
   
   ENV['EPFWIKI_GOOGLE_CUSTOM_SEARCH'] = 'N' # Google Custom Search example for EPFWiki.net
