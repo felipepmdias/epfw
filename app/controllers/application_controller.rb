@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   # http://mrchrisadams.tumblr.com/post/333036266/catching-errors-in-rails-with-rescue-from
   # http://techoctave.com/c7/posts/36-rails-3-0-rescue-from-routing-error-solution
   #rescue_from ActionController::RoutingError, :with => :render_404
+  rescue_from Exception, :with => :render_exception
   
   #########
   protected   
@@ -58,13 +59,7 @@ class ApplicationController < ActionController::Base
   #  end
   #end
   
-  # all exceptions are redirected to OtherController.error
-  #d#ef rescue_action_in_public(exception) #:doc:
-   # flash['error'] = exception.message
-  #  flash['notice'] = "An application error occurred while processing your request. This error was logged and an email was sent to notify the administrator."
-  #  flash['notice'] = 'We\'re sorry, but something went wrong. We\'ve been notified about this issue and we\'ll take a look at it shortly.'
-  #  redirect_to :controller => 'other', :action => 'error'
-  #end
+
   
   # instead of an error stack we want to display a nice user friendly error message
   #def local_request? #:doc:
@@ -118,5 +113,31 @@ class ApplicationController < ActionController::Base
     cookies.delete :epfwiki_id
     cookies.delete :epfwiki_token
   end
-
+  
+  #######
+  private
+  #######
+  
+  def render_exception(exception = nil)
+    flash['error'] = exception.message
+    flash['notice'] = "An application error occurred while processing your request. This error was logged and an email was sent to notify the administrator."
+    flash['notice'] = 'We\'re sorry, but something went wrong. We\'ve been notified about this issue and we\'ll take a look at it shortly.'
+    #begin
+    Rails.backtrace_cleaner.clean(exception.backtrace)
+    #Notifier.deliver_error_report(exception, exception.backtrace,
+    Notifier.deliver_error_report(exception, Rails.backtrace_cleaner.clean(exception.backtrace),
+      session.instance_variable_get("@data"),
+      params,
+      request.env)
+    redirect_to :controller => 'other', :action => 'error'
+    #rescue => e
+    #  logger.error(e)
+    #end
+    #if exception
+    #    logger.info "Rendering 404: #{exception.message}"
+    #end
+    #
+    #render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+  end
+  
 end

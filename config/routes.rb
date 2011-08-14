@@ -174,6 +174,11 @@ match 'login/confirm_account/:id', :to => 'login#confirm_account' # used for con
   #match 'pages/view/:id?url=:url', :to => 'pages#view' # see wiki.js: pages/view/id?url=.. TODO dit werkt niet, logisch?
   match 'pages/view/:id', :to => 'pages#view' # see wiki.js: pages/view/id?url=.. # TODO maar dit werkt ook niet!?
 
+  # Last route in routes.rb
+  # See http://techoctave.com/c7/posts/36-rails-3-0-rescue-from-routing-error-solution
+  match '*a', :to => 'other#show404'
+  
+  
   #match ':site_folder/:id/:action', :to => 'pages'
   #match ':site_folder/:id/:action', :to => 'pages'
   

@@ -22,6 +22,7 @@ EPFWikiRails3::Application.configure do
   ENV['EPFWIKI_AUTH_METHODS'] = 'validemail'# valid values, for instance: bugzilla,basic,validemail
   ENV['EPFWIKI_AUTH_BASIC'] = 'home.global.logicacmg.com,401,logicacmg.com'  # host,fail code,domain for creating email
   ENV['EPFWIKI_AUTH_BUGZILLA'] = 'bugs.eclipse.org,443'  # host,port
+  
   config.per_page = 5
   
   # In the development environment your application's code is reloaded on
