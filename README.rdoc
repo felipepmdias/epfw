@@ -38,7 +38,7 @@ When you enable {bridged networking}[http://www.virtualbox.org/manual/ch06.html#
 will allow easy access to EPF Wiki box for administration tasks. Also you can access EPF Wiki
 from anywhere on the network. The command <tt>ifconfig</tt> will show the IP
 address that is assigned to the machine on your network. After that you can easily creat http, ssh or
-sftp connections to the machine. 
+sftp connections to the machine. To activate changes do <tt>sudo /etc/init.d/networking restart</tt>
 
 === Rails Ready
 
@@ -78,17 +78,10 @@ Provide the recommended root password when you are prompted for it.
 	
  sudo apt-get install mysql-client mysql-server
 
-Install the MySQL development headers files and libraries,they are also needed.
-
- sudo apt-get install libmysqlclient15-dev
-
 === EPF Wiki
 
-You can now use <tt>git clone</tt> to get <b>Edge EPF Wiki</b> on your box.	
-The command will prompt for a password, you can just 
-ignore this by pressing enter.
-	
- git clone https://ostraaten@github.com/ostraaten/epfw.git
+You can now use <tt>git clone</tt> to get <b>Edge EPF Wiki</b> on your box.
+ git clone https://github.com/ostraaten/epfw.git
 
 This command creates folder <b>epfw</b> which we will refer to as the <b>EPF Wiki root</b>. 
 Now we install all EPF Wiki specific Ruby gems using the new gem tool 
@@ -97,7 +90,7 @@ Now we install all EPF Wiki specific Ruby gems using the new gem tool
  cd ~/epfw
  bundle install
 
-Next we create the database
+Next we create a MySQL user
 
  mysql -u root -p
  create user 'epfwiki'@'localhost' identified by 'ikiwpur';
@@ -110,7 +103,7 @@ You can check the resulting privileges of this MySQL user with
 
 You exit the MySQL console with <tt>exit</tt>. Now create a database configuration file for your installation
 
- cd ~/epf/config
+ cd ~/epfw/config
  cp database.yml.example database.yml
 	
 If necessary change the database settings in you configuration file <b>database.yml</b> to match 
@@ -125,7 +118,7 @@ running plain Ubuntu you can for example browse, open, edit and save the config 
 
  nautilus sftp://ostraaten@192.168.1.42/home/ostraaten/epfw/config
 
-Now you can create the database schema
+Now you can create the database and database schema
 
  cd ~/epfw
  rake db:create db:migrate RAILS_ENV=production
@@ -191,9 +184,9 @@ Some extra Apache bits For Phusion Passenger
 
  sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
 
-Phusion Passenger is installed with the following command. The command will output some vital
+Phusion Passenger is installed with the following command. <b>The command will output some vital
 Apache2 configuration for you environment that you want to take note of. Copy paste it somewhere
-as it will be needed to confire Apache2.
+as it will be needed to configure Apache2</b>.
 	
  passenger-install-apache2-module
 
@@ -323,6 +316,15 @@ Crontab entry to do the update 'and' send the reports
 Crontab entry to do updates every hour
  0 * * * * cd ~/epfw && rake epfw:update RAILS_ENV=production
 
+== Troubleshooting
+
+If things are not working as expected EPF Wiki will send emails to the administrator
+with more information. If these emails do not contain information to fix the problem
+it is necessary to look in the log files of Rails and then of Apache 2.
+
+The Rails log file is '''~/epfw/log/production.log'''. The Apache2 log files can be
+found in the directory '''/var/log/apache2'''.
+
 == Update and/or restart EPF Wiki
 
 Logon the machine do a <tt>git pull</tt> and then touch the <b>restart.txt</b> file to restart EPF Wiki
@@ -330,7 +332,7 @@ Logon the machine do a <tt>git pull</tt> and then touch the <b>restart.txt</b> f
  cd ~\
  git pull
  touch tmp\restart.txt
- 
+
 == Contributing
 
 You can contribute to EPF Wiki in many ways. At a minimum an open source initiative needs
