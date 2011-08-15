@@ -16,13 +16,22 @@ EPFWikiRails3::Application.configure do
   #ENV['EPFWIKI_DOMAINS'] = "@epfwiki.org @openup.org" # specify to restrict valid emails to these domains. Uncomment to allow all.
   
   ENV['EPFWIKI_TEMPLATES_DIR'] = "#{ENV['EPFWIKI_ROOT_DIR']}#{ENV['EPFWIKI_PUBLIC_FOLDER']}/templates/"
-  
   ENV['EPFWIKI_GOOGLE_CUSTOM_SEARCH'] = 'N' # Google Custom Search example for EPFWiki.net
   
    # authentication methods that can be used to authenticate users
   ENV['EPFWIKI_AUTH_METHODS'] = 'validemail' # valid values, for instance: bugzilla,basic,validemail
   #ENV['EPFWIKI_AUTH_BASIC'] = 'home.global.logicacmg.com,401,logicacmg.com'  # host,fail code,domain for creating email
   #ENV['EPFWIKI_AUTH_BUGZILLA'] = 'bugs.eclipse.org,443'  # host,port
+  
+  # Some very basic usage statistics are collected automatically when you
+  # deploy EPF Wiki. This is done using a {web bug}[http://en.wikipedia.org/wiki/Web_bug]. 
+  # This EPF Wiki 'web bug' embeds a invisible image in a deployed website. Request for this
+  # image are logged and provide information about browser, OS and so forth. 
+  # 
+  # If you don't want  usage statistics te be collected add the following entry to your
+  # configuration file
+  # ENV['EPFWIKI_USAGE_STATISTICS'] = 'N'
+  
   config.per_page = 25
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
