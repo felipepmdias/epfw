@@ -125,10 +125,10 @@ class ApplicationController < ActionController::Base
     #begin
     Rails.backtrace_cleaner.clean(exception.backtrace)
     #Notifier.deliver_error_report(exception, exception.backtrace,
-    Notifier.deliver_error_report(exception, Rails.backtrace_cleaner.clean(exception.backtrace),
+    Notifier.error_report(exception, Rails.backtrace_cleaner.clean(exception.backtrace),
       session.instance_variable_get("@data"),
       params,
-      request.env)
+      request.env).deliver
     redirect_to :controller => 'other', :action => 'error'
     #rescue => e
     #  logger.error(e)

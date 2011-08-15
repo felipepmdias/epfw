@@ -25,7 +25,7 @@ p { margin: 0 }
 <hr/>
 <% for key, val in @params -%>
 <p><b><%= key %></b></p>
-<p><%= val.to_yaml.to_a.join("</p>\n<p>    ").gsub(/password:.*/, 'password: ****') %></p>
+<p><%= val.inspect.gsub(/password:.*/, 'password: ****') %></p>
 <% end if @params -%>
 
 <h3>Session</h3>
