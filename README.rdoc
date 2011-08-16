@@ -322,8 +322,8 @@ If things are not working as expected EPF Wiki will send emails to the administr
 with more information. If these emails do not contain information to fix the problem
 it is necessary to look in the log files of Rails and then of Apache 2.
 
-The Rails log file is '''~/epfw/log/production.log'''. The Apache2 log files can be
-found in the directory '''/var/log/apache2'''.
+The Rails log file is <b>~/epfw/log/production.log</b>. The Apache2 log files can be
+found in the directory <b>/var/log/apache2</b>.
 
 == Update and/or restart EPF Wiki
 
