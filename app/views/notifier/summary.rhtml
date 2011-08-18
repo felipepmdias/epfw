@@ -6,7 +6,7 @@
 	<p>
 		<strong>General Summary</strong>
 		<ul>
-		<% @items.each do |itm| %>
+		<% @report.items.each do |itm| %>
 			<% if itm.class.name == 'Upload' %>
 				<li><%= link_to itm.filename, itm.url(true) %> was uploaded by <%= itm.user.name %> at <%= itm.created_on.strftime(Utils::TIME_FORMAT) %></li>
 			<% elsif itm.class.name == 'User' %>
@@ -20,7 +20,7 @@
 		<p>
 			<strong><%= link_to w.title, w.url(true) %> Summary</strong>
 			<ul>
-				<% @items.each do |itm| %>
+				<% @report.items.each do |itm| %>
 					<% if itm.class.name == 'Version' && itm.wiki == w %>
 						<li><%= link_to itm.presentation_name, itm.page.url(true) %> was changed by <%= itm.user.name %> at <%= itm.created_on.strftime(Utils::TIME_FORMAT) %></li>
 					<% elsif itm.class.name == 'Comment' && itm.site == w %>
@@ -39,6 +39,6 @@
 		</p>
 	<% end %>	
 
-<p>Generated on: <strong><%= @runtime.to_s %></strong><br>
-Showing from <strong><%= @starttime.to_s %></strong> to <strong><%= @endtime.to_s %></strong></p>
+<p>Generated on: <strong><%= @report.runtime.to_s %></strong><br>
+Showing from <strong><%= @report.starttime.to_s %></strong> to <strong><%= @report.starttime.to_s %></strong></p>
 <%= render :partial => 'notifier/footer' %>

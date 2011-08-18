@@ -120,7 +120,6 @@ class ApplicationController < ActionController::Base
   
   def render_exception(exception = nil)
     flash['error'] = exception.message
-    flash['notice'] = "An application error occurred while processing your request. This error was logged and an email was sent to notify the administrator."
     flash['notice'] = 'We\'re sorry, but something went wrong. We\'ve been notified about this issue and we\'ll take a look at it shortly.'
     #begin
     Rails.backtrace_cleaner.clean(exception.backtrace)

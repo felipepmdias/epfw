@@ -117,10 +117,11 @@ class EpfcLibraryTest < ActiveSupport::TestCase
  "[EPF Wiki - Test Enviroment] FINISHED update of Wiki Templates with Baseline Process templates_20080828",
  "[EPF Wiki - Test Enviroment] Your contribution has been processed",
  "[EPF Wiki - Test Enviroment] Your contribution has been processed",
- "[EPF Wiki - Test Enviroment] Your contribution has been processed",
- "[EPF Wiki - Test Enviroment] Daily Summary"]
- r << "[EPF Wiki - Test Enviroment] Weekly Summary"  if Time.now.wday == 1 # monday, sunday is 0
- r << "[EPF Wiki - Test Enviroment] Monthly Summary" if Time.now.day == 1 # first day of the month
+ "[EPF Wiki - Test Enviroment] Your contribution has been processed"]
+ #"[EPF Wiki - Test Enviroment] Templates Daily Summary", # send but without recipients
+ #"[EPF Wiki - Test Enviroment] Daily Summary"]
+ #r << "[EPF Wiki - Test Enviroment] Weekly Summary"  if Time.now.wday == 1 # monday, sunday is 0
+ #r << "[EPF Wiki - Test Enviroment] Monthly Summary" if Time.now.day == 1 # first day of the month
     assert_equal r,@emails.collect {|e|e.subject}
     assert_equal [["foocash.oshman@epf.eclipse.org"],
  ["footony.clifton@epf.eclipse.org"], ['foogeorge.shapiro@epf.eclipse.org'],

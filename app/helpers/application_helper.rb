@@ -13,9 +13,8 @@ module ApplicationHelper
 
   # TODO rails 3 copy van mine? in application controller
   def user?
-    logger.debug("session: #{session.inspect}")
     if session and session['user']
-      logger.debug("session['user']: #{session['user'].inspect}")
+      #logger.debug("session['user']: #{session['user'].inspect}")
       true
     else
       false
@@ -122,7 +121,7 @@ module ApplicationHelper
         txt = raw "<input type=checkbox checked>notify me of new comments and changes" if notification
         html << link_to(txt, 
           url_for(:div_id => div_id, :controller => "users", :action => "notification", 
-            :page_id => page.id, :site_id => page.site.id,:user_id => user.id, 
+            :page_id => page.id,:user_id => user.id, # , :site_id => page.site.id 
             :notification_type=> notification_type), :remote => true) # TODO Rails 3 was link_to_remote
         html << raw("</span>")
       else

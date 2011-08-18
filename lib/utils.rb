@@ -68,9 +68,6 @@ module Utils # Need this, otherwise Rails won't load
     end
   end
   
-  
- 
-  
   # HTML Tidy Configuration Options see http://tidy.sourceforge.net/docs/quickref.html
   # Ruby Interface on SuSE linux does not seem to work. Causes a segmentation fault.
   # If this is fixed we can start using it again instead of the current #tidy_file. 

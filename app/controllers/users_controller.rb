@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   
   protect_from_forgery :except => [:admin, :cadmin, :send_report]
     
-  FLASH_REPORT_SENT = "Report sent!"
+  FLASH_REPORT_SENT = "Report scheduled to be emailed!"
+  FLASH_NO_ITEMS = "Report was scheduled to be emailed but it doesn't contain any data"
   FLASH_FAILED_TO_RESEND_PW = "New password could not be saved!"
   FLASH_NO_LONGER_CADMIN = "You are no longer the central administrator"  
   
@@ -25,8 +26,14 @@ class UsersController < ApplicationController
   end    
   
   def send_report
-    Notifier.summary(params.merge(:user => session['user'])).deliver
-    flash['success'] = FLASH_REPORT_SENT
+    rep = Report.new(params[:type])
+    rep.users = [session['user']]
+    unless rep.items.empty?
+      flash['success'] = FLASH_REPORT_SENT
+    else
+      flash['notice'] = FLASH_NO_ITEMS
+    end
+    Notifier.summary(rep).deliver
     redirect_to :action => 'account', :id => session['user'].id
   end
   
@@ -105,17 +112,18 @@ class UsersController < ApplicationController
   end
   
   # Action #notification creates or deletes (toggles) a notification of a certain type for a Page and Site
+  # params[:page_id] can now also be a Wiki
   def notification
     @user = User.find(params[:user_id])
-    @site = Site.find(params[:site_id])
-    @page = Page.find(params[:page_id])
+    #@site = Site.find(params[:site_id])
+    #@page = Page.find(params[:page_id])
     @type = params[:notification_type]
     if session['user'] == @user || cadmin?
-      n = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", @user.id, @page.id, @type])
+      n = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", @user.id, params[:page_id], @type])
       if  n
         n.destroy
       else
-        n = Notification.create(:user => session['user'], :page => @page, :notification_type => @type)
+        n = Notification.create(:user => session['user'], :page_id => params[:page_id], :notification_type => @type)
       end
       respond_to do |format|
         format.js {  render :update do |page|

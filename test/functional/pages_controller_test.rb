@@ -191,14 +191,24 @@ class PagesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:checkout)
     assert_match "The page is currently checked out by user #{@tony.name}", @response.body
     assert_match "As you are the central administrator you can perform operations on this checkout", @response.body
-    # 9    
+    # 9
+    @emails.clear
     page.reload
     assert_not_nil page.checkout
     co = page.checkout
     assert_equal co.version.source_version.page, co.page # ordinary checkout, not a new page
     html = co.version.html.gsub('</body>','adding some text</body>')
     session['user'] = @andy
-    assert_raise(RuntimeError) {post :save, :html => html, :checkout_id => co.id}
+    post :save, :html => html, :checkout_id => co.id
+    assert_equal 1, @emails.size
+    assert @emails[0].subject.include?('[Error] exception in')
+    assert @emails[0].body.include?(LoginController::FLASH_UNOT_CADMIN)
+    assert_redirected_to :controller => 'other', :action => 'error'
+    assert_not_nil flash['error'] 
+    assert flash['error'].include?(LoginController::FLASH_UNOT_CADMIN)
+    assert flash['notice'].include?('notified about this issue')
+    #assert_raise(RuntimeError) {post :save, :html => html, :checkout_id => co.id}
+      #"Only Tony or the administator (#{User.find_central_admin.name}) should be able to save the HTML"
     # 10
     session['user'] = checkout.user
     post :save, :html => html, :checkout_id => co.id
@@ -218,7 +228,12 @@ class PagesControllerTest < ActionController::TestCase
     co = page.checkout
     session['user'] = @andy
     assert @andy != checkout.user
-    assert_raise(RuntimeError) {post :checkin, :checkout_id => checkout.id}
+    @emails.clear
+    post :checkin, :checkout_id => checkout.id
+    assert_equal 1, @emails.size
+    assert @emails[0].subject.include?('[Error] exception in')
+    assert_redirected_to :controller => 'other', :action => 'error' 
+    #assert_raise(RuntimeError) {post :checkin, :checkout_id => checkout.id}
     # 13
     session['user'] = checkout.user
     post :checkin, :checkout_id => checkout.id
@@ -328,7 +343,12 @@ class PagesControllerTest < ActionController::TestCase
     co = page.checkout
     v = page.checkout.version    
     session['user'] = @andy
-    assert_raise(RuntimeError) {get :undocheckout, :checkout_id => co.id}
+    @emails.clear
+    get :undocheckout, :checkout_id => co.id
+    assert_redirected_to :controller => 'other', :action => 'error'
+    assert_equal 1, @emails.size
+    assert @emails[0].subject.include?('[Error] exception in')
+    #assert_raise(RuntimeError) {get :undocheckout, :checkout_id => co.id}
     # 3
     session['user'] = @george
 

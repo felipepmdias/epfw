@@ -133,14 +133,43 @@ class Site < ActiveRecord::Base
     Notifier.email(User.find_central_admin, 'Error running job_daily', [], e.message + "\n" + e.backtrace.join("\n")).deliver
   end
   
-  def self.reports
+  def self.reports(runtime = Time.now)
+    reps_sent = []
     raise "Raise for testing exception handling in rake update" if ENV['EPFWIKI_RAISE_IN_RAKE_UPDATE'] == 'Y' # for test purposes
-    Notifier.summary(:type => 'D', :host => ENV['EPFWIKI_HOST']).deliver
-    Notifier.summary(:type => 'W', :host => ENV['EPFWIKI_HOST']).deliver if Time.now.wday == 1 # monday, sunday is 0
-    Notifier.summary(:type => 'M', :host => ENV['EPFWIKI_HOST']).deliver if Time.now.day == 1 # first day of the month
+    (Wiki.find(:all, :conditions => ['obsolete_on is null']) << nil).each do |w| # Wiki.new for notification for all sites
+      reps = [Report.new('D', w, runtime)] # daily 
+      reps << Report.new('W', w, runtime) if runtime.wday == 1 # monday, sunday is 0
+      reps << Report.new('M', w, runtime) if runtime.day == 1 # first day of the month 
+      reps.each do |r|
+        Notifier.summary(r).deliver unless r.items.empty? or r.users.empty? # only deliver when content and users
+        reps_sent << r unless  r.items.empty? or r.users.empty?
+      end
+    end
+    reps_sent
   rescue => e
     Rails.logger.info("Error running job_daily: " + e.message + "\n" + e.backtrace.join("\n"))
     Notifier.email(User.find_central_admin, 'Error running job_daily', [], e.message + "\n" + e.backtrace.join("\n")).deliver
+  end
+  
+  def self.changed_items(rep)
+    cond = ['created_on > ? and created_on < ?', rep.starttime, rep.endtime]
+    if rep.site
+      site_cond = ['created_on > ? and created_on < ? and site_id = ?', rep.starttime, rep.endtime, rep.site]
+      site_cond2 = ['created_on > ? and created_on < ? and wiki_id = ?', rep.starttime, rep.endtime, rep.site]
+      site_cond3 = ['created_on > ? and created_on < ? and tool=? and site_id = ?', rep.starttime, rep.endtime, 'Wiki', rep.site]
+    else
+      site_cond = site_cond2 = cond
+      site_cond3 = ['created_on > ? and created_on < ? and tool=?', rep.starttime, rep.endtime, 'Wiki']
+    end
+    items = UserVersion.find(:all, :conditions => site_cond2) +
+    Comment.find(:all, :conditions => site_cond) +
+    Upload.find(:all, :conditions => cond) +
+    Wiki.find(:all, :conditions => cond)+
+    Update.find(:all, :conditions => site_cond2) +
+    User.find(:all, :conditions => cond) +
+    WikiPage.find(:all, :conditions => site_cond3)
+    Checkout.find(:all)
+    items.sort_by {|item|item.created_on}
   end
   
   ###########

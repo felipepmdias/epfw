@@ -59,10 +59,11 @@ class PagesController < ApplicationController
       if @comment.save
         redirect_to :controller => 'pages', :site_folder => @wiki.folder, :id => @page.id, :action => 'discussion'
         users = (User.find(:all, :conditions => ['notify_immediate=?', 1]) + Notification.find_all_users(@page, Page.name)).uniq
+        users += Notification.find_all_users(@wiki, 'Immediate')          
         unless users.empty?
           subject = "New comment about #{@page.presentation_name}"
           introduction = "User #{@comment.user.name} created a comment about <a href=\"#{@comment.page.url(true, request.host + (request.port == 80 ? '' : ':' + request.port.to_s))}\">#{@comment.page.presentation_name}</a> in site #{@comment.site.title}<br>"
-          Notifier.notification(users,subject,introduction, @comment.text, request.host + (request.port == 80 ? '' : ':' + request.port.to_s)).deliver
+          Notifier.notification(users.uniq,subject,introduction, @comment.text, request.host + (request.port == 80 ? '' : ':' + request.port.to_s)).deliver
         end
       end
     end
@@ -140,14 +141,15 @@ class PagesController < ApplicationController
       @version = co.version
       @wiki = co.site
       @page = co.page
-      co.checkin(session['user'], params[:html])
+      co.checkin(session['user'], params[:html]) # will create Notification record
       raise "Failed to checkin #{checkout.id}" if Checkout.exists?(co.id)
       flash.now['success'] = FLASH_CHECKIN_SUCCESS
       users = (User.find(:all, :conditions => ['notify_immediate=?', 1]) + Notification.find_all_users(@page, Page.name)).uniq
+      users += Notification.find_all_users(@wiki, 'Immediate')
       unless users.empty?
           subject = "New version created of #{@version.page.presentation_name}"
           introduction = "User #{@version.user.name} created a version of <a href=\"#{@version.page.url(true, request.host + (request.port == 80 ? '' : ':' + request.port.to_s))}\">#{@version.page.presentation_name}</a> in site #{@version.wiki.title}<br>"
-          Notifier.notification(users,subject,introduction, @version.note, request.host + (request.port == 80 ? '' : ':' + request.port.to_s)).deliver
+          Notifier.notification(users.uniq,subject,introduction, @version.note, request.host + (request.port == 80 ? '' : ':' + request.port.to_s)).deliver
       end
       #redirect_to :controller => 'versions', :action => 'edit', :id => version.id
       if @version.template?

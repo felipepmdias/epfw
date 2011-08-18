@@ -303,6 +303,26 @@
 </div>
 <% end %>
 
+<% if @site.wiki? %>
+<div class="sectionHeading">Reports</div>
+<div class="sectionContent">
+    <table cellpadding="0" cellspacing="0" border="0" class="sectionTable">
+    	<% ['Daily','Weekly', 'Monthly', 'Immediate'].each do |report| %>
+        <tr>
+            <th scope="row" class="sectionTableHeading"><%= report %></th>
+            <td align="left" class="sectionTableCell">
+	           	<p></>The following users will be notified of changes and new comments:
+	        	<%= Notification.find_all_users(@site, report).collect{|u|u.name}.join(', ') %>.
+				</p>
+				<p><%= link_to_notification_toggle(@site, report)  %></p>
+            </td>
+        </tr>
+		<% end %>
+    </table>
+</div>
+<% end %>
+
+
 <div class="sectionHeading">Properties</div>
 <div class="sectionContent">
 <table cellpadding="0" cellspacing="0" border="0" class="sectionTable">

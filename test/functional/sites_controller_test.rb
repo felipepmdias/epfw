@@ -184,10 +184,13 @@ class SitesControllerTest < ActionController::TestCase
     Site.reports
     openupwiki2.reload
     assert_equal [], Update.find_todo
-    rep_cnt = 1 # daily
-    rep_cnt = 1 if Time.now.wday == 1 # weekly
-    rep_cnt += 1 if Time.now.day == 1 # monthly
-    assert_equal(3+rep_cnt, @emails.size) # scheduled, started, finished
+    #rep_cnt = 1 # daily
+    #rep_cnt += 1 if Time.now.wday == 1 # weekly
+    #rep_cnt += 1 if Time.now.day == 1 # monthly
+    #assert_equal [], @emails.collect{|e|[e.subject, e.bcc]}
+    assert_equal(3, @emails.size) # scheduled, started, finished, daily summary for 2 wikis and 1 global
+    s = @emails.collect{|e|e.subject}.to_s
+    assert (s.include?('SCHEDULED') and s.include?('FINISHED') and s.include?('STARTED')), "#{s}"
     assert_equal 'Ready', openupwiki2.status
   end
   

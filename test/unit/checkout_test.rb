@@ -1,5 +1,5 @@
 require 'test_helper'
-# rake log:clear test:units TEST=test/unit/checkout_test.rb
+# rake reset && log:clear test:units TEST=test/unit/checkout_test.rb
 
 class EpfcLibraryTest < ActiveSupport::TestCase
   

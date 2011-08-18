@@ -2,7 +2,6 @@ require 'test_helper'
 
 class EpfcLibraryTest < ActiveSupport::TestCase
   
-  # TODO include all record types: 
   test "Delivery summary" do
     @george = Factory(:user, :name => 'George Shapiro', :password => 'secret', :admin => 'C')
     @andy = Factory(:user, :name => 'Andy Kaufman', :password => 'secret', :admin => 'Y')
@@ -32,7 +31,37 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     @tony.created_on = Time.now - 3.days
     @tony.save!
     assert 0 < User.find(:all, :conditions => ['created_on > ? and created_on < ?', starttime, endtime ], :order => 'created_on DESC').size
-    Notifier.summary({:type => 'M', :dummy => ''}, Time.now + 1.month).deliver # plus 1 month, because records are created in the current month
-  end
+    # daily report
+    assert_not_nil WikiPage.find(:first)
+    assert_not_nil Version.find(:first)
+    assert_not_nil Comment.find(:first)
+    itms = []
+    itms << Comment.find(:first)
+    itms << Version.find(:first)
+    itms << @george
+    itms << @andy
+    itms << Checkout.new(:site =>@oup_wiki, :page => page, :user => @tony, :created_on => Time.now)
+    itms << Update.new(:wiki => @oup_wiki, :user => @tony, :baseline_process => @oup_20060721, :created_on => Time.now)
+    itms << @oup_wiki
+    itms << WikiPage.find(:first)
+    itms << Upload.new(:filename => 'myupload.pdf', :user => @tony, :created_on => Time.now)
+    reps = [Report.new('D', nil)] # daily 
+    reps << Report.new('W', nil) # weekly
+    reps << Report.new('M', nil) # monthly 
+    reps.each do |r|
+      r.items = itms
+      r.users = [@george, @andy]
+      Notifier.summary(r).deliver unless r.items.empty? or r.users.empty? # only deliver when content and users  
+    end
+    
+    
+    
+      
+    #  Notifier.summary({:type => 'M', :dummy => ''}, Time.now + 1.month).deliver # plus 1 month, because records are created in the current month
+    #
+    #cmt
+
+end
+  
   
 end

@@ -95,18 +95,25 @@ class UsersControllerTest < ActionController::TestCase
   test "Send report" do 
     get :index
     session['user'] = @cash
-    post    :send_report, :type => 'M'
-    assert_equal UsersController::FLASH_REPORT_SENT, flash['success']
+    rt = Time.now
+    rep = Report.new('M',nil,rt)
+    assert_equal rt, rep.runtime
+    assert_equal (rep.runtime - 1.month).at_beginning_of_month, rep.starttime
+    assert_equal rep.runtime.at_beginning_of_month, rep.endtime
+    post :send_report, :type => 'M'
+    #assert_equal UsersController::FLASH_REPORT_SENT, flash['success']
     assert_redirected_to :action => 'account', :id => @cash.id
-    assert_equal(1, @emails.size)
-    email = @emails.first
-    assert email.subject.index('Monthly')
-    assert_equal("foocash.oshman@epf.eclipse.org", email.bcc[0])
-    assert_equal([ENV['EPFWIKI_REPLY_ADDRESS']], email.from)
-    post    :send_report, :type => 'D'
-    assert_equal UsersController::FLASH_REPORT_SENT, flash['success']
-    post    :send_report, :type => 'W'
-    assert_equal UsersController::FLASH_REPORT_SENT, flash['success']
+    assert_equal 1, @emails.size
+    assert_equal [],  rep.items, "Report shouldn't have any data to send"
+    assert_equal UsersController::FLASH_NO_ITEMS, flash['notice']
+    assert @emails.first.subject.index('Monthly Summary')
+    assert_equal @cash.email, @emails.first.bcc.first 
+    assert @emails.first.body.include? 'Monthly Summary'
+    assert_equal([ENV['EPFWIKI_REPLY_ADDRESS']], @emails.first.from)
+    post :send_report, :type => 'D'
+    assert_equal UsersController::FLASH_NO_ITEMS, flash['notice']
+    post :send_report, :type => 'W'
+    assert_equal UsersController::FLASH_NO_ITEMS, flash['notice']
   end
 
   # Show:

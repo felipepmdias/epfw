@@ -26,6 +26,8 @@ class Notifier < ActionMailer::Base
   end
 
   def error_report(exception, trace, session, params, env, sent_on = Time.now)
+    print "e"
+    logger.info("Sending error report")
     content_type "text/html" 
     @recipients         = User.find_central_admin.email
     @from               = ENV['EPFWIKI_REPLY_ADDRESS']
@@ -38,43 +40,13 @@ class Notifier < ActionMailer::Base
     @env        = env
   end
   
-  def summary(params, runtime = Time.now)
-    content_type "text/html" 
-    
-    case params[:type]
-    when 'D' # daily
-      starttime = (runtime - 1.day).at_beginning_of_day
-      endtime = runtime.at_beginning_of_day
-      @bcc = Utils.email_addresses_4_report(User.find_all_by_notify_daily(1))
-      subject_text = 'Daily'
-    when 'W' # weekly
-      starttime = (runtime - 1.week).at_beginning_of_week
-      endtime = runtime.at_beginning_of_week
-      @bcc = Utils.email_addresses_4_report(User.find_all_by_notify_weekly(1))
-      subject_text = 'Weekly'
-    when 'M' # monthly
-      starttime = (runtime - 1.month).at_beginning_of_month
-      endtime = runtime.at_beginning_of_month
-      @bcc = Utils.email_addresses_4_report(User.find_all_by_notify_monthly(1))
-      subject_text = 'Monthly'
-    else
-      raise 'Report type is required'
-    end
-    
-    @bcc = Utils.email_addresses_4_report(params[:user]) unless params[:user].blank?
-    @subject = "[#{ENV['EPFWIKI_APP_NAME']}] #{subject_text} Summary" 
-
-    items = UserVersion.find(:all, :conditions => ['created_on > ? and created_on < ?', starttime, endtime ]) +
-    Comment.find(:all, :conditions => ['created_on > ? and created_on < ?', starttime, endtime ]) +
-    Upload.find(:all, :conditions => ['created_on > ? and created_on < ?', starttime, endtime ]) +
-    Wiki.find(:all, :conditions => ['created_on > ? and created_on < ?', starttime, endtime ])+
-    Update.find(:all, :conditions => ['created_on > ? and created_on < ?', starttime, endtime ]) +
-    User.find(:all, :conditions => ['created_on > ? and created_on < ?', starttime, endtime ]) +
-    WikiPage.find(:all, :conditions => ['created_on > ? and created_on < ? and tool=?', starttime, endtime, 'Wiki'])
-    Checkout.find(:all)
-    items.sort_by {|item|item.created_on}
+  #def summary(params, runtime = Time.now, report = nil)
+  def summary(rep)
+    content_type "text/html"
+    @bcc = Utils.email_addresses_4_report(rep.users)
+    #@bcc = Utils.email_addresses_4_report(params[:user]) unless params[:user].blank?
     @wikis = []
-    items.each do |item|
+    rep.items.each do |item|
       logger.debug("item: #{item.inspect}")
       w = nil
       case item.class.name
@@ -87,16 +59,14 @@ class Notifier < ActionMailer::Base
       @wikis << w if !w.nil?
     end
     @wikis = @wikis.uniq    
-    @from               = ENV['EPFWIKI_REPLY_ADDRESS']
-    @sent_on            = Time.now
-    @runtime    = runtime
-    @endtime    = endtime
-    @starttime  = starttime
-    @contributions   = items
-    @subject    = subject
-    @cadmin      = User.find_central_admin
-    @host       = ENV['EPFWIKI_HOST']
-    @items = items
+    @report = rep
+    @from = ENV['EPFWIKI_REPLY_ADDRESS']
+    @subject2 = rep.subject # @subject cannot be used, will always be nil in the view
+    @sent_on = Time.now
+    @contributions = rep.items
+    @cadmin = User.find_central_admin
+    @host = ENV['EPFWIKI_HOST']
+    mail(:bcc => @bcc, :subject =>  @report.subject)
   end 
   
   def env_to(user, session, params, env, sent_on = Time.now)
