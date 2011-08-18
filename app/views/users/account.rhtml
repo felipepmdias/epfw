@@ -20,7 +20,7 @@
                 <ul><% for notification in @user.reload.notifications %>
 				<% if Page.exists?(notification.page_id) %>
 					<% p = Page.find(notification.page_id)%>
-                	<li><%= link_to_notification_toggle(p, Page.name, @user) %> for <%= link_to_page p %> in Wiki <%= link_to_site p.site %></li>
+                	<li><%= link_to_notification_toggle(p.id, Page.name, @user) %> for <%= link_to_page p %> in Wiki <%= link_to_site p.site %></li>
 				<% else %>
 					<% notification.destroy %>
 				<% end %>

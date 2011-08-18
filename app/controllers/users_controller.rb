@@ -112,22 +112,19 @@ class UsersController < ApplicationController
   end
   
   # Action #notification creates or deletes (toggles) a notification of a certain type for a Page and Site
-  # params[:page_id] can now also be a Wiki
   def notification
     @user = User.find(params[:user_id])
-    #@site = Site.find(params[:site_id])
-    #@page = Page.find(params[:page_id])
     @type = params[:notification_type]
     if session['user'] == @user || cadmin?
-      n = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", @user.id, params[:page_id], @type])
+      n = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", @user.id, params[:id], @type])
       if  n
         n.destroy
       else
-        n = Notification.create(:user => session['user'], :page_id => params[:page_id], :notification_type => @type)
+        n = Notification.create(:user => session['user'], :page_id => params[:id], :notification_type => @type)
       end
       respond_to do |format|
         format.js {  render :update do |page|
-          page.replace_html params['div_id'], :inline => "<%= link_to_notification_toggle(@page, @type, @user)%>"
+          page.replace_html params['div_id'], :inline => "<%= link_to_notification_toggle(params[:id], @type, @user)%>"
           page.visual_effect :highlight, params['div_id'], :duration => 2 
         end}
       end

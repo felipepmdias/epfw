@@ -3,7 +3,7 @@
 <div id="menu">
     <%= link_to('Edit', {:controller => 'pages', :action=> 'checkout', :id=> @page.id, :site_id => @wiki.id}) %>
     <% if session['user'] %>
-    | <%= link_to_notification_toggle(@page, Page.name) %>
+    | <%= link_to_notification_toggle(@page.id, Page.name) %>
     <% end %>
     <% if @versions && @versions.size > 1 && !@page.checkedout? %>
 	| <%= link_to_function("Rollback") do |page| 

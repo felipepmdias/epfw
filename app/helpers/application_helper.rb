@@ -111,17 +111,17 @@ module ApplicationHelper
   end
     
   # Helper #link_to_notification_toggle
-  def link_to_notification_toggle(page, notification_type, user = session['user'])
+  def link_to_notification_toggle(id, notification_type, user = session['user'])
     html = []
-      notification = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", user.id, page.id, notification_type])
+      notification = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", user.id, id, notification_type])
       if session['user'] && (mine?(user) || cadmin?)
-        div_id = "notification_" + page.id.to_s + "_" + notification_type
+        div_id = "notification_" + id.to_s + "_" + notification_type
         html << raw("<span id=\"" + div_id + "\">")
         txt = raw "<input type=checkbox>notify me of new comments and changes"
         txt = raw "<input type=checkbox checked>notify me of new comments and changes" if notification
         html << link_to(txt, 
           url_for(:div_id => div_id, :controller => "users", :action => "notification", 
-            :page_id => page.id,:user_id => user.id, # , :site_id => page.site.id 
+            :id => id,:user_id => user.id, # , :site_id => page.site.id 
             :notification_type=> notification_type), :remote => true) # TODO Rails 3 was link_to_remote
         html << raw("</span>")
       else

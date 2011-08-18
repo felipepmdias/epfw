@@ -314,7 +314,7 @@
 	           	<p></>The following users will be notified of changes and new comments:
 	        	<%= Notification.find_all_users(@site, report).collect{|u|u.name}.join(', ') %>.
 				</p>
-				<p><%= link_to_notification_toggle(@site, report)  %></p>
+				<p><%= link_to_notification_toggle(@site.id, report)  %></p>
             </td>
         </tr>
 		<% end %>
