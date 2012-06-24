@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
   protected   
   #########
 
-
   def user?
     if session and session['user']
       true
