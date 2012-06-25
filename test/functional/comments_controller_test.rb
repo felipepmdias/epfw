@@ -16,8 +16,7 @@ class CommentsControllerTest < ActionController::TestCase
     @tony = Factory(:user, :name => 'Tony Clifton', :password => 'secret', :admin => 'N')
   end
 
-  def teardown # TODO werkt nog in Rails 3
-    puts "Teardown"
+  def teardown 
     [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
       FileUtils.rm_r(p) if File.exists?(p)
       FileUtils.makedirs(p)
@@ -33,7 +32,7 @@ class CommentsControllerTest < ActionController::TestCase
     c = Comment.create(:text => 'Text of comment by user tony', :user => @tony, :version => p.current_version, :page => p, :site => p.site)
     get :edit, :id => c.id
     assert_response :success
-    session['user'] = @andy
+    session['user'] = @andy.id
     get :edit, :id => c.id
     assert_response :success
     assert_match 'Text of comment by user tony', @response.body
@@ -43,7 +42,7 @@ class CommentsControllerTest < ActionController::TestCase
     assert_unot_cadmin_message
     put 'update', :id => 999 # id does not matter
     assert_unot_cadmin_message
-    session['user'] = @george
+    session['user'] = @george.id
     post :destroy, :id => c.id 
     assert_redirected_to :controller => 'sites', :action => 'comments', :id => p.site.id
     # TODO test update

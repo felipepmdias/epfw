@@ -6,7 +6,7 @@
     bp = BaselineProcess.new(:folder => folder, :title => folder, :user_id => cadmin.id)
     if File.exists?(bp.path)
       Rails.logger.debug('Removing old folder')
-      FileUtils.rm_r(bp.path)
+      FileUtils.rm_rf(bp.path) 
     end
     if !File.exists?(bp.path2zip)
       path = File.expand_path(File.dirname(__FILE__) + "/../data/#{bp.folder}.zip")

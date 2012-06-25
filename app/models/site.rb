@@ -1,3 +1,5 @@
+require 'iconv'
+
 # A Site can be a BaselineProcess (static, published website from EPF) or a Wiki, 
 # which is an enhanced EPFC site. Baseline Processes are 
 # used to create or update Wiki sites.
@@ -96,7 +98,6 @@ class Site < ActiveRecord::Base
     logger.info("Finding wikifiable files in #{self.path}")
     
     # TODO workaround for ArgumentError: invalid byte sequence in UTF-8
-    # TODO which reminds me, after uploading to CVS I think we have to run tests again
     # http://po-ru.com/diary/fixing-invalid-utf-8-in-ruby-revisited/
     # ic = Iconv.new('UTF-8//IGNORE', 'UTF-8') # 
     # valid_string = ic.iconv(untrusted_string + ' ')[0..-2]
@@ -137,10 +138,13 @@ class Site < ActiveRecord::Base
     reps_sent = []
     raise "Raise for testing exception handling in rake update" if ENV['EPFWIKI_RAISE_IN_RAKE_UPDATE'] == 'Y' # for test purposes
     (Wiki.find(:all, :conditions => ['obsolete_on is null']) << nil).each do |w| # Wiki.new for notification for all sites
+      Rails.logger.info("Site Reports for site " + w.title) if w
+      Rails.logger.info("Global Reports") unless w
       reps = [Report.new('D', w, runtime)] # daily 
       reps << Report.new('W', w, runtime) if runtime.wday == 1 # monday, sunday is 0
       reps << Report.new('M', w, runtime) if runtime.day == 1 # first day of the month 
       reps.each do |r|
+        Rails.logger.info("Report_type: " + r.report_type + "\nr.items.empty?: " + r.items.empty?.to_s + "\nr.users.empty? " + r.users.empty?.to_s )
         Notifier.summary(r).deliver unless r.items.empty? or r.users.empty? # only deliver when content and users
         reps_sent << r unless  r.items.empty? or r.users.empty?
       end

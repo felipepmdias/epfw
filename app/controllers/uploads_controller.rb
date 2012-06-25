@@ -25,7 +25,7 @@ class UploadsController < ApplicationController
   end
   
   def create
-    @upload = Upload.new(params[:upload].merge(:user => session['user']))
+    @upload = Upload.new(params[:upload].merge(:user => session_user))
     if @upload.save
       @upload.save_file
       flash['success'] = 'Upload was successfully created.'

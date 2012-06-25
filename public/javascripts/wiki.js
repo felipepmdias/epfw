@@ -21,6 +21,6 @@ function epfwiki_includes(){
 	var page_id = location.pathname.replace(/\//g, '_').replace(/\./g,'_') + '.js';
 	// page_id is to allow the possibility for caching
     var url = '/pages/view/'+page_id+'?url='+page_href;
-    var myAjax = new Ajax.Request(url, {method: 'get'});
+    $.ajax({url: url});
 }
-Event.observe(window, 'load', epfwiki_includes, false);
+$(document).bind("ready", epfwiki_includes)

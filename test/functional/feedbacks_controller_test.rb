@@ -25,19 +25,18 @@ class FeedbacksControllerTest < ActionController::TestCase
 
   test "Destroy feedback" do 
     feedback = Feedback.create(:email => 'x@adb.com',:text => 'test_show')
-    #get :index # TODO MOETWEB
-    session['user'] = @andy
+    session['user'] = @andy.id
     assert_nothing_raised {Feedback.find(feedback.id)}
 
     post :destroy, :id => feedback.id
     assert_unot_cadmin_message
     
-    # TODO cannot test this because the controller uses request.referer
-    session['user'] = @george
+    request.env["HTTP_REFERER"] = '/portal/feedback'
+    session['user'] = @george.id
     post :destroy, :id => feedback.id
     
     assert_response :redirect
-    assert_redirected_to '/'#:action => 'list' # bestaat niet, hoe heeft dit ooit gewerk
+    assert_redirected_to '/portal/feedback'
 
     assert_raise(ActiveRecord::RecordNotFound) {Feedback.find(feedback.id)}
   end

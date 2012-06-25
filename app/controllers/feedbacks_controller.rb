@@ -26,8 +26,7 @@ class FeedbacksController < ApplicationController
   
   def destroy
     Feedback.find(params[:id]).destroy
-    logger.info("destroy en dan #{request.referer}")
-    redirect_to request.referer
+    redirect_to :back
   end
   
 end

@@ -1,6 +1,18 @@
 require 'test_helper'
 
 class EpfcLibraryTest < ActiveSupport::TestCase
+
+
+  def setup
+    teardown
+  end
+
+  def teardown
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
   
   # Shows:
   # 1. To create a new BaselineProcess we have to specifiy: title, folder, baseline, user
@@ -10,6 +22,7 @@ class EpfcLibraryTest < ActiveSupport::TestCase
   # 5. We can scan the content
   test "New baseline process" do
     @george = Factory(:user, :name => 'George Shapiro', :password => 'secret', :admin => 'C')
+    create_oup_20060721
     BaselineProcess.destroy_all
     # 1.
     site = BaselineProcess.new
@@ -23,7 +36,8 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert_equal site_count, Site.count
     # 3.
     site = BaselineProcess.new(:folder => 'oup_20060721', :title => 'oup_20060721', :user_id => @george.id)
-    assert site.save
+    #assert
+    site.save
     assert_equal '', site.errors.full_messages.join(', ')
     assert_equal site_count + 1, Site.count
     site = Site.find(site.id)
@@ -82,7 +96,7 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert_equal [sites_count, update_count], [Site.count, Update.count]
     # 2.
     wiki = Wiki.new(:folder => 'openup', :title => 'OpenUP Wiki', :user_id => @george.id)
-    FileUtils.remove_dir(wiki.path) 
+    FileUtils.remove_dir(wiki.path) if File.exists?(wiki.path)
     assert wiki.save
     assert_equal "", wiki.errors.full_messages.join(', ')
     wiki.reload

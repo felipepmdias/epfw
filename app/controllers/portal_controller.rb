@@ -96,7 +96,7 @@ class PortalController < ApplicationController
     if request.get?
       @feedback = Feedback.new
     else  
-      @feedback = Feedback.new(params[:feedback].merge(:user => session['user']))
+      @feedback = Feedback.new(params[:feedback].merge(:user => session_user))
       if @feedback.save
         Notifier.feedback(@feedback).deliver
         flash['success'] = "Your feedback or question was succesfully sent. Thanks for your interest in #{ENV['EPFWIKI_APP_NAME']}!"

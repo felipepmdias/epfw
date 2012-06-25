@@ -29,8 +29,8 @@ class UploadsControllerTest < ActionController::TestCase
     post :new
     assert_redirected_to :controller => 'login'
     # 2
-    session['user'] = @andy
-    post :create, :upload => {:upload_type => 'Image', :description => 'OpenUP PT image', :file => upload_file("#{ENV['EPFWIKI_ROOT_DIR']}test/functional/uploads_controller_test/openup_pt.jpg", 'image/jpeg')}
+    session['user'] = @andy.id
+    post :create, :upload => {:upload_type => 'Image', :description => 'OpenUP PT image', :file => fixture_file_upload("openup_pt.jpg", 'image/jpeg')}
     assert_redirected_to :action => 'index'
     assert_equal 1, Upload.count
     assert_not_nil assigns(:upload)
@@ -39,7 +39,7 @@ class UploadsControllerTest < ActionController::TestCase
     # 4
     assert_equal 1, Upload.count
     get :index
-    session['user'] = @tony
+    session['user'] = @tony.id
     upload = Upload.find(:first)
     post :update, :id => upload.id, :upload => {:description => 'image'}
     assert_equal Utils::FLASH_NOT_OWNER, flash['error']
@@ -49,17 +49,17 @@ class UploadsControllerTest < ActionController::TestCase
     # 5
     upload.user = @tony
     assert upload.save
-    session['user'] = @andy # het lukt me niet om de session user te veranderen
-    assert_equal @andy, session['user']
+    session['user'] = @andy.id # het lukt me niet om de session user te veranderen
+    assert_equal @andy, session_user
     post :update, :id => upload.id, :upload => {:description => 'image'}
     assert_equal nil, flash['error']
     upload.reload
     assert_equal 'image', upload.description
     # 6
     get :index
-    session['user'] = @andy
+    session['user'] = @andy.id
     upload = Upload.find(:first)
-    assert session['user'] != upload.user
+    assert session['user'] != upload.user.id
     post :destroy, :id => upload
     assert_equal LoginController::FLASH_UNOT_CADMIN, flash['error']
     assert Upload.exists?(upload.id)
@@ -68,13 +68,13 @@ class UploadsControllerTest < ActionController::TestCase
     :user_id => upload.user_id, :rel_path => upload.rel_path)
     assert upload2.save
     # 7
-    session['user'] = @tony
-    assert_equal session['user'], upload.user
+    session['user'] = @tony.id
+    assert_equal session['user'], upload.user.id
     post :destroy, :id => upload
     assert Upload.exists?(upload)
     # 8 # TODO test this, currently we cannot test this because use of request.referer causes errors: "The error occurred while evaluating nil.[]"
-    session['user'] = @george
-    assert session['user'] != upload2.user
+    session['user'] = @george.id
+    assert session['user'] != upload2.user.id
     assert_equal 2, Upload.count
     post :destroy, :id => upload2
     assert !Upload.exists?(upload2)

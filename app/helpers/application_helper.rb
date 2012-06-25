@@ -3,11 +3,16 @@
 module ApplicationHelper
 
   # TODO rails 3 copy van mine? in application controller
+  def session_user
+    User.find(session['user']) if session and session['user']
+  end
+
+  # TODO rails 3 copy van mine? in application controller
   def mine?(obj)
     if obj.class.name == User.name
-      obj.id == session['user'].id
+      obj.id == session_user.id
     else
-      obj.user_id == session['user'].id
+      obj.user_id == session_user.id
     end
   end
 
@@ -23,7 +28,7 @@ module ApplicationHelper
 
   # TODO rails 3 copy van mine? in application controller
   def admin?
-    if user? and session['user'].admin?
+    if user? and session_user.admin?
       true
     else
       false
@@ -32,45 +37,13 @@ module ApplicationHelper
 
   # TODO rails 3 copy van mine? in application controller
   def cadmin? # TODO Rails 3 
-    if user? and session['user'].cadmin?
+    if user? and session_user.cadmin?
       true
     else
       false
     end
   end
 
-  # Helper to simplify In-Place Editing 
-  # http://madrobby.github.com/scriptaculous/ajax-inplaceeditor/
-  def editable_content(options)
-    options[:content] = { :element => 'span' }.merge(options[:content])
-    options[:url] = {}.merge(options[:url])
-    options[:ajax] = { :okText => 'Save', :cancelText => 'Cancel'}.merge(options[:ajax] || {})
-    script = Array.new
-    script << 'new Ajax.InPlaceEditor('
-    script << "  '#{options[:content][:options][:id]}',"
-    script << "  '#{url_for(options[:url])}',"
-    script << "  {"
-    script << options[:ajax].map{ |key, value| "#{key.to_s}: #{value}" }.join(", ")
-    script << "  }"
-    script << ")"
-    content_tag(
-                options[:content][:element],
-                options[:content][:text],
-                options[:content][:options]
-    ) + javascript_tag( script.join)
-  end
-  
-  def link_to_review_note(comment)
-    if admin?
-      editable_content(:content => {:element => 'span', :text => comment.review_note,
-            :options => {:id => "review_note_#{comment.id}",:class => 'editable-content'}},
-            :url => { :controller => 'review', :action => 'note',:id => comment.id},
-            :ajax => {:okText => "'Ok'",:cancelText => "'Cancel'" })
-    else
-      comment.review_note
-    end
-  end
-  
   # TODO a better name for this method
   def menulink_to(*args)
     logger.debug("Creating menulink #{args.inspect}, #{params[:action]}")
@@ -111,10 +84,10 @@ module ApplicationHelper
   end
     
   # Helper #link_to_notification_toggle
-  def link_to_notification_toggle(id, notification_type, user = session['user'])
+  def link_to_notification_toggle(id, notification_type, user = session_user)
     html = []
       notification = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", user.id, id, notification_type])
-      if session['user'] && (mine?(user) || cadmin?)
+      if session_user && (mine?(user) || cadmin?)
         div_id = "notification_" + id.to_s + "_" + notification_type
         html << raw("<span id=\"" + div_id + "\">")
         txt = raw "<input type=checkbox>notify me of new comments and changes"
@@ -210,12 +183,12 @@ module ApplicationHelper
         user = checkout.user
         link << link_to(image_tag('checkout.gif', :border => 0, :title =>'Version is checked-out by ' + user.name ),:controller => 'versions',:action => 'show',:id => version.id)
         link << " " 
-        if user == session['user'] || cadmin?
+        if user == session_user || cadmin? # TODO this will cause too much database request
           link << link_to(image_tag('edit.gif', :border => 0, :title =>'Version is checked-out by you. Click to continue editing.' ),:controller => 'pages',:action => 'edit',:checkout_id => checkout.id)
         end
       end
-      link << link_to(image_tag('compare.gif', :border => 0, :title =>'Compare with previous version' ),:controller => 'versions', :action => 'diff',:id => version.id) # TODO hier stond version niet version.id 
-      link << link_to(image_tag('txt.gif', :border => 0,  :title =>'View as plain text' ), {:controller => 'versions',:action => 'text',:id => version.id}) # TODO 
+      link << link_to(image_tag('compare.gif', :border => 0, :title =>'Compare with previous version' ),:controller => 'versions', :action => 'diff',:id => version.id)  
+      link << link_to(image_tag('txt.gif', :border => 0,  :title =>'View as plain text' ), {:controller => 'versions',:action => 'text',:id => version.id}) 
     raw link.join("\n")
   end
                       

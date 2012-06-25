@@ -7,9 +7,8 @@ class ObsoleteNotificationWorkaroundTest < ActionDispatch::IntegrationTest
     @george = Factory(:user, :name => 'George Shapiro', :password => 'secret', :admin => 'C')
     @andy = Factory(:user, :name => 'Andy Kaufman', :password => 'secret', :admin => 'Y')
     #get "login/login"
-    #session['user'] = @andy
     post 'login/login', :user => {:email => @andy.email, :password => 'secret'}
-    assert_equal @andy, session['user'] 
+    assert_equal @andy, session_user
     p = WikiPage.find_by_presentation_name('Toolmentor Template')
     template = Site.templates[0]
     w = p.site
@@ -21,7 +20,7 @@ class ObsoleteNotificationWorkaroundTest < ActionDispatch::IntegrationTest
     p2,w,np,co = assigns(:page), assigns(:wiki), assigns(:new_page), assigns(:checkout)
     [p2,w,np,co].each {|o|o.reload}
     assert_equal 1, Notification.count # checkout creates notification?
-    #assert Notification.create(:user => session['user'], :page => p2, :notification_type => 'Page')
+    #assert Notification.create(:user => session_user, :page => p2, :notification_type => 'Page')
     post 'pages/undocheckout', :checkout_id => co.id
     assert_equal 1, Notification.count # Notification still exists although page was deleted
     get 'users/account'
@@ -34,7 +33,7 @@ class ObsoleteNotificationWorkaroundTest < ActionDispatch::IntegrationTest
       :page => {:presentation_name => 'New page', :source_version => template.id}
     assert_redirected_to  :action => 'edit', :checkout_id => assigns(:checkout).id
     p2,w,np,co = assigns(:page), assigns(:wiki), assigns(:new_page), assigns(:checkout)
-    #assert Notification.create(:user => session['user'], :page => p2, :notification_type => 'Page')
+    #assert Notification.create(:user => session_user, :page => p2, :notification_type => 'Page')
     assert_equal 1, Notification.count
     post 'pages/undocheckout', :checkout_id => co.id
     assert_equal 1, Notification.count

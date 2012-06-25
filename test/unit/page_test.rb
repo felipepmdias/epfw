@@ -2,14 +2,14 @@ require 'test_helper'
 
 class EpfcLibraryTest < ActiveSupport::TestCase
   
-  #def setup
-  #  logger.debug "Test Case: #{name}"
-  #  @andy = users(:andy)
-  #  @george = users(:george)
-  #  @tony = users(:tony)
-  #  @cash = users(:cash)    
-  #  @html = IO.readlines('test/unit/page_test/test_html.txt').join.split("####")
-  #end
+
+  def teardown
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
+
   
   test "New" do
     @george = Factory(:user, :name => 'George Shapiro', :password => 'secret', :admin => 'C')
@@ -100,7 +100,8 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert_equal 1, Version.count(:conditions => ['page_id=? and wiki_id =?', tool_tpl.id, @templates.id])
     source_version = tool_tpl.current_version
     assert_not_nil source_version
-    new_page, new_co = WikiPage.new_using_template(:presentation_name => 'New Tool Mentor created in test10_new_page_using_tempalte', :source_version => source_version, :user => @andy, :site => @oup_wiki)
+    new_page, new_co = WikiPage.new_using_template(:presentation_name => 'New Tool Mentor created in test10_new_page_using_tempalte', 
+      :source_version => source_version, :user => @andy, :site => @oup_wiki)
     #5
     assert_no_errors(new_page)
     assert_no_errors(new_co)
@@ -234,6 +235,7 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert_version_file(version.path)
     # 2
     pages_count = @oup_wiki.pages.count
+    @pages = @oup_wiki.pages.collect{|p|p.rel_path}
     params = Hash.new
     params[:page] = {:presentation_name => 'New page created using base concepts', :source_version => version.id, :user => @andy, :site => @oup_wiki}
     page, co = WikiPage.new_using_template(params[:page])
@@ -243,7 +245,9 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     page.reload
     co.reload
     @oup_wiki.reload
-    assert_equal pages_count + 1, @oup_wiki.pages.count
+    assert_equal ["base_concepts/guidances/supportingmaterials/new_page_created_using_base_concepts.html"], 
+          (@oup_wiki.pages.collect{|p|p.rel_path} - @pages)
+    assert_equal pages_count + 1, @oup_wiki.pages.reload.count # don't understand the reload but anyway...grasping at straws
     assert_equal 0, page.versions.size # checkouts are not counted here
     v = co.version
     assert_not_nil v

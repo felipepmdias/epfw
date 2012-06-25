@@ -2,7 +2,14 @@ require 'test_helper'
 # rake log:clear test:units TEST=test/unit/checkout_test.rb
 
 class EpfcLibraryTest < ActiveSupport::TestCase
- 
+
+   def teardown 
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
+
   # Shows that a user will start receiving notifications about page changes after creating a comment about a page
   test "Notification" do
     @andy = Factory(:user, :name => 'Andy Kaufman', :password => 'secret', :admin => 'C')

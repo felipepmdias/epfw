@@ -9,6 +9,8 @@ class VersionsController < ApplicationController
   
   layout 'wiki'
   
+  protect_from_forgery :except => :note 
+  
   def show
     @version = Version.find(params[:id])
     @page = @version.page
@@ -43,9 +45,9 @@ class VersionsController < ApplicationController
   # an admin when there is no reviewer defined yet.
   def note
     v = Version.find(params[:id])
-    if v.reviewer.nil? || v.reviewer == session['user'] || cadmin?
+    if v.reviewer.nil? || v.reviewer == session_user || cadmin?
       v.note = params[:value]
-      v.reviewer = session['user'] 
+      v.reviewer = session_user 
       v.save!
       v.reload
     end

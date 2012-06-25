@@ -2,13 +2,13 @@ require 'test_helper'
 
 class EpfcLibraryTest < ActiveSupport::TestCase
 
-  #def setup
-  #  logger.debug "Test Case: #{name}"  
-  #  @andy, @george, @cash, @tony = users(:andy), users(:george), users(:cash), users(:tony)
-  #  @emails = ActionMailer::Base::deliveries
-  #  @emails.clear
-  #end
-  
+  def teardown
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
+
   # Shows:
   # 1. No notify_immediate users, no email
   # 2. Notify_immediate users are receiving email

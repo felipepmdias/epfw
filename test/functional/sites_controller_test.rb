@@ -27,14 +27,14 @@ class SitesControllerTest < ActionController::TestCase
   test "index" do 
     get :index
     assert_redirected_to :controller => 'login'
-    session['user'] = @tony
+    session['user'] = @tony.id
     assert_not_nil(session['user'])
   end
   
   test "List" do 
     get :list
     assert_redirected_to :controller => 'login'
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :list
     assert_response :success
     assert_template 'list'
@@ -48,11 +48,11 @@ class SitesControllerTest < ActionController::TestCase
   # 3. Admin can upload baseline process
   test "New" do
     # 1
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :new
     assert_unot_admin_message
     # 2
-    session['user'] = @andy
+    session['user'] = @andy.id
     get :list
     assert_response :success
     assert_tag :tag => 'a', :attributes => {:href => "/sites/new"}    
@@ -83,7 +83,7 @@ class SitesControllerTest < ActionController::TestCase
       assert_tag :tag => 'option', :content => folder
     end
     site_count = Site.count
-    assert session['user'].admin?
+    assert session_user.admin?
     post :new, :site => {:title => 'oup_20060721', :folder => assigns(:folders)[0], :description => 'test03_new'}
     assert_not_nil assigns(:baseline_processes)
     assert_not_nil assigns(:folders)
@@ -102,11 +102,11 @@ class SitesControllerTest < ActionController::TestCase
   test "New wiki" do 
     @oup_20060721 = create_oup_20060721
     # 1
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :new_wiki
     assert_unot_admin_message
     # 2
-    session['user'] = @andy 
+    session['user'] = @andy.id
     assert @andy.admin?
     get :new_wiki 
     assert_not_nil assigns(:wiki)
@@ -121,9 +121,11 @@ class SitesControllerTest < ActionController::TestCase
     @emails.clear
     # 1
     get :new_wiki
-    session['user'] = @andy
+    session['user'] = @andy.id
     @oup_20060721 = create_oup_20060721
-    post :new_wiki, :wiki => {:folder => 'openup', :title => 'OpenUP Wiki', :description => 'Wiki for OpenUP created in test05_new_wiki_post', :baseline_process => @oup_20060721}
+    Rails.logger.debug('@oup_20060721' + @oup_20060721.inspect)
+    post :new_wiki, :wiki => {:folder => 'openup', :title => 'OpenUP Wiki', 
+      :description => 'Wiki for OpenUP created in test05_new_wiki_post'} #,       :baseline_process => @oup_20060721
     assert_not_nil assigns(:wiki)
     assert_redirected_to :action => 'description', :id => assigns(:wiki).id
     assert SitesController::FLASH_WIKI_SITE_CREATED, flash['success']
@@ -139,17 +141,17 @@ class SitesControllerTest < ActionController::TestCase
     @emails.clear
     get 'list'
     # 1.
-    session['user'] = @tony
+    session['user'] = @tony.id
     @oup_20060721 = create_oup_20060721
-    wiki = Wiki.new(:folder => 'openup', :title => 'OpenUP Wiki', :user_id => session['user'].id)
+    wiki = Wiki.new(:folder => 'openup', :title => 'OpenUP Wiki', :user_id => session['user'])
     assert wiki.save
     assert_equal 'Pending', wiki.status
-    update = Update.new(:wiki => wiki, :baseline_process => @oup_20060721, :user => session['user'])
+    update = Update.new(:wiki => wiki, :baseline_process => @oup_20060721, :user => session_user)
     assert update.save
     get :update_now, :update_id => update.id
     assert_unot_admin_message
     # 2
-    session['user'] = @andy
+    session['user'] = @andy.id
     post :update_now, :update_id => update.id 
     assert_equal(4, @emails.size) 
     assert_equal ["[EPF Wiki - Test Enviroment] SCHEDULED creation new Wiki OpenUP Wiki using Baseline Process oup_20060721",
@@ -168,7 +170,7 @@ class SitesControllerTest < ActionController::TestCase
   test "New wiki job daily" do 
     # 1
     get :new_wiki
-    session['user'] = @andy
+    session['user'] = @andy.id
     #baseline_process = Site.find_by_title('openup0721')
     #assert_not_nil baseline_process
     @oup_20060721 = create_oup_20060721    
@@ -205,17 +207,17 @@ class SitesControllerTest < ActionController::TestCase
     @oupwiki = create_oup_wiki(@oup_20060721)    
     get :description, :id => @oupwiki.id
     assert_redirected_to :controller => 'login'
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :description, :id => @oupwiki.id
     # TODO enable. Dit werkt nu anders ivm REST? Update kan weg?
     #BaselineProcess.find(:all).each do |bp|
     #  assert_match "/sites/update/#{@oupwiki.id}?baseline_process_id=#{bp.id}", @response.body
     #end
     # 2
-    session['user'] = @tony
+    session['user'] = @tony.id
     post :update
     assert_unot_admin_message
-    session['user'] =  @andy
+    session['user'] =  @andy.id
     cnt = Update.count
     post :update, :id => @oupwiki.id, :baseline_process_id => @oup_20060721.id    
     assert_equal 1+cnt, Update.count
@@ -223,10 +225,10 @@ class SitesControllerTest < ActionController::TestCase
     # 3
     assert_equal 1, Update.find_todo.size
     update = Update.find_todo[0]
-    session['user'] = @tony
+    session['user'] = @tony.id
     post :update_cancel, :id => @oupwiki.id , :update_id => update.id
     assert_unot_admin_message
-    session['user'] = @andy
+    session['user'] = @andy.id
     post :update_cancel, :id => @oupwiki.id , :update_id => update.id
     assert_equal cnt, Update.count
     assert_equal 0, Update.find_todo.size
@@ -235,10 +237,10 @@ class SitesControllerTest < ActionController::TestCase
     update = Update.new(:wiki => @oupwiki, :baseline_process => @oup_20060721, :user => @andy)
     assert update.save
     assert_equal(1, @emails.size) # scheduled 
-    session['user'] = @tony
+    session['user'] = @tony.id
     post :update_now, :update_id => update.id
     assert_unot_admin_message
-    session['user'] = @andy
+    session['user'] = @andy.id
     @emails.clear    
     post :update_now, :update_id => update.id
     assert_equal SitesController::FLASH_WIKI_UPDATE_SUCCESS, flash['success']
@@ -254,22 +256,22 @@ class SitesControllerTest < ActionController::TestCase
     wiki = Wiki.find(:first)
     assert wiki.obsolete_on.nil?
     # 1
-    session['user'] = @george
+    session['user'] = @george.id
     get :obsolete, :id => wiki.id
     assert_illegal_get
     # 2
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :obsolete, :id => wiki.id
     assert_unot_admin_message
-    session['user'] = @andy
+    session['user'] = @andy.id
     post :obsolete, :id => wiki.id
     wiki.reload
     assert !wiki.obsolete_on.nil?
     assert_equal @andy.id, wiki.obsolete_by, "User #{User.find(wiki.obsolete_by).name}"
   end
   
-  test "Comments, Versions" do
-    session['user'] = @george
+  test "Comments and versions" do
+    session['user'] = @george.id
     wiki = Wiki.find(:first)
     p = wiki.pages.first
     c = Comment.new(:text => 'Text of comment by user tony', :user => @tony, :version => p.current_version, :page => p, :site => p.site)

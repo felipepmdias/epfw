@@ -3,68 +3,55 @@ class ReviewController < ApplicationController
   before_filter :authenticate_admin
   before_filter :find_record
   
+  protect_from_forgery :except => [:note,:toggle_done, :assign] 
+  
   # Action #toggle_done toggles the <tt>done</tt> column. 
   def toggle_done
-    if @record.reviewer.nil? || @record.reviewer == session['user'] || cadmin?
+    if @record.reviewer.nil? || @record.reviewer == session_user || cadmin?
       if @record.done == 'Y'
         @record.update_attributes(:done => 'N')
       else
         @record.update_attributes(:done => 'Y')
       end
-      html = "<%= link_to_done_toggle(@record) %>"
+      @html = "<%= link_to_done_toggle(@record) %>"
     else
-      html = "<script language=\"JavaScript\">alert('To change the done flag you need to be the reviewer or " + 
+      @html = "<script language=\"JavaScript\">alert('To change the done flag you need to be the reviewer or " + 
         "the central administrator (#{User.find_central_admin.name})!')</script><%= link_to_done_toggle(@record) %>"
     end
-    div_id = "#{params['class_name']}#{params['id']}_done_toggle"
+    @div_id = "#{params['class_name']}#{params['id']}_done_toggle"
     respond_to do |format|
-      format.js { render :update do |page|
-        logger.debug("div_id: #{div_id}")
-        page.replace_html div_id, :inline => html
-        page.visual_effect :pulsate, div_id, :duration => 2 
-      end}
+      format.js 
     end
   end
   
   #Action #review assigns current User as the reviewer
   def assign
-    html = "<%= link_to_reviewer(@record) %>"
+    @html = "<%= link_to_reviewer(@record) %>"
     if @record.reviewer.nil?
-        @record.update_attributes(:reviewer => session['user'])
-    elsif @record.reviewer == session['user']
+        @record.update_attributes(:reviewer => session_user)
+    elsif @record.reviewer == session_user
         @record.update_attributes(:reviewer => nil)
     elsif cadmin?
-        @record.update_attributes(:reviewer => session['user'])
+        @record.update_attributes(:reviewer => session_user)
     elsif !@record.reviewer.nil? && !cadmin?
-        html = "<script language=\"JavaScript\">alert('Only the central administrator (#{User.find_central_admin.name}) can change or clear the reviewer!')</script><%= link_to_reviewer(@record) %>"
+        @html = "<script language=\"JavaScript\">alert('Only the central administrator (#{User.find_central_admin.name}) can change or clear the reviewer!')</script><%= link_to_reviewer(@record) %>"
     end
     respond_to do |format|
-      format.js { render :update do |page|
-        page.replace_html params['div_id'],:inline => html
-        page.visual_effect :pulsate, params['div_id'], :duration => 2
-      end}
+      format.js 
     end
   end
   
   # Action #review_note updates the review note
   def note
-    if @record.reviewer.nil? || @record.reviewer == session['user'] || cadmin?
+    if @record.reviewer.nil? || @record.reviewer == session_user || cadmin?
       @js_msg = ''
       @record.review_note = params[:value]
       @record.save!
     else
-      @js_msg = "<script language=\"JavaScript\">alert('Only the central administrator (#{User.find_central_admin.name}) or the reviewer can update the review note!')</script>" 
+      @js_msg = "<script language=\"JavaScript\">alert('Only the central administrator (#{User.find_central_admin.name}) or the reviewer can update the review note!')</script>"
     end
     @record.reload
-    #@record.review_note = '_______' if @record.review_note.blank?
-    #render :text => "#{params['editorId']}"
-    render :layout => false, :inline => "<%= @record.review_note %>" 
-    #respond_to do |format|
-    #  format.js { render :update do |page|
-    #    #page.replace_html "review_note_#{@record.id}",:text => "<%= @record.review_note %>"
-    #    page.visual_effect :pulsate, "review_note_#{@record.id}", :duration => 2
-    #  end}
-    #nd    
+    render :layout => false, :inline => "<%= @record.review_note %>" + @js_msg
   end
   
   #######

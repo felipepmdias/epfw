@@ -3,7 +3,6 @@ EPFWikiRails3::Application.configure do
 
   ENV['EPFWIKI_APP_NAME'] = "EPF Wiki - Test Enviroment"
   ENV['EPFWIKI_PUBLIC_FOLDER'] = 'public'
-  ENV['EPFWIKI_EDITOR'] = 'tinymce' # TODO Bug 218832 - RTE
   ENV['EPFWIKI_ROOT_DIR'] = File.expand_path(Rails.root.to_s) + '/'
   ENV['EPFWIKI_HOST'] = "localhost:3000" # used for jobs, when there is no host variable in the environment
   ENV['EPFWIKI_SITES_FOLDER'] = 'test_sites'

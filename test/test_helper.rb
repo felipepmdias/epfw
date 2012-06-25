@@ -138,17 +138,6 @@ class ActiveSupport::TestCase
     assert Utils::FLASH_USE_POST_NOT_GET, flash['error']
   end
  
-  def upload_file(path, content_type="application/octet-stream")
-    file = Tempfile.new(File.basename(path))
-    FileUtils.copy_file(path, file.path)
-    (class << file; self; end;).class_eval do
-      alias local_path path
-      define_method(:original_filename) { File.basename(path)}
-      define_method(:content_type) { content_type }
-    end
-    return file
-  end
-  
   def copyright_files(path)
     paths = Array.new
      (Dir.entries(path) - [".", ".."]).each do |entry| 
@@ -162,6 +151,43 @@ class ActiveSupport::TestCase
       end
     end
     return paths
+  end
+  
+  # Test helper integration tests
+  def assert_page_success(page)
+
+    w = page.site
+    
+    get page.url # e.g. /development_wikis/mywiki/new/guidances/toolmentors/toolmentor_template_E9930C53.html
+    assert_response :success, "assert_page_success View #{page.url}"
+    
+    Rails.logger.info("assert_page_success View #{page.url} AJAX")
+    id = (w.rel_path + '/' + page.rel_path).gsub('/', '_').gsub('.','_') # id allows us to cache the requests (pages)
+    #http://localhost:3000/pages/view/_development_wikis_mywiki_new_guidances_toolmentors_toolmentor_template_E9930C53_html.js?url=http://localhost:3000/development_wikis/mywiki/new/guidances/toolmentors/toolmentor_template_E9930C53.html
+    url = "pages/view/_#{id}.js?url=#{page.url(true)}"
+    get url
+    assert_response :success
+    
+    Rails.logger.info("assert_page_success Discussion #{page.url}!")
+    get "#{w.folder}/#{page.id}/discussion"
+    assert_response :success 
+    
+    Rails.logger.info("assert_page_success Edit #{page.url}")
+    get "#{w.folder}/#{page.id}/edit"
+    assert_redirected_to :controller => 'pages', :action => 'checkout', :id => page.id, :site_folder => w.folder
+    
+    Rails.logger.info("assert_page_success New #{page.url}")
+    get "#{w.folder}/#{page.id}/new"
+    assert_response :success
+
+    Rails.logger.info("assert_page_success History #{page.url}")
+    get "#{w.folder}/#{page.id}/history"
+    assert_response :success
+
+  end
+  
+  def session_user
+    User.find(session['user']) if session and session['user']
   end
     
 end

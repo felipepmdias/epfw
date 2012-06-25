@@ -24,17 +24,10 @@ class Version < ActiveRecord::Base
   HREF_PATTERN = /href="(.*?)"/
 
   DIFF_STYLE =   ["<style type=\"text/css\">",
-"  .diffdel,del.diffmod, .diffdel *, del.diffmod * {",
-"  background-color:#FAA;",
-"  text-decoration:line-through;",
-"  }",
-"  .diffins,ins.diffmod, .diffins *, ins.diffmod * {",
-"  background-color:#AFA;",
-"  text-decoration:underline;",
-"  }",
-"  .diffmod, .diffmod * {",
-"  border: 2px solid #FE0;",
-"}",
+"ins { text-decoration: none; background-color: #ff0; color: #000; }
+del { text-decoration: line-through; color: #f00; }
+
+div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
 "</style>"].join("\n")
   
   def previous_version

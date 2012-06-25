@@ -22,11 +22,13 @@ class NotificationPerSiteTest < ActionDispatch::IntegrationTest
     @wiki = Wiki.find(:first) # templates wiki
     @oup_20060721 = create_oup_20060721
     @oup_wiki = create_oup_wiki(@oup_20060721)
-    get 'users/notification', :user_id => @andy.id, :page_id => @wiki.id, :notification_type => 'Daily'  
+    get 'users/notification', :user_id => @andy.id, :id => @wiki.id, :notification_type => 'Daily'  
     assert_equal 0, Notification.count, "No session, shouldn't be possible to create a notification"
     post 'login/login', :user => {:email => @andy.email, :password => 'secret'}
-    get 'users/notification', :user_id => @andy.id, :page_id => @wiki.id, :notification_type => 'Daily'
-    get 'users/notification', :user_id => @andy.id, :page_id => @wiki.id, :notification_type => 'Immediate'
+    get 'users/notification', :user_id => @andy.id, :id => @wiki.id, :notification_type => 'Daily', :format => 'js'
+    assert_response :success
+    get 'users/notification', :user_id => @andy.id, :id => @wiki.id, :notification_type => 'Immediate', :format => 'js'
+    assert_response :success
     assert_equal 2, Notification.count
     # version
     @emails.clear
@@ -43,11 +45,13 @@ class NotificationPerSiteTest < ActionDispatch::IntegrationTest
     v.created_on = v.created_on - 1.day # back one day to send it in the report
     v.save!
     @emails.clear
-    reps = Site.reports
+    r = Report.new('D', @wiki) # 
+    assert_equal 1, r.users.size
+    reps = Site.reports # TODO test user
     assert_equal 1,@emails.size
     #assert assigns(:report)
     #rep = assigns(:report)
-    assert_equal 1, reps.size
+    assert_equal 1, reps.length
     assert reps.first.starttime < v.created_on
     assert reps.first.endtime > v.created_on
     assert_equal ["[EPF Wiki - Test Enviroment] Templates Daily Summary", ["fooandy.kaufman@epf.eclipse.org"]], 
@@ -71,7 +75,8 @@ class NotificationPerSiteTest < ActionDispatch::IntegrationTest
     assert !@emails.first.bcc.include?(@andy.email) # andy is not interested in oup_wiki 
     
     assert_equal 4, Notification.count, "Should unscribe user"
-    get 'users/notification', :user_id => @andy.id, :page_id => @wiki.id, :notification_type => 'Daily'
+    get 'users/notification', :user_id => @andy.id, :id => @wiki.id, :notification_type => 'Daily', :format => 'js'
+    assert_response :success
     assert_equal 3, Notification.count, "Should unscribe user"
   end
 end

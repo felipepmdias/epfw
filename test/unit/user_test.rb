@@ -4,13 +4,13 @@ require 'digest/sha1'
 
 class EpfcLibraryTest < ActiveSupport::TestCase
  
-  #def setup
-  #  logger.debug "Test Case: #{name}"  
-  #  @emails = ActionMailer::Base::deliveries
-  #  @emails.clear
-  #  @andy, @cash, @tony, @george = users(:andy), users(:cash), users(:tony), users(:george)
-  #end
-  
+  def teardown
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
+
   test "Create" do
     @andy = Factory(:user, :name => 'Andy Kaufman', :password => 'secret', :admin => 'C')
     assert_kind_of User, @andy

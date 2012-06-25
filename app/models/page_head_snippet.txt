@@ -1,5 +1,6 @@
 <!-- epfwiki head start -->
-<script src="/javascripts/prototype.js" type="text/javascript" language="JavaScript"></script>
+<script src="/javascripts/jquery.js" type="text/javascript"></script>
+<script src="/javascripts/jquery_ujs.js" type="text/javascript"></script>
 <link href="/stylesheets/wiki.css" media="screen" rel="Stylesheet" type="text/css" />
 <script src="/javascripts/wiki.js" type="text/javascript" language="JavaScript"></script>
 <!-- epfwiki head end -->

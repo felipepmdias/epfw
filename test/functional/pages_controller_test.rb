@@ -3,6 +3,7 @@ require 'test_helper'
 class PagesControllerTest < ActionController::TestCase
   
   def setup
+    teardown
     @controller = PagesController.new
     @emails = ActionMailer::Base::deliveries
     @emails.clear
@@ -28,9 +29,8 @@ class PagesControllerTest < ActionController::TestCase
     # 1
     @wiki.pages.each do |page|
       id = (@wiki.rel_path + page.rel_path).gsub('/', '_') # id allows us to cache the requests (pages)
-      post :view, :id => id, :url => page.url(true)# TODO rails 3. Zou eigenlijk een get moeten zijn maar Rails 3 kan dat niet
-      # De applicatie gebruikt dit als get maar vanuit Rails test kun je dit niet zo gebruiken. De route wordt
-      # dan nooit herkend. Toch moet je parameter meegeven anders werkt het sowieso niet
+      @request.env["CUSTOM_HEADER"] = "bar"
+      get :view, :id => id , :url => URI.escape(page.url(true)), :format => 'js'
       assert_response :success
       assert_equal @wiki, assigns(:wiki)
       assert_equal page, assigns(:page)
@@ -49,7 +49,7 @@ class PagesControllerTest < ActionController::TestCase
     end
     page.reload
     assert_equal 3, page.comments.size 
-    get :view, :url => page.url(true)
+    get :view, :url => page.url(true), :format => 'js'
     assert_response :success
     assert_match "Comment", @response.body
     assert_match "Another comment", @response.body
@@ -60,9 +60,9 @@ class PagesControllerTest < ActionController::TestCase
     # 4
     co = Checkout.new(:user => @andy, :page => page, :site => @wiki)
     assert co.save
-    get :view, :url => page.url(true)
+    get :view, :url => page.url(true), :format => 'js'
     assert_response :success
-    assert_match 'This page is currently being modified by ' + @andy.name, @response.body
+    assert_match 'This page is currently being created or modified by ' + @andy.name, @response.body
   end
 
   # Shows:
@@ -83,7 +83,7 @@ class PagesControllerTest < ActionController::TestCase
     page = WikiPage.find_by_presentation_name('Toolmentor Template')
     get :discussion, :site_folder => @wiki.folder, :id => page.id
     assert_redirected_to :controller => 'login'
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :discussion, :site_folder => @wiki.folder, :id => page.id
     assert_response :success
     assert_not_nil assigns(:wiki)
@@ -149,7 +149,7 @@ class PagesControllerTest < ActionController::TestCase
     # 1
     get :edit, :id => page.id, :site_folder => @wiki.folder
     assert_redirected_to :controller => 'login'
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :edit, :id => page.id, :site_folder => @wiki.folder
     assert_redirected_to :action => 'checkout', :id => page.id, :site_folder => @wiki.folder
     # 2 
@@ -167,7 +167,7 @@ class PagesControllerTest < ActionController::TestCase
     assert_not_nil page.checkout
     assert_redirected_to  :action => 'edit', :checkout_id => page.checkout.id 
     # 4
-    session['user'] = @andy
+    session['user'] = @andy.id
     get :checkout, :id => page.id, :site_folder => @wiki.folder # get checkout will redirect
     assert_redirected_to  :action => 'edit', :checkout_id => page.checkout.id
     get :edit, :checkout_id => page.checkout.id # will just open the page in the HTML editor
@@ -175,17 +175,16 @@ class PagesControllerTest < ActionController::TestCase
     assert_match 'The page is currently checked out by user',@response.body
     # 7
     checkout = Checkout.find(:first)
-    session['user'] = checkout.user
-    ENV['EPFWIKI_EDITOR'] = 'tinymce' # TODO Bug 218832 - RTE
+    session['user'] = checkout.user.id
     get :edit, :checkout_id => checkout.id
     assert_response :success
     # 8
-    session['user'] = @andy
+    session['user'] = @andy.id
     get :edit, :checkout_id => checkout.id
     assert_response :success
     assert_match "The page is currently checked out by user #{@tony.name}", @response.body
     assert_match "You can modify the HTML but you cannot commit any changes", @response.body
-    session['user'] = @george
+    session['user'] = @george.id
     get :edit, :checkout_id => checkout.id
     assert_response :success
     assert_not_nil assigns(:checkout)
@@ -198,8 +197,10 @@ class PagesControllerTest < ActionController::TestCase
     co = page.checkout
     assert_equal co.version.source_version.page, co.page # ordinary checkout, not a new page
     html = co.version.html.gsub('</body>','adding some text</body>')
-    session['user'] = @andy
+    session['user'] = @andy.id
     post :save, :html => html, :checkout_id => co.id
+    #assert_raise(RuntimeError) {post :save, :html => html, :checkout_id => co.id}
+      #"Only Tony or the administator (#{User.find_central_admin.name}) should be able to save the HTML"
     assert_equal 1, @emails.size
     assert @emails[0].subject.include?('[Error] exception in')
     assert @emails[0].body.include?(LoginController::FLASH_UNOT_CADMIN)
@@ -207,15 +208,13 @@ class PagesControllerTest < ActionController::TestCase
     assert_not_nil flash['error'] 
     assert flash['error'].include?(LoginController::FLASH_UNOT_CADMIN)
     assert flash['notice'].include?('notified about this issue')
-    #assert_raise(RuntimeError) {post :save, :html => html, :checkout_id => co.id}
-      #"Only Tony or the administator (#{User.find_central_admin.name}) should be able to save the HTML"
     # 10
-    session['user'] = checkout.user
+    session['user'] = checkout.user.id
     post :save, :html => html, :checkout_id => co.id
     assert_redirected_to :action => 'edit', :checkout_id => co.id
     assert_match 'adding some text', checkout.version.html 
     # 11
-    session['user'] = @george
+    session['user'] = @george.id
     post :save,  :checkout_id => co.id, :html => co.version.html.gsub('adding some text', 'adding some text, adding some more by by cadmin')
     assert_redirected_to :action => 'edit', :checkout_id => co.id    
     assert_equal nil, co.version.version
@@ -226,7 +225,7 @@ class PagesControllerTest < ActionController::TestCase
     #page = WikiPage.find_by_presentation_name('Role Template')
     assert_not_nil page.checkout
     co = page.checkout
-    session['user'] = @andy
+    session['user'] = @andy.id
     assert @andy != checkout.user
     @emails.clear
     post :checkin, :checkout_id => checkout.id
@@ -235,7 +234,7 @@ class PagesControllerTest < ActionController::TestCase
     assert_redirected_to :controller => 'other', :action => 'error' 
     #assert_raise(RuntimeError) {post :checkin, :checkout_id => checkout.id}
     # 13
-    session['user'] = checkout.user
+    session['user'] = checkout.user.id
     post :checkin, :checkout_id => checkout.id
     assert_raise(ActiveRecord::RecordNotFound) {Checkout.find(checkout.id)}
     assert_match 'adding some text, adding some more by by cadmin', page.html
@@ -258,7 +257,7 @@ class PagesControllerTest < ActionController::TestCase
     assert_version_file(v.path)
     # 16
     #create_templates
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :new, :site_folder => @wiki.folder, :id => @wiki.pages[10]
     assert_not_nil assigns(:wiki)
     assert_not_nil assigns(:page)    
@@ -296,7 +295,7 @@ class PagesControllerTest < ActionController::TestCase
     assert_not_nil page.checkout
     co = page.checkout
     v = co.version
-    session['user'] = co.user
+    session['user'] = co.user.id
     get :edit, :checkout_id => co.id # we can edit
     post :preview, :html => co.version.html.gsub('accomplish a piece of work', 'accomplish a piece of work####'), :checkout_id => co.id
     assert_redirected_to '/' + co.version.rel_path_root
@@ -324,7 +323,7 @@ class PagesControllerTest < ActionController::TestCase
     @wiki = Wiki.find(:first)
     assert_equal 'Templates', @wiki.title 
     #get :checkout # TODO remove rails 3 - was workaround
-    session['user'] = @tony
+    session['user'] = @tony.id
     page = WikiPage.find_by_presentation_name('Toolmentor Template')
     assert_nil page.checkout
     # 1
@@ -342,7 +341,7 @@ class PagesControllerTest < ActionController::TestCase
     post :checkout, :id => page.id ,:user_version => {:version_id => page.current_version.id, :note => 'test_undocheckout'}    
     co = page.checkout
     v = page.checkout.version    
-    session['user'] = @andy
+    session['user'] = @andy.id
     @emails.clear
     get :undocheckout, :checkout_id => co.id
     assert_redirected_to :controller => 'other', :action => 'error'
@@ -350,7 +349,7 @@ class PagesControllerTest < ActionController::TestCase
     assert @emails[0].subject.include?('[Error] exception in')
     #assert_raise(RuntimeError) {get :undocheckout, :checkout_id => co.id}
     # 3
-    session['user'] = @george
+    session['user'] = @george.id
 
     get :undocheckout, :checkout_id => co.id
     assert_redirected_to '/' + @wiki.rel_path + '/' + page.rel_path
@@ -358,7 +357,7 @@ class PagesControllerTest < ActionController::TestCase
     assert !Checkout.exists?(co.id)
     assert !Version.exists?(v.id)
     # 4 
-    session['user'] = @tony
+    session['user'] = @tony.id
     page.reload
     assert_not_nil page
     assert_not_nil page.site
@@ -386,7 +385,7 @@ class PagesControllerTest < ActionController::TestCase
     @cash = Factory(:user, :name => 'Cash Oshman', :password => 'secret', :admin => 'N')
     @tony = Factory(:user, :name => 'Tony Clifton', :password => 'secret', :admin => 'N')
     get :new
-    session['user'] = @tony
+    session['user'] = @tony.id
     page = WikiPage.find_by_presentation_name('Toolmentor Template')
     assert_equal 1, page.versions.size
     # 1
@@ -427,16 +426,21 @@ class PagesControllerTest < ActionController::TestCase
     Rails.logger.info('We need to login to create a new page')
     get :new, :id => p.id, :site_folder => w.folder
     assert_redirected_to :controller => 'login'
-    session['user'] = @cash
+    session['user'] = @cash.id
+    Rails.logger.info("---- test new #{p.id}, #{w.folder}")
     get :new, :id => p.id, :site_folder => w.folder
-    assert_response :success
+    #assert_response :success
+   # assert_redirected_to :action => 'edit', :checkout_id => assigns(:checkout).id
     assert_equal [w.id, p.id, v.id], 
       [assigns(:wiki).id, assigns(:page).id, assigns(:new_page).source_version]
     assert_not_nil assigns(:templates)
     Rails.logger.info('We can create a new page')
     assert_equal 'BaselineProcessVersion', assigns(:templates)[0].class.name
-    template = assigns(:templates)[4]
-    assert_equal 'Practice Template', template.page.presentation_name
+    p = WikiPage.find_by_presentation_name('Role Set Grouping Template')
+    template = p.current_version 
+    assert assigns(:templates).include? template
+    raise "No Templates Wiki was found. There should always be a Wiki with title 'Templates' to provide templates for creating new pages" if !w
+    assert_equal 'Role Set Grouping Template', template.page.presentation_name # TODO <"Role Set Grouping Template"> expected but was<"Checklist Template"> 
     post :new, :site_folder => w.folder, :id => p.id, 
       :page => {:presentation_name => 'New page', :source_version => template.id}
     assert assigns(:page)
@@ -446,7 +450,7 @@ class PagesControllerTest < ActionController::TestCase
     assert_redirected_to  :action => 'edit', :checkout_id => assigns(:checkout).id
     p,w,np,co = assigns(:page), assigns(:wiki), assigns(:new_page), assigns(:checkout)
     [p,w,np,co].each {|o|o.reload}
-    assert_equal 'Practice Template', co.version.source_version.page.presentation_name
+    assert_equal 'Role Set Grouping Template', co.version.source_version.page.presentation_name
     assert_equal template.page.current_version, co.version.source_version
     page_count = Page.count
     post :undocheckout, :checkout_id => co.id

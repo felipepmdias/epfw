@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class EpfcLibraryTest < ActiveSupport::TestCase
+
+  def teardown
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
   
   test "Delivery summary" do
     @george = Factory(:user, :name => 'George Shapiro', :password => 'secret', :admin => 'C')

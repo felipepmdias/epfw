@@ -145,10 +145,10 @@ class SetupAndSignInTest < ActionDispatch::IntegrationTest
     # user can now logon
     # user can sign in and check that they want to be remembered
     post "login/login" , :user => {:email => 'user4@xyz.com', :password => 'user4', :remember_me => 0}
-    assert_equal User.find_by_name("user4"), session['user']
+    assert_equal User.find_by_name("user4"), session_user
     assert_not_nil cookies
     # TODO we can't use cookies[:epfwiki_id] anymore?
-    assert_equal cookies["epfwiki_id"], session['user'].id.to_s 
+    assert_equal cookies["epfwiki_id"], session['user'].to_s 
     # automatically sign-in for remembered users
     # redirected to user details or requested page (not tested)
     get "login/login"
@@ -195,7 +195,7 @@ class SetupAndSignInTest < ActionDispatch::IntegrationTest
     # cookies[:epfwiki_id] doesn't work either
     # Testing cookies with functional tests is hard work but here is not easy either
     # We also cannot use symbols, and values are converted to strings
-    assert_equal cookies['epfwiki_id'],session['user'].id.to_s
+    assert_equal cookies['epfwiki_id'],session['user'].to_s
 
     session['user'] = nil
     get 'login/login'

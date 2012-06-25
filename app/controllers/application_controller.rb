@@ -7,11 +7,13 @@ class ApplicationController < ActionController::Base
   # http://mrchrisadams.tumblr.com/post/333036266/catching-errors-in-rails-with-rescue-from
   # http://techoctave.com/c7/posts/36-rails-3-0-rescue-from-routing-error-solution
   #rescue_from ActionController::RoutingError, :with => :render_404
-  rescue_from Exception, :with => :render_exception
+  
+  rescue_from Exception, :with => :render_exception unless Rails.env == 'development'
   
   #########
   protected   
   #########
+
 
   def user?
     if session and session['user']
@@ -22,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    if user? and session['user'].admin?
+    if user? and session_user.admin?
       true
     else
       false
@@ -30,7 +32,7 @@ class ApplicationController < ActionController::Base
   end
 
   def cadmin?
-    if user? and session['user'].cadmin?
+    if user? and session_user.cadmin?
       true
     else
       false
@@ -39,9 +41,9 @@ class ApplicationController < ActionController::Base
 
   def mine?(obj)
     if obj.class.name == User.name
-      obj.id == session['user'].id
+      obj.id == session_user.id
     else
-      obj.user_id == session['user'].id
+      obj.user_id == session_user.id
     end
   end
   
@@ -87,17 +89,17 @@ class ApplicationController < ActionController::Base
       logger.debug("User not authenticated as admin")
       flash['notice'] = 'Administrators privileges are required to access this function'
       flash['error'] = LoginController::FLASH_UNOT_ADMIN # TODO should be flash.now?
-      Notifier.authorisation_problem(session['user'], session.instance_variable_get("@data"), params, request.env).deliver
+      Notifier.authorisation_problem(session_user, session.instance_variable_get("@data"), params, request.env).deliver
       redirect_to :controller => 'other', :action => 'error'
       return false        
     end
   end
   
   def authenticate_cadmin #:doc:
-    unless session and session['user'] and session['user'].cadmin?
+    unless session and session['user'] and session_user.cadmin?
       flash['notice'] = 'You need to be the central administrator to access this function'
       flash['error'] = LoginController::FLASH_UNOT_CADMIN
-      Notifier.authorisation_problem(session['user'], session.instance_variable_get("@data"), params, request.env).deliver
+      Notifier.authorisation_problem(session_user, session.instance_variable_get("@data"), params, request.env).deliver
       redirect_to :controller => 'other', :action => 'error'
       return false
     end
@@ -113,12 +115,19 @@ class ApplicationController < ActionController::Base
     cookies.delete :epfwiki_token
   end
   
+  def session_user
+    User.find(session['user']) if session and session['user']
+  end
+  
   #######
   private
   #######
   
   def render_exception(exception = nil)
     flash['error'] = exception.message
+    if Rails.env == 'development'
+      flash['error'] = "<p>" + exception.message + "</p><p>" + Rails.backtrace_cleaner.clean(exception.backtrace).join("<br/>") + "</p>"
+    end
     flash['notice'] = 'We\'re sorry, but something went wrong. We\'ve been notified about this issue and we\'ll take a look at it shortly.'
     #begin
     Rails.backtrace_cleaner.clean(exception.backtrace)

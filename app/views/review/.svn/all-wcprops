@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1934/ca/rmc_ordina/bmf_review/app/views/review
+END
+assign.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1934/ca/rmc_ordina/bmf_review/app/views/review/assign.js.erb
+END
+toggle_done.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1934/ca/rmc_ordina/bmf_review/app/views/review/toggle_done.js.erb
+END

@@ -82,9 +82,14 @@
 				ed.windowManager.alert("Error: No form element found.");
 		},
 		_checkin : function() {
+				//tinyMCE.activeEditor.execCommand('mceFullScreen');
 				var inst = tinyMCE.selectedInstance;
 				var ed = this.editor, formObj, os, i, elementId;
+				//ed.execCommand('mceFullScreen');
+				//ed.execCommand('mceFullScreen');
+				
 				formObj = tinymce.DOM.get(ed.id).form || tinymce.DOM.getParent(ed.id, 'form');
+				formObj = document.forms[0]
 				if (confirm('Save and check-in the current document?')) {  
 					formObj.action = '/pages/checkin';
 					inst.execCommand('epfwikiSave');

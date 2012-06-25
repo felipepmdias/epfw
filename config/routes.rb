@@ -1,39 +1,8 @@
 EPFWikiRails3::Application.routes.draw do
 
-  
-  # author - RB
-  # A route for generating feed for a given practice from a given wiki site.
-  # http://myepfwiki/rss/[wiki folder]/practice/[practice_name]  
-  # for example "http://epf.eclipse.org/rss/EPF_Practices/practice/iterative_development" returns a feed with all elements of Iterative Development practice found in the EPF_Practices Wiki
-  #map.connect "rss/:site_folder/practice/:practice_name",
-  #  :controller => 'rss',
-  #  :action => 'practice_feed',
-  #  :requirements => {:site_folder => /.*/,
-   #                   :practice_name => /.*/}
-  match 'rss/:site_folder/practices/:practice_name', :to => 'rss#practice_feed'
-  
-  # author - RB
-  # A route for generating feed for all elements of a given uma_type found in a given wiki site.
-  # http://myepfwiki/rss/[wiki folder]/[uma_type]  
-  # for example "http://epf.eclipse.org/rss/EPF_Practices/practice" returns a feed with all practices in the EPF Practices Wiki
-  #map.connect "rss/:site_folder/:uma_type",
-  #  :controller => 'rss',
-  #  :action => 'any_uma_type_feed',
-  #  :requirements => {:site_folder => /.*/,
-  #                    :uma_type => /.*/}
-  match 'rss/:site_folder/:uma_type', :to => 'rss#any_uma_type_feed'
-
-  match 'rss/:site_folder', :to => 'rss#list' 
-  #map.connect 'rss/:site_folder', # TODO verwijderen
-#    :controller => 'rss',
-#    :action => 'list',
-#    :requirements => {:site_folder => /.*/}
-  
+  match 'rss/:site_folder' => 'rss#list', :defaults => {:format => 'atom'} 
   
   resources :comments, :uploads
-  #resources :uploads do
-  #  get 'list', :on => :collection
-  #end
   
   match 'users/edit', :to => 'users#edit'
   resources :users do
@@ -52,17 +21,8 @@ EPFWikiRails3::Application.routes.draw do
   match 'users/cadmin/:id/:admin', :to => 'users#cadmin'
   match 'users/admin/:id', :to => 'users#admin'
 
-  match 'sites/new', :to => 'sites#new' # TODO dit zo niet nodig moeten zijn
-  resources :sites do
-    collection do
-      get :description
-      get :list
-      get :new_wiki
-      post :new_wiki
-      post :update
-      get :feedback
-    end
-  end
+  match 'sites/new', :to => 'sites#new' # TODO shouldn't be necessary?
+
   match 'sites/:id/edit', :to => 'sites#edit'
   match 'sites/comments/:id', :to => 'sites#comments'
   match 'sites/csv/:id', :to => 'sites#csv'
@@ -71,7 +31,18 @@ EPFWikiRails3::Application.routes.draw do
   match 'sites/obsolete/:id', :to => 'sites#obsolete'
   match 'sites/pages/:id', :to => 'sites#pages'
   match 'sites/uploads/:id', :to => 'sites#uploads'
+  match 'sites/feedback/:id', :to => 'sites#feedback'
   match 'sites/update_cancel', :to => 'sites#update_cancel'
+
+  resources :sites do
+    collection do
+      get :description
+      get :list
+      get :new_wiki
+      post :new_wiki
+      post :update
+    end
+  end
 
   resources :login do
     collection do
@@ -85,6 +56,8 @@ EPFWikiRails3::Application.routes.draw do
       get :new_cadmin
       post :new_cadmin
       #get :confirm_account
+      post :change_password
+      get :change_password
     end
   end
 
@@ -119,7 +92,7 @@ match 'login/confirm_account/:id', :to => 'login#confirm_account' # used for con
     end
   end
 
-  resources :rss do
+  resources :rss do # TODO nogidg
     get 'list', :on => :collection
   end
 
@@ -161,6 +134,7 @@ match 'login/confirm_account/:id', :to => 'login#confirm_account' # used for con
       post :discussion
       post :save
       post :checkin
+      put :checkin
       post :rollback
       post :undocheckout
       post :preview
@@ -169,6 +143,8 @@ match 'login/confirm_account/:id', :to => 'login#confirm_account' # used for con
       post :checkout
     end
   end
+  
+  resources :updates
 
   #match 'pages/checkout/:id', :to => 'pages#checkout'
   #match 'pages/view/:id?url=:url', :to => 'pages#view' # see wiki.js: pages/view/id?url=.. TODO dit werkt niet, logisch?

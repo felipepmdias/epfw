@@ -82,6 +82,7 @@
 				ed.windowManager.alert("Error: No form element found.");
 		},
 		_checkin : function() {
+				tinyMCE.activeEditor.execCommand('mceFullScreen');
 				var inst = tinyMCE.selectedInstance;
 				var ed = this.editor, formObj, os, i, elementId;
 				formObj = tinymce.DOM.get(ed.id).form || tinymce.DOM.getParent(ed.id, 'form');

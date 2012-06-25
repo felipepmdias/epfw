@@ -8,14 +8,16 @@ class OtherController < ApplicationController
   def about
     @version = Utils.db_script_version(ENV['EPFWIKI_ROOT_DIR'] + "db/migrate")
     sql = 'select max(version) from schema_migrations'
-    #  TODO does not work in production
-    #@database_schema = ActiveRecord::Base.connection.execute(sql).entries[0][0].to_i
     @database_schema = ActiveRecord::Base.connection.execute(sql).extend(Enumerable).to_a.first.first
     if  @database_schema.to_s == @version.to_s
       @version = nil
     else
       flash.now['warning'] = "Database seems out-of-date. Available scripts are of a higher version. Available is " + @version.to_s + ", installed is " + @database_schema.to_s 
     end
+    config   = Rails.configuration.database_configuration
+    @host     = config[Rails.env]["host"]
+    @database = config[Rails.env]["database"]
+    @username = config[Rails.env]["username"]
   end
     
   # Action #error is redirected to from ApplicationController.resque_action_in_public

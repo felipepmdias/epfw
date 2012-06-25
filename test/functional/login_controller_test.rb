@@ -29,7 +29,7 @@ class LoginControllerTest < ActionController::TestCase
     assert_field 'user_password'
     assert_field 'user_password_confirmation'
     assert_tag :tag => 'input', :attributes => {:type => 'submit'}    
-    assert_tag :tag => 'form', :attributes => {:action => '/login/new_cadmin?format='} # TODO Rails3, not sure about format
+    assert_tag :tag => 'form', :attributes => {:action => '/login/new_cadmin'} 
     post	:new_cadmin, :user => {:name => 'George Shapiro', :email=> 'george.shapiro@epf.eclipse.org', :password => 'pass2', :password_confirmation => 'pass2'}
     assert_equal LoginController::FLASH_CENTRAL_ADMIN_CREATED, flash['success']
     assert_redirected_to :action => 'login'
@@ -77,7 +77,7 @@ class LoginControllerTest < ActionController::TestCase
     get :lost_password
     assert_response :success
     assert_field 'user_email'
-    assert_tag :tag => 'form', :attributes => {:action => '/login/lost_password?format='} # TODO format is onwenselijk maar noodzakelijk?
+    assert_tag :tag => 'form', :attributes => {:action => '/login/lost_password'} 
     # 2
     Rails.logger.info("Email should exist")
     post :lost_password, :user => {:email => 'noneexisting email', :password => 'new_password', :password_confirmation => 'new_password'}

@@ -23,7 +23,7 @@ class UsersControllerTest < ActionController::TestCase
   test "List cadmin" do 
     # get the central admin
     get :list
-    session['user'] = @george
+    session['user'] = @george.id
     get :list
     assert_not_nil assigns(:users)
     assert_not_nil assigns(:admins)
@@ -32,7 +32,7 @@ class UsersControllerTest < ActionController::TestCase
   
   test "List admin" do 
     get :index
-    session['user'] = @andy
+    session['user'] = @andy.id
     get :list
     assert_not_nil assigns(:users)
     assert_not_nil assigns(:admins)
@@ -45,12 +45,12 @@ class UsersControllerTest < ActionController::TestCase
   test "List normal user" do 
     # 1
     get :list
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :list
     assert_unot_admin_message
     # 2
     post :account, :id => @george.id
-    assert_equal session['user'], assigns(:user)
+    assert_equal session_user, assigns(:user)
     assert_equal LoginController::FLASH_UNOT_ADMIN, flash['notice']
   end
   
@@ -62,7 +62,7 @@ class UsersControllerTest < ActionController::TestCase
   test "Edit" do
     # 1
     get :index
-    session['user'] = @tony
+    session['user'] = @tony.id
     saved_name = @tony.name
     post :edit, :id => @tony.id, :user => {:name => 'test06_edit'}
     assert_response :success
@@ -71,19 +71,19 @@ class UsersControllerTest < ActionController::TestCase
     @tony.name = saved_name
     @tony.save!
     # 2
-    session['user'] = @cash
+    session['user'] = @cash.id
     post :edit, :id => @tony.id, :user => {:name => 'test06_edit'}
     assert_response :success
     @tony.reload
     assert_equal saved_name, @tony.name # unchanged
     # 3
-    session['user'] = @andy
+    session['user'] = @andy.id
     post :edit, :id => @tony.id, :user => {:name => 'test06_edit'}
     assert_response :success
     @tony.reload
     assert_equal saved_name, @tony.name # unchanged
     # 4
-    session['user'] = @george
+    session['user'] = @george.id
     post :edit, :id => @tony.id, :user => {:name => 'test06_edit'}
     assert_response :success
     @tony.reload
@@ -94,7 +94,7 @@ class UsersControllerTest < ActionController::TestCase
   
   test "Send report" do 
     get :index
-    session['user'] = @cash
+    session['user'] = @cash.id
     rt = Time.now
     rep = Report.new('M',nil,rt)
     assert_equal rt, rep.runtime
@@ -123,7 +123,7 @@ class UsersControllerTest < ActionController::TestCase
   test "Show" do 
     get :index
     # 1
-    session['user'] = @tony
+    session['user'] = @tony.id
     get :show, :id => @tony.id
     assert_response :success
     assert_template 'show'
@@ -134,7 +134,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:pages)    
     assert_equal @tony.id, assigns(:user).id
     # 2
-    session['user'] = @george
+    session['user'] = @george.id
     get :show, :id => @tony.id
     assert_equal @tony.id, assigns(:user).id # cadmin sees details of user
     assert_tag :tag => 'a', :attributes => {:href => '/users/list'}    
@@ -147,8 +147,8 @@ class UsersControllerTest < ActionController::TestCase
 
   test "Edit user" do 
     get :list
-    session['user'] = @tony
-    post :edit, :id => session['user'].id, :user => { :name => 'Tony Renamed'}
+    session['user'] = @tony.id
+    post :edit, :id => session['user'], :user => { :name => 'Tony Renamed'}
     assert_response :success
     assert_template 'edit'    
     assert_not_nil assigns(:user)
@@ -168,7 +168,7 @@ class UsersControllerTest < ActionController::TestCase
     assert @tony.user?
     # 2
     get :list    
-    session['user'] = @george
+    session['user'] = @george.id
     get :list
     assert_response :success
     assert_template 'list'
@@ -196,7 +196,7 @@ class UsersControllerTest < ActionController::TestCase
     post :cadmin, :id => @tony.id
     assert_unot_cadmin_message
     # 5
-    session['user'] = @tony
+    session['user'] = @tony.id
     post :cadmin, :id => @george.id
     assert_redirected_to :action => 'list'
     @george.reload
@@ -225,7 +225,7 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test "Adminmessage" do
-    session['user'] = @george
+    session['user'] = @george.id
     am = AdminMessage.create(:guid => 'Welcome', :text => 'Welcome to EPF Wiki, the Wiki technology for Eclipse Process Framework Composer.' )
     assert_equal 1, AdminMessage.count
     get :account

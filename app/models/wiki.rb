@@ -192,10 +192,10 @@ class Wiki < Site
     #++
     request_host = ENV['EPFWIKI_HOST'] if request_host.nil? 
 
-    logger.debug("url for site #{self.title}, absolute #{absolute.inspect}, request_host #{request_host.inspect}")
+    #logger.debug("url for site #{self.title}, absolute #{absolute.inspect}, request_host #{request_host.inspect}")
     s = "/#{ENV['EPFWIKI_WIKIS_FOLDER']}/#{self.folder}/index.htm"
     s = "http://#{request_host}#{s}" if absolute
-    logger.debug("returning: #{s}")
+    #logger.debug("returning: #{s}")
     s
   end
   

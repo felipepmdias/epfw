@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class EpfcLibraryTest < ActiveSupport::TestCase
+
+  def teardown
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
   
   # Shows:
   # 1. We cannot checkout to baseline process, only to a Wiki
@@ -121,7 +128,7 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert co.save
     cv4 = co.version
     Rails.logger.info("version_test.rb checking current version")
-    assert_equal cv1, page.current_version # TODO TODO krijgen versie cv3 terug, niet cv1, na upgrade
+    assert_equal cv1, page.current_version 
     co.checkin(@andy)
     cv4.reload
     assert_equal cv4, page.current_version

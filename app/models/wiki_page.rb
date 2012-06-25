@@ -74,7 +74,8 @@ class WikiPage < Page
        p.errors.add(:source_version, "can't be blank") if params[:source_version].nil?
     else
       sv = Version.find(params[:source_version])
-      p = sv.page.clone 
+      #p = sv.page.clone # TODO no longer working, why? 
+      p = WikiPage.new
       p.site = params[:site]
       p.tool = 'Wiki'
       p.user = params[:user]
@@ -86,7 +87,6 @@ class WikiPage < Page
       else
         p.rel_path = old_path.gsub(sv.baseline_process.path + '/','')
       end
-  
       # make the rel_path unique, this way we can create multiple pages with the same presentation name
       unique = false
       while !unique
@@ -143,7 +143,7 @@ class WikiPage < Page
       logger.info("No current version found")
     end
     #if v
-      v.current = true # TODO dit lijkt niet uitgevoerd te worden
+      v.current = true # TODO implement test
       v.save!
       logger.debug("v na: #{v.inspect}")
       v.reload

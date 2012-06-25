@@ -32,10 +32,17 @@ class RssControllerTest < ActionController::TestCase
         :user_id => @andy.id, :rel_path => 'x/y/z.html')
       assert u.save
     end
-    get :list, :site_folder => 'all'
+    get :list, :site_folder => 'all', :format => 'atom'
+    assert_response :success
     #assert_valid_feed # TODO fails after upgrade Rails 3
-    get :list, :site_folder => @wiki.folder
+    get :list, :site_folder => @wiki.folder, :format => 'atom' 
+    assert_response :success
+    assert assigns(:records)
+    #assert_equal [], assigns(:records)
+    
     #assert_valid_feed # TODO fails after upgrade Rails 3
+    
+    # TODO redirect rss
   end
   
   # Assumes you will have a development environment on http://localhost:3000 with some data

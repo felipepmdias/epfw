@@ -2,7 +2,7 @@ class SitesController < ApplicationController
   
   layout 'management'
   
-  protect_from_forgery :except => [:update, :update_cancel, :update_now, :csv]
+  protect_from_forgery :except => [:update, :update_cancel, :update_now, :csv, :obsolete]
   
   before_filter :authenticate
   before_filter :authenticate_admin, :only => [:csv, :new, :compare, :new_wiki, :create, :update, :upload, :edit, :update_now, :obsolete, :update_cancel]
@@ -39,10 +39,10 @@ class SitesController < ApplicationController
       logger.info("Creating a new Baseline Process with params #{params.inspect}")
       if params[:site][:file].nil?
         logger.info("Creating a new Baseline Process from server folder")
-        @site = BaselineProcess.new(params[:site].merge(:user => session['user']))       
+        @site = BaselineProcess.new(params[:site].merge(:user => session_user))       
       else  
         logger.info("Creating a new Baseline Process using zip")
-        @site = BaselineProcess.new_from_upload(params[:site].merge(:user => session['user']))        
+        @site = BaselineProcess.new_from_upload(params[:site].merge(:user => session_user))        
       end
       if @site.errors.empty? && @site.save
         flash['success'] = Utils::FLASH_RECORD_CREATED 
@@ -60,7 +60,7 @@ class SitesController < ApplicationController
     if request.get?
       @wiki = Wiki.new
     else
-      @wiki = Wiki.new(params[:wiki].merge(:user => session['user']))
+      @wiki = Wiki.new(params[:wiki].merge(:user => session_user))
       if  @wiki.save
         flash['success'] = FLASH_WIKI_SITE_CREATED
         redirect_to :action => 'description', :id => @wiki.id
@@ -73,7 +73,7 @@ class SitesController < ApplicationController
   def update
     site = Site.find(params[:id])
     bp = BaselineProcess.find(params[:baseline_process_id])
-    u = Update.new(:user => session['user'], :wiki => site, :baseline_process => bp)
+    u = Update.new(:user => session_user, :wiki => site, :baseline_process => bp)
     u.save!
     flash['success'] = "Update of #{site.title} to #{u.baseline_process.title} scheduled"
     redirect_to :action => 'description', :id => site.id
@@ -130,7 +130,6 @@ class SitesController < ApplicationController
     render :action => 'description'
   end
   
-  # TODO paginate zie ik uploads controller
   def comments
     @site = Site.find(params[:id])
     #logger.debug("params.inspect: #{params.inspect}")
@@ -179,7 +178,7 @@ class SitesController < ApplicationController
   def obsolete
     if request.post?
      site = Site.find(params[:id])
-      site.obsolete_by = session['user'].id # TODO discovered bug during upgrade
+      site.obsolete_by = session_user.id 
       if site.obsolete_on.nil?
 	site.obsolete_on = Time.now
 	flash.now['success'] = "#{site.title} succesfully made obsolete"

@@ -27,14 +27,14 @@ class UsersController < ApplicationController
   
   def send_report
     rep = Report.new(params[:type])
-    rep.users = [session['user']]
+    rep.users = [session_user]
     unless rep.items.empty?
       flash['success'] = FLASH_REPORT_SENT
     else
       flash['notice'] = FLASH_NO_ITEMS
     end
     Notifier.summary(rep).deliver
-    redirect_to :action => 'account', :id => session['user'].id
+    redirect_to :action => 'account', :id => session_user.id
   end
   
   # TODO caching of this page
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     if request.get?
     else
       if  mine?(@user) || cadmin?
-        if @user.update_attributes(params[:user].merge(:user => session['user']))
+        if @user.update_attributes(params[:user].merge(:user => session_user))
           flash.now['success'] = Utils::FLASH_RECORD_UPDATED
         end
       else
@@ -81,7 +81,7 @@ class UsersController < ApplicationController
   end
   
   def cadmin
-    @cadmin = User.find(session['user'].id) # about to become 'ordinary' admin
+    @cadmin = User.find(session_user.id) # about to become 'ordinary' admin
     @user = User.find(params[:id]) # about to become cadmin
     User.cadmin(@cadmin,@user)
     flash['notice'] = FLASH_NO_LONGER_CADMIN 
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
   
   def admin
     @user = User.find(params[:id])
-    @user.user = session['user'] # used for authorisation
+    @user.user = session_user # used for authorisation
     @user.admin = params[:admin]
     if  @user.save
       flash['success'] = Utils::FLASH_RECORD_UPDATED
@@ -115,21 +115,16 @@ class UsersController < ApplicationController
   def notification
     @user = User.find(params[:user_id])
     @type = params[:notification_type]
-    if session['user'] == @user || cadmin?
+    if session_user == @user || cadmin?
       n = Notification.find(:first, :conditions => ["user_id=? and page_id=? and notification_type=?", @user.id, params[:id], @type])
       if  n
         n.destroy
       else
-        n = Notification.create(:user => session['user'], :page_id => params[:id], :notification_type => @type)
+        n = Notification.create(:user => session_user, :page_id => params[:id], :notification_type => @type)
       end
       respond_to do |format|
-        format.js {  render :update do |page|
-          page.replace_html params['div_id'], :inline => "<%= link_to_notification_toggle(params[:id], @type, @user)%>"
-          page.visual_effect :highlight, params['div_id'], :duration => 2 
-        end}
+        format.js  
       end
-    else
-      #render :inline => "<%= link_to_notification_toggle(@page, @type, @user)%>"
     end
   end
   
@@ -148,10 +143,10 @@ class UsersController < ApplicationController
     if params[:id]
       @user = User.find(params[:id])
     else
-      @user = session['user']
+      @user = session_user
     end
     if !cadmin? && !mine?(@user)
-      @user = session['user']
+      @user = session_user
       flash['notice'] = LoginController::FLASH_UNOT_ADMIN 
     end
   end

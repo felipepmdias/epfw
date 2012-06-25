@@ -3,17 +3,7 @@ require 'test_helper'
 class OtherControllerTest < ActionController::TestCase
   
   def setup
-    #logger.debug "Test Case: #{name}"  
     @controller = OtherController.new
-    #@request    = ActionController::TestRequest.new
-    #@response   = ActionController::TestResponse.new
-    #@oup_20060721 = create_oup_20060721
-    #@oup_20060728 = create_oup_20060728
-    #@oup_wiki = create_oup_wiki(@oup_20060721)
-    #@andy = users(:andy) # admin
-    #@george = users(:george) # central admin
-    #@tony = users(:tony) # user
-    #@cash = users(:cash) 
   end
   
   def teardown
@@ -25,6 +15,15 @@ class OtherControllerTest < ActionController::TestCase
 
   # Shows all users can access information about the application with other/about
   test "About" do
+    get :about
+    assert_response :success
+  end
+  
+  # Shows that also for logged on users
+  test "About2" do
+    george = Factory(:user, :name => 'George Shapiro', :password => 'secret', :admin => 'C')
+    assert_not_nil george
+    session['user'] = george.id
     get :about
     assert_response :success
   end

@@ -1,19 +1,17 @@
 require 'test_helper'
-# rake reset && log:clear test:units TEST=test/unit/checkout_test.rb
+# reset && rake log:clear test:units TEST=test/unit/checkout_test.rb
+# reset && rake log:clear && ruby -I test test/unit/page_test.rb -n test_New_page_using_template
 
 class EpfcLibraryTest < ActiveSupport::TestCase
   
-  #def setup
-  #  logger.debug "Test Case: #{name}" 
-  #  @oup_20060721 = create_oup_20060721
-  #  @oup_wiki = create_oup_wiki(@oup_20060721)
-  ##  @andy = users(:andy)
-  #  @george = users(:george)
-  #  @tony = users(:tony)
-  #  @cash = users(:cash)    
-  #end
-  
-  # Shows:
+  def teardown 
+    [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
+      FileUtils.rm_r(p) if File.exists?(p)
+      FileUtils.makedirs(p)
+    end
+  end
+
+  # Shows: 
   # 1. we cannot check out a page of a baseline process
   # 2. we can check out a page by supplying the user, page and site
   # 3. we cannot check out the same page twice
@@ -146,7 +144,7 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert_equal nil, html_version.index('<!-- epfwiki iframe start -->')
     # replaced stuff in version file
     File.open('magweg.html', 'w') {|f| f.write(html_page) }
-    assert_not_nil html_version.index(Page::TREEBROWSER_PLACEHOLDER)   # TODO soms wel soms niet, hier is geen pijl op te trekken 
+    assert_not_nil html_version.index(Page::TREEBROWSER_PLACEHOLDER)   # TODO test this 
     # assert_not_nil html_version.index('<!-- copyright statement -->')    
     # stuff to be removed from page
     

@@ -83,7 +83,7 @@ class LoginController < ApplicationController
   # TODO Like to use flash.now here but functional tests will fail! Is a bug?
   #++
   def  change_password
-    @user= User.find(session['user'].id)
+    @user= User.find(session['user'])
     if  request.get?
     else
       @user.errors.add(:password, "Can't be blank") if params[:user][:password].blank? # blank? returns true if its receiver is nil or an empty string
@@ -91,7 +91,7 @@ class LoginController < ApplicationController
       if  @user.save
         flash['success'] = 'Password was succesfully changed'
       else
-        @user= User.find(session['user'].id)
+        @user= User.find(session['user'])
       end
     end
   end
@@ -132,7 +132,6 @@ class LoginController < ApplicationController
   
   # Action #login checks if there is a cookie. With 'posts' we try to login using User.try_to_login. If the user 
   # wants to be remembered a cookie is created. 'Gets' can login the user if the user has a good cookie.
-# TODO text_field_with_autocomplete vervangen door text_field. Ook code daarvoor verwijderen.
   def login
     @wikis = Wiki.find(:all, :conditions => ['obsolete_on is null'])
     @login_message = AdminMessage.text('Login')    
@@ -145,7 +144,7 @@ class LoginController < ApplicationController
           logger.info("Token good, refresh cookies and login user")
           create_cookie(@user) # refresh van cookie
           @user.update_attributes({:http_user_agent => request.env['HTTP_USER_AGENT'], :ip_address => request.env['REMOTE_ADDR'] , :last_logon => Time.now, :logon_count => @user.logon_count + 1, :logon_using_cookie_count => @user.logon_using_cookie_count + 1})
-          session['user'] = @user
+          session['user'] = @user.id
           redirect2page
         else
           logger.info("An account was found but the token was not correct #{request.env.inspect}")        
@@ -171,7 +170,7 @@ class LoginController < ApplicationController
       @logged_in_user = @user.try_to_login
       if @logged_in_user
         logger.info("Login succesfull")
-        session['user'] = @logged_in_user
+        session['user'] = @logged_in_user.id
         if @user.remember_me == "0" # remember_me = 0, do not remember_me is 1
           create_cookie(@logged_in_user)
         end

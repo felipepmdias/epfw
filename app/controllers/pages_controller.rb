@@ -32,18 +32,12 @@ class PagesController < ApplicationController
       logger.debug("@version: #{@version.inspect}")
       @contributor_names = @page.contributors
     end
-    headers["Content-Type"] = 'text/javascript' 
-    render :update do |page|
-      page.replace_html 'epfwiki_header', :partial => 'header'
-      page.replace_html 'epfwiki_footer', :partial => 'footer'
-      if @checkout
-        if @version
-          page.replace_html 'checkout_text', :inline => "<%= image_tag('notice.png', :align => 'middle') %> This page is currently being modified by <%= @checkout.user.name %>"
-        else
-          page.replace_html 'checkout_text', :inline => "<%= image_tag('notice.png', :align => 'middle') %> This page is currently being created by <%= @checkout.user.name %>"
-        end
-      end
-    end 
+
+    @checkout_text = "This page is currently being created or modified by #{@checkout.user.name}" if @checkout and @version
+     
+    respond_to do |format|
+      format.js 
+    end
   end
 
   def discussion
@@ -52,7 +46,7 @@ class PagesController < ApplicationController
       @page = Page.find(params[:id])
       @comment = Comment.new(:site => @wiki, :page => @page) 
     else
-      @comment = Comment.new(params[:comment].merge(:user => session['user']))
+      @comment = Comment.new(params[:comment].merge(:user => session_user))
       @page = @comment.page
       @wiki = @page.site 
       @comment.version = @page.current_version
@@ -102,10 +96,10 @@ class PagesController < ApplicationController
     else
       logger.info("Creating new checkout using params #{params[:user_version].inspect}")
       @version = UserVersion.new(params[:user_version]) 
-      @version.source_version = Version.find(@version.version_id) # TODO niet handig maar noodzakelijk
+      @version.source_version = Version.find(@version.version_id) # TODO
       @page = @version.source_version.page
       @wiki = @page.site
-      co = Checkout.new(:note => @version.note, :page => @page, :site => @wiki, :source_version => @version.source_version, :user => session['user'], :version => @version )
+      co = Checkout.new(:note => @version.note, :page => @page, :site => @wiki, :source_version => @version.source_version, :user => session_user, :version => @version )
       if co.save
         redirect_to :action => 'edit', :checkout_id => co.id 
       else
@@ -141,7 +135,7 @@ class PagesController < ApplicationController
       @version = co.version
       @wiki = co.site
       @page = co.page
-      co.checkin(session['user'], params[:html]) # will create Notification record
+      co.checkin(session_user, params[:html]) # will create Notification record
       raise "Failed to checkin #{checkout.id}" if Checkout.exists?(co.id)
       flash.now['success'] = FLASH_CHECKIN_SUCCESS
       users = (User.find(:all, :conditions => ['notify_immediate=?', 1]) + Notification.find_all_users(@page, Page.name)).uniq
@@ -154,7 +148,7 @@ class PagesController < ApplicationController
       #redirect_to :controller => 'versions', :action => 'edit', :id => version.id
       if @version.template?
         # Because we use note field to cache the brief description of a template
-        # the field should be empty. Maybe we should rethink this use of the note field
+        # the field should be empty. # TODO Maybe we should rethink this use of the note field
         @version.note = ''
         @version.save!
         redirect_to '/' + @version.wiki.rel_path + '/' + @version.page.rel_path
@@ -190,7 +184,7 @@ class PagesController < ApplicationController
       #@templates = []
       version = nil
       version = Version.find(params[:page][:source_version]) if params[:page][:source_version]  
-      @new_page, @checkout = WikiPage.new_using_template(params[:page].merge(:user=> session['user'], :site => @wiki, :source_version => version))
+      @new_page, @checkout = WikiPage.new_using_template(params[:page].merge(:user=> session_user, :site => @wiki, :source_version => version))
       if @new_page.errors.empty?
         if @new_page.save
           if @checkout
@@ -253,9 +247,9 @@ class PagesController < ApplicationController
     unless params[:version].nil?
       to = Version.find(params[:version][:version_id])
       if to.page.checkout.nil?
-        co = Checkout.new(:user => session['user'], :page => to.page, :site => to.wiki, :source_version => to, :note => "Rollback to version #{to.version}")
+        co = Checkout.new(:user => session_user, :page => to.page, :site => to.wiki, :source_version => to, :note => "Rollback to version #{to.version}")
         if co.save
-          co.checkin(session['user'])
+          co.checkin(session_user)
           flash['success'] = 'Rollback complete'
         else
           flash['error'] = 'Rollback failed'

@@ -39,7 +39,7 @@ class VersionsControllerTest < ActionController::TestCase
     assert_tologin
     # 2
     [@andy, @george, @tony].each do |user|
-      session['user'] = user
+      session['user'] = user.id
       Version.find(:all).each do |v|  
         get :show, :id => v.id
         # 2
