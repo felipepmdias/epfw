@@ -116,8 +116,8 @@ div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
 
   # Create diff results using XHTMLDiff
   def xhtmldiff(from_version)
-    content_from = "<div>\n" + from_version.html4diff + "\n</div>"
     content_to = "<div>\n" + self.html4diff + "\n</div>"
+    content_from = "<div>\n" + from_version.html4diff + "\n</div>"
 
     diff_doc = REXML::Document.new
     diff_doc << (div = REXML::Element.new 'div')
