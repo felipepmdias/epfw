@@ -60,23 +60,23 @@ class Checkout < ActiveRecord::Base
         logger.info("HTML element found, adding a head element to it")
         h = h.gsub(HTML_START_ELEMENT, HTML_START_ELEMENT.match(h)[0] + self.page.head_tag)
       else
-        logger.info("No head or html element found, adding head element and letting tidy do the rest")
+        logger.info("No head or html element found, adding head element")
         h = self.page.head_tag + h
       end
     end
     logger.info("Removing EPF Wiki Javascript library includes")
     h = h.gsub(Page::PAGE_HEAD_SNIPPET_PATTERN,'') if h.index(Page::PAGE_HEAD_SNIPPET_PATTERN)
-    self.version.html = h
+    self.version.html = Nokogiri::HTML(h).to_html # this wil force html, body tags
     
     # copy version to page and enhance
-    self.page.html = self.version.html
+    self.page.html = self.version.html # version html does not have body
     Page.enhance_file(self.page.path) 
     h= self.page.html
     h = h.gsub(Page::BODY_TAG_PATTERN, self.page.body_tag ) if self.page.body_tag
     h = h.gsub(Page::TREEBROWSER_PLACEHOLDER, self.page.treebrowser_tag) if self.page.treebrowser_tag
     h = h.gsub(Page::COPYRIGHT_PLACEHOLDER, self.page.copyright_tag) if self.page.copyright_tag
     h = h.gsub('class="pageTitle"', 'nowrap="true" class="pageTitle"') # TODO workaround for 250148: No-wrap should be part of CSS file https://bugs.eclipse.org/bugs/show_bug.cgi?id=250148
-    self.page.html = h
+    self.page.html = Nokogiri::HTML(h).to_html # this wil force html, body tags
     # TODO set title equal to pageTitle? 
     self.destroy
   end
@@ -106,7 +106,6 @@ class Checkout < ActiveRecord::Base
     # TODO step 4 does not seem to work anymore with current version of OpenUP (EPF) 
     # TODO move to version as part of checkout
     #++ 
-    h = self.html # TODO is this right? document this
     h = self.source_version.html if h.blank?
     h = h.gsub(Page::BODY_TAG_PATTERN, '<body>') # 1
     h = h.gsub(Page::TREEBROWSER_PATTERN, Page::TREEBROWSER_PLACEHOLDER) # 2

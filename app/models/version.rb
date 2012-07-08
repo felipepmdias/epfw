@@ -65,49 +65,43 @@ div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
     return self.path.gsub("#{ENV['EPFWIKI_ROOT_DIR']}#{ENV['EPFWIKI_PUBLIC_FOLDER']}/", '')
   end
   
+  # TODO remove
   # use #tidy to tidy the file using HTML Tidy. 
   # This also removes any empty lines that may have been 
   # created by PinEdit.
-  def tidy
-    logger.info("Tidying file " + path)
-    Utils.tidy_file(path)
-  end
+  #def tidy
+  #  logger.info("Tidying file " + path)
+  #  Utils.tidy_file(path)
+  #end
   
   
   # method #html read or writes the HTML of a version from or to the version file.
-  # When writing HTML Tidy is used to cleanup the file
+  # When writing HTML Tidy is used to cleanup the file # TODO remove tidy
   def html
     IO.readlines(self.path).join
   end
 
-  # Create the tmp diff source file, clean it using Tidy and prepare for use with XHTMLDiff
+  # Create the tmp diff source file, clean it using Tidy and prepare for use with XHTMLDiff # TODO remove tidy
   def html4diff(h = nil)
     logger.info("Create tmp diff source file #{self.path_to_tmp_diff_html} using #{self.path}")    
-    FileUtils.copy(self.path, self.path_to_tmp_diff_html)
-    Utils.tidy_file(self.path_to_tmp_diff_html)    
-    h = IO.readlines(self.path_to_tmp_diff_html).join if h.nil?
-    h = BODY_PATTERN.match(h)[0]
-    h = h.gsub(Page::TREEBROWSER_PLACEHOLDER, '').gsub(Page::TREEBROWSER_PATTERN, '')
-    h = h.gsub(Page::SHIM_TAG_PATTERN, Page::SHIM_TAG) # TODO remove? This should not be necessary, see html
-    h = h.gsub(/<!-- epfwiki.*end -->/m, '') # TODO remove?
-    h = h.gsub('</body>','').gsub(/<body.*>/, '')
-    
-    # If the html originates from TinyMCE it contains extra tbody tags.
-    # TinyMCE adds those and this is good XHTML but if
-    # we strip those so we get better diff results
-    # Because without it, compare with the baseversion (not modified by TinyMCE) will 
-    # result false positives (changes)
+    h = IO.readlines(self.path).join if h.nil?
+    html = Nokogiri.HTML(h)
+    xhtml = html.to_xhtml
+    h = BODY_PATTERN.match(xhtml.to_s)[0]
     h = h.gsub(/<[\/]{0,1}(tbody){1}[.]*>/, '') 
+    h = h.gsub(Page::TREEBROWSER_PATTERN,'') 
+    h = h.gsub(Page::TREEBROWSER_PLACEHOLDER,'')
+    h = h.gsub(Page::TREEBROWSER_PATTERN,'')
+    h = h.gsub(Page::TREEBROWSER_PLACEHOLDER,'')
+    h = h.gsub('&#13;','').gsub('nowrap="nowrap"','').gsub('width="100%"','width="99%"')#.gsub('&#13;','')
+    h = h.gsub(/guid="(.*?)"/, '') # v0 diffs
+    h = h.gsub('<div id="breadcrumbs"></div>','')
+    h = h.gsub('class="sectionTable" border="0" cellspacing="0" cellpadding="0"', 'border="0" cellspacing="0" cellpadding="0" class="sectionTable"')
+    h = h.gsub('cellspacing="0" cellpadding="0"', 'cellpadding="0" cellspacing="0"') # v0: TinyMCE changes sort
     
-    # TODO Workaround for Tidy adding title attributes which causes false changes
-    #--
-    # The question mark makes it lazy, so it won't match for instance  
-    # title="Org"></a><span class="overview" it will match
-    # title="Org" only
-    #++
-    h = h.gsub(/title="(.*?)"/, '') # WE REMOVE ALL TITLE ATTRIBUTES FOR BETTER DIFFS
+    
+    h = h.gsub(/title="(.*?)"/, '') 
     logger.debug("html4diff #{self.path}: ")
-    #logger.debug(h)
     file = File.new(self.path_to_tmp_diff_html, 'w')
     file.puts(h)
     file.close    
@@ -132,12 +126,12 @@ div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
   end
   
   # Create diff file using #xhtmldiff. The file is generated if doesn't exist of if one of the versions is checked out.
-  def xhtmldiffpage(from_version, force = false)
+  def xhtmldiffpage(from_version, force = true)
     p = path_to_diff(from_version)
       if !File.exists?(p) || !from_version.checkout.nil? || !self.checkout.nil? || force
       logger.info("Generating xhtmldiffpage #{p}")
       diffs = xhtmldiff(from_version)
-      h = page.html
+      h = Nokogiri::HTML(page.html).to_html
       body_tag = Page::BODY_TAG_PATTERN.match(h)[0]
       h = h.gsub(BODY_PATTERN,body_tag + diffs + '</body>')
       h = h.gsub('</head>',DIFF_STYLE + '</head>')

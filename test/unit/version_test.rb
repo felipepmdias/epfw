@@ -193,4 +193,50 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     #links
   end
   
+  test "Diff v0v1" do
+
+    v0 = File.read(File.join(Rails.root, 'test', 'unit', 'version_test', 'guideline_template_B677C878.html'))
+    v1 = File.read(File.join(Rails.root, 'test', 'unit', 'version_test', 'guideline_template_B677C878.html_EPFWIKI_v1.html'))
+    v0_noko, v1_noko = Nokogiri.HTML(v0).to_xhtml, Nokogiri.HTML(v1).to_xhtml
+    v0_body, v1_body = Version::BODY_PATTERN.match(v0_noko.to_s)[0], Version::BODY_PATTERN.match(v1_noko.to_s)[0]
+    # TODO volgende kan veel handiger, vraag is hoe, in Ruby, zonder duplication, drama
+    v0_body = v0_body.gsub(Page::TREEBROWSER_PATTERN,'') # TODO
+    v0_body = v0_body.gsub(Page::TREEBROWSER_PLACEHOLDER,'') # TODO
+    v0_body = v0_body.gsub(Page::TREEBROWSER_PATTERN,'') # TODO
+    v0_body = v0_body.gsub(Page::TREEBROWSER_PLACEHOLDER,'') # TODO
+    v0_body = v0_body.gsub('&#13;','').gsub('nowrap="nowrap"','').gsub('width="100%"','width="99%"')
+    v1_body = v1_body.gsub(Page::TREEBROWSER_PATTERN,'') # TODO
+    v1_body = v1_body.gsub(Page::TREEBROWSER_PLACEHOLDER,'') # TODO
+    v1_body = v1_body.gsub(Page::TREEBROWSER_PATTERN,'') # TODO
+    v1_body = v1_body.gsub(Page::TREEBROWSER_PLACEHOLDER,'') # TODO
+    v1_body = v1_body.gsub('&#13;','').gsub('nowrap="nowrap"','').gsub('width="100%"','width="99%"')
+      # TODO javascript
+
+    [[v0_body, 'guideline_template_body_v0.html'],[v1_body, 'guideline_template_body_v1.html']].each do |f|
+      file = File.new(File.join(Rails.root, 'tmp',f[1]), 'w')
+      file.puts f[0]
+      file.close  
+    end
+
+    content_to = "<div>\n" + v0_body + "\n</div>"
+    content_from = "<div>\n" + v1_body + "\n</div>"
+
+    diff_doc = REXML::Document.new
+    diff_doc << (div = REXML::Element.new 'div')
+    hd = XHTMLDiff.new(div)
+    
+    parsed_from_content = REXML::HashableElementDelegator.new(REXML::XPath.first(REXML::Document.new(content_from), '/div'))
+    parsed_to_content = REXML::HashableElementDelegator.new(REXML::XPath.first(REXML::Document.new(content_to), '/div'))
+    Diff::LCS.traverse_balanced(parsed_from_content, parsed_to_content , hd)
+    diffs = ''
+    diff_doc.write(diffs, -1, true, true)
+
+    diffs.gsub('&#13;','')
+
+    file = File.new(File.join(Rails.root, 'tmp','guideline_template_diffs.html'), 'w')
+    file.puts diffs
+    file.close  
+
+  end
+  
 end

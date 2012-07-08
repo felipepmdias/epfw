@@ -4,6 +4,7 @@ EPFWikiRails3::Application.configure do
   ENV['EPFWIKI_APP_NAME'] = 'EPF Wiki'
   ENV['EPFWIKI_REPLY_ADDRESS'] = "no-reply@epf.eclipse.org"
   ENV['EPFWIKI_HOST'] = "localhost" # used for jobs, when there is no host variable in the environment
+  ENV['EPFWIKI_WINDOWS'] = 'N' # Y/N
   
   ENV['EPFWIKI_PUBLIC_FOLDER'] = 'public'
   ENV['EPFWIKI_ROOT_DIR'] = File.expand_path(Rails.root) + '/'

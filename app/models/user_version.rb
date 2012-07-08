@@ -10,7 +10,7 @@ class UserVersion < Version
     f.puts(h)
     f.close
     # works on the file, we are using tidy lib
-    self.tidy if self.user_version? 
+    #self.tidy if self.user_version? TODO remove 
     h = self.html.gsub(Page::SHIM_TAG_PATTERN, Page::SHIM_TAG)
     f = File.new(self.path, "w")
     f.puts(h)

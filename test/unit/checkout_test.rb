@@ -96,6 +96,12 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     @oup_wiki = create_oup_wiki(@oup_20060721)
     page = WikiPage.find_by_filename('artifact,_fdRfkBUJEdqrUt4zetC1gg.html')
     assert page.html.include?('body onload')
+    
+    assert Page::BODY_TAG_PATTERN.match(page.html)
+    assert Page::TREEBROWSER_PATTERN.match(page.html)
+    assert Page::COPYRIGHT_PATTERN.match(page.html)
+    assert Page::HEAD_PATTERN.match(page.html)
+    
     checkout = Checkout.new(:user => @tony, :page => page, :site => @oup_wiki, :note => 'Another checkout')
     assert checkout.save
     assert_kind_of Checkout,  checkout
@@ -119,16 +125,34 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert !Checkout.exists?(checkout_id)
     
     Rails.logger.debug('4 - html can be supplied during checkin')
+    
+    assert Page::BODY_TAG_PATTERN.match(page.html)
+    assert Page::TREEBROWSER_PATTERN.match(page.html)
+    assert Page::COPYRIGHT_PATTERN.match(page.html)
+    assert Page::HEAD_PATTERN.match(page.html)
+    
     checkout = Checkout.new(:user => @tony, :page => page, :site => @oup_wiki, :note => 'Another checkout')
     assert checkout.save!
     version = checkout.version
     checkout_id = checkout.id
     html = checkout.version.html
     html = html.gsub('making responsibility easy to identify','##replaced text##')
+    
+    assert Page::BODY_TAG_PATTERN.match(version.html) # still there
+    assert !Page::TREEBROWSER_PATTERN.match(version.html) # is replaced by placeholder
+    assert version.html.include? Page::TREEBROWSER_PLACEHOLDER
+    assert Page::COPYRIGHT_PATTERN.match(version.html)
+    assert !Page::HEAD_PATTERN.match(version.html)
+    
     checkout.checkin(@tony, html)
     assert !Checkout.exists?(checkout_id)
     assert version.html.index('##replaced text##')
     assert page.html.index('##replaced text##')
+
+    assert Page::BODY_TAG_PATTERN.match(page.html)
+    assert Page::TREEBROWSER_PATTERN.match(page.html)
+    assert Page::COPYRIGHT_PATTERN.match(page.html)
+    assert Page::HEAD_PATTERN.match(page.html)
     
     Rails.logger.debug('5 - don\'t supply html which will checkin using the version file')
     

@@ -99,6 +99,17 @@ class AuthoringTest < ActionDispatch::IntegrationTest
     diff_html = File.read(path)
     assert diff_html.include? "<del>This role leads and coordinates requirements elicitation; outlines and delimits the system's functionality; specifies and maintains the detailed system requirements.</del><ins>This role REPLACED; outlines and delimits the system's functionality; specifies and maintains the detailed system requirements.</ins></td>"
 
+    v = @page1.current_version
+    v.html = File.read(File.join(Rails.root, 'test', 'integration', 'authoring_test.html')) # this is a file authored by TinyMCE
+    File.delete(path)
+    get "/versions/diff?id=#{v.id}"
+    assert_response :success
+    path = "#{Rails.root}/public#{@page1.url}_EPFWIKI_DIFF_V0_V1.html"
+    assert File.exists? path
+    get diff_url
+    diff_html = File.read(path)
+    #assert diff_html.include? "<del>This role leads and coordinates requirements elicitation; outlines and delimits the system's functionality; specifies and maintains the detailed system requirements.</del><ins>This role REPLACED; outlines and delimits the system's functionality; specifies and maintains the detailed system requirements.</ins></td>"
+
   end
   
   test "Feedback" do 

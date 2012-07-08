@@ -249,18 +249,6 @@ You should now see the form for creating the administrators account. It is recom
 now because anyone that accesses that resource can create the first account. But the installation
 is not finished untill you complete the remaining steps.
 
-=== Tidy
-
-Install HTML Tidy. This is used for cleaning up HTML so that nice visual difference analysis of
-versions of pages that have been edited in the Wiki. 
-
- sudo apt-get install tidy
-
-Test that it is working
-
- ~/epfw$ tidy -v
- HTML Tidy for Linux/x86 released on 25 March 2009
- 
 === HTML Editor (TinyMCE)
 
 Download TinyMCE from {tinymce.moxiecode.com}[http://tinymce.moxiecode.com/download.php]. EPF Wiki

@@ -101,7 +101,7 @@ class WikiPage < Page
       h = sv.html
       h = h.gsub(/<meta.*? name="uma\.presentationName".*?>/, '<meta content="' + p.presentation_name + '" name="uma.presentationName">')
       h = h.gsub(TITLE_PATTERN, "<title>#{p.presentation_name}</title>")
-      h = h.gsub(TITLE2_PATTERN, 'class="pageTitle">' + p.presentation_name + '<\/td>') # TODO don't think this is working, but there is a workaround
+      h = h.gsub(TITLE2_PATTERN, 'class="pageTitle">' + p.presentation_name + '</td>') 
       p.html = h
       Page.enhance_file(p.path)
       if p.save

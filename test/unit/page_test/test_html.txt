@@ -549,19 +549,7 @@
 </tr>
 </table>
 
-<!-- epfwiki iframe start -->
-<script language="JavaScript">
 
-    aURL = "http://localhost/epfwiki/toolbar?url=" + document.location.href;
-
-    document.write("  <div id=\"topbar\">\n");
-
-    document.write("    <iframe width=\"100%\" height=\"25\" frameborder=\"0\" src=\"" + aURL +  "\" scrolling=\"no\" marginwidth=\"0\">\n");
-
-    document.writeln("   </div>");
-
-  </script>
-<!-- epfwiki iframe end -->
 </body>
 </html>
 #### 4
@@ -1240,19 +1228,6 @@ Event.observe(window, 'load', epfwiki, false);
 </tr>
 </table>
 
-<!-- epfwiki iframe start -->
-<script language="JavaScript">
-
-    aURL = "http://localhost/epfwiki/toolbar?url=" + document.location.href;
-
-    document.write("  <div id=\"topbar\">\n");
-
-    document.write("    <iframe width=\"100%\" height=\"25\" frameborder=\"0\" src=\"" + aURL +  "\" scrolling=\"no\" marginwidth=\"0\">\n");
-
-    document.writeln("   </div>");
-
-  </script>
-<!-- epfwiki iframe end -->
 </body>
 
 </html>

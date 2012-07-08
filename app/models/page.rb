@@ -31,7 +31,7 @@ class Page < ActiveRecord::Base
   TREEBROWSER_PATTERN = /<script.*?scripts\/treebrowser\.js.*?<\/script>/i
   # Placeholder for TREEBROWSER_PATTERN , so we can easily place it back in the file
   TREEBROWSER_PLACEHOLDER = "<div id=\"treebrowser_tag_placeholder\"></div>"
-  # Used to remove onload event from HTML files because it chrashed the HTML Editor
+  # Used to remove onload event from HTML files because it crashed the HTML Editor
   BODY_TAG_PATTERN = /<body.*>/i
   # Used to add the page_script
   BODY_CLOSING_TAG_PATTERN = /<\/body>/i

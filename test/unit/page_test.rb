@@ -3,7 +3,7 @@ require 'test_helper'
 class EpfcLibraryTest < ActiveSupport::TestCase
   
 
-  def teardown
+  def teardown2
     [ENV['EPFWIKI_SITES_PATH'], ENV['EPFWIKI_WIKIS_PATH']].each do |p|
       FileUtils.rm_r(p) if File.exists?(p)
       FileUtils.makedirs(p)
@@ -214,7 +214,7 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     # 1 
     assert_equal 1, WikiPage.find(:all, :conditions => ['presentation_name=?','About Base Concepts']).size
     page = WikiPage.find_by_presentation_name('About Base Concepts')
-    assert !page.nil? # Shouldn't fail but does, this really sucks, big time.
+    assert !page.nil? 
     assert_equal [617+26, 617+26, (617*3) + (2*26), 617*2+ 26], [Version.count, WikiPage.count, Page.count, BaselineProcessPage.count]
     assert_equal 1, page.versions.size
     checkout = Checkout.new(:user => @andy, :page => page, :site => @oup_wiki, :note => 'test13_new_page_using_other_page')
@@ -258,6 +258,8 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert_not_nil checkout
     assert checkout.version.html.index('Unified Method Architecture (UMA)')
     assert_not_nil checkout.version.source_version
+    p = checkout.version.source_version.path
+    assert_version_file(p)
     checkout.checkin(@andy, checkout.version.html.gsub('Unified Method Architecture (UMA)','Unified Architecture (UMA)'))
     version = page.current_version
     assert_equal 1, version.version
@@ -265,6 +267,8 @@ class EpfcLibraryTest < ActiveSupport::TestCase
     assert page.html.index('Unified Architecture (UMA)')
     Rails.logger.debug("Page test: test enhanced: \n#{page.html}")
     assert_enhanced_file(page.path)
+    Rails.logger.info("assert_version_file: #{version.path}\n should be same as: #{p}")
+    assert_version_file(p)
     assert_version_file(version.path)
   end
 

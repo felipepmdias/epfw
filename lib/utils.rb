@@ -110,12 +110,16 @@ module Utils # Need this, otherwise Rails won't load
   # Note: tidy_success is false when there are warnings and there are always warnings!
   # Tidy exists with 1 when there are warnings, 2 when there are errors, 0 when there
   # are no errors or warnings. 
-  def self.tidy_file(path)
+  def self.tidy_file_todo_remove(path)
       cmdline = "tidy -m -config \"#{File.expand_path(Rails.root.to_s)}/config/tidy.cfg\" \"#{path}\""
+      cmdline = "\"#{File.join(Rails.root.to_s,'script','tidy.bat')}\" \"#{File.expand_path(Rails.root.to_s)}/config/tidy.cfg\" \"#{path}\"" if ENV['EPFWIKI_WINDOWS'] == 'Y'
       Rails.logger.info("HTML Tidy file with command #{cmdline}")
-      tidy_success = system(cmdline)
-      #puts "Message #{$?.exitstatus}, #{$?.pid}"
-      raise "Error executing command #{cmdline}: #{$?}" if $?.exitstatus ==  2
+      o = `#{cmdline}`
+      Rails.logger.info("output:\n#{o}\n----")
+      #tidy_success = system(cmdline) # bug 444
+      Rails.logger.info("Message #{$?.exitstatus}, #{$?.pid}")
+      raise "Error executing command #{cmdline}: #{$?}" unless $?.success?
+      # raise TODO
   end
   
   def self.db_script_version(path2migratefolder)
