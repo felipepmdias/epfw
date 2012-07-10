@@ -128,7 +128,7 @@ class Site < ActiveRecord::Base
       update.do_update
       expired_by_update = true
     end # end update
-    expire_all_pages unless expired_by_update
+    Wiki.expire_all_pages unless expired_by_update
   rescue => e
     Rails.logger.info("Error updating sites: " + e.message + "\n" + e.backtrace.join("\n"))
     Notifier.email(User.find_central_admin, 'Error running job_daily', [], e.message + "\n" + e.backtrace.join("\n")).deliver

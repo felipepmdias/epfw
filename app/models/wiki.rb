@@ -27,6 +27,25 @@ class Wiki < Site
   # HTML Editors remove the nowrap attribute, so we add it to the CSS-file, see Wiki.enhance_files
   DEFAULT_CSS = 'css/default.css'
   
+  def self.expire_all_pages
+    # expire cached pages
+    FileUtils.rm_rf File.expand_path("public/index.html", Rails.root.to_s)
+    FileUtils.rm_rf File.expand_path("public/portal/home.html", Rails.root.to_s)
+    FileUtils.rm_rf File.expand_path("public/portal/about.html", Rails.root.to_s)
+    #FileUtils.rm_rf File.expand_path("public/portal/search.html", Rails.root.to_s)
+    FileUtils.rm_rf File.expand_path("public/portal/wikis.html", Rails.root.to_s)
+    FileUtils.rm_rf File.expand_path("public/portal/users.html", Rails.root.to_s)  
+    FileUtils.rm_rf File.expand_path("public/portal/privacypolicy.html", Rails.root.to_s)  
+    FileUtils.rm_rf File.expand_path("public/portal/termsofuse.html", Rails.root.to_s)  
+    
+    # remove cache folders 
+    ['public/archives', 'public/pages/view', 'public/rss'].each do |f|
+      p = File.expand_path(f, Rails.root.to_s)
+      FileUtils.rm_r(p) if File.exists?(p)
+    end
+  end
+  
+  
   def status
     logger.debug("Determining status of wiki #{self.title}")
     s = 'Ready' 

@@ -334,6 +334,13 @@
     <textarea id="html" name="html" rows="15" cols="80" style="width: 100%">
         <%= @checkout.version.html %>
     </textarea>
+    <% if @version0_html %>
+    <div style="visibility: hidden">
+    <textarea id="html_v0" name="html_v0" rows="15" cols="80" style="width: 100%">
+        <%= @version0_html %>
+    </textarea>
+    </div>
+    <% end %>
 <% end %>
 </body>
 </html>

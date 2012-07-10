@@ -24,7 +24,7 @@ class Version < ActiveRecord::Base
   HREF_PATTERN = /href="(.*?)"/
 
   DIFF_STYLE =   ["<style type=\"text/css\">",
-"ins { text-decoration: none; background-color: #ff0; color: #000; }
+"ins { text-decoration: none; background-color: #ff0; color: #057508; }
 del { text-decoration: line-through; color: #f00; }
 
 div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
@@ -65,23 +65,11 @@ div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
     return self.path.gsub("#{ENV['EPFWIKI_ROOT_DIR']}#{ENV['EPFWIKI_PUBLIC_FOLDER']}/", '')
   end
   
-  # TODO remove
-  # use #tidy to tidy the file using HTML Tidy. 
-  # This also removes any empty lines that may have been 
-  # created by PinEdit.
-  #def tidy
-  #  logger.info("Tidying file " + path)
-  #  Utils.tidy_file(path)
-  #end
-  
-  
-  # method #html read or writes the HTML of a version from or to the version file.
-  # When writing HTML Tidy is used to cleanup the file # TODO remove tidy
   def html
     IO.readlines(self.path).join
   end
 
-  # Create the tmp diff source file, clean it using Tidy and prepare for use with XHTMLDiff # TODO remove tidy
+  # Create the tmp diff source file, clean it using Tidy and prepare for use with XHTMLDiff 
   def html4diff(h = nil)
     logger.info("Create tmp diff source file #{self.path_to_tmp_diff_html} using #{self.path}")    
     h = IO.readlines(self.path).join if h.nil?
@@ -98,13 +86,14 @@ div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
     h = h.gsub('<div id="breadcrumbs"></div>','')
     h = h.gsub('class="sectionTable" border="0" cellspacing="0" cellpadding="0"', 'border="0" cellspacing="0" cellpadding="0" class="sectionTable"')
     h = h.gsub('cellspacing="0" cellpadding="0"', 'cellpadding="0" cellspacing="0"') # v0: TinyMCE changes sort
+    h = h.gsub('<p></p>','') # TinyMCE adds empty p element
     
     
     h = h.gsub(/title="(.*?)"/, '') 
     logger.debug("html4diff #{self.path}: ")
     file = File.new(self.path_to_tmp_diff_html, 'w')
     file.puts(h)
-    file.close    
+    file.close
     h 
   end
 
@@ -162,7 +151,7 @@ div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
   #--
   # Depends on covert_urls settings of TinyMCE
   #++
-  # TODO implement
+  # TODO diff enhancement
   #def diff_links(from_version)
   #  links = self.html.scan(LINKS_PATTERN)
   #  links_from = from_version.html.scan(LINKS_PATTERN)
@@ -172,7 +161,7 @@ div>ins, ul>ins, div>del, ul>del, body>ins, body>del { display: block; }",
   #  new_removed
   #end
   
-  # TODO implement
+  # TODO diff enhancement
   #def diff_img(from_version)
   #end
 

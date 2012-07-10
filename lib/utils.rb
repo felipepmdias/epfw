@@ -3,26 +3,6 @@ require 'digest/sha1'
 require 'logger' 
 require 'cgi'
 
-
-def expire_all_pages
-  # expire cached pages
-  FileUtils.rm_rf File.expand_path("public/index.html", Rails.root.to_s)
-  FileUtils.rm_rf File.expand_path("public/portal/home.html", Rails.root.to_s)
-  FileUtils.rm_rf File.expand_path("public/portal/about.html", Rails.root.to_s)
-  #FileUtils.rm_rf File.expand_path("public/portal/search.html", Rails.root.to_s)
-  FileUtils.rm_rf File.expand_path("public/portal/wikis.html", Rails.root.to_s)
-  FileUtils.rm_rf File.expand_path("public/portal/users.html", Rails.root.to_s)  
-  FileUtils.rm_rf File.expand_path("public/portal/privacypolicy.html", Rails.root.to_s)  
-  FileUtils.rm_rf File.expand_path("public/portal/termsofuse.html", Rails.root.to_s)  
-  
-  # remove cache folders 
-  ['public/archives', 'public/pages/view', 'public/rss'].each do |f|
-    p = File.expand_path(f, Rails.root.to_s)
-    FileUtils.rm_r(p) if File.exists?(p)
-  end
-  
-end
-
 module Utils # Need this, otherwise Rails won't load
 
   EPFWIKI_CSDIFF_PATH = "\"" + File.expand_path(Rails.root.to_s) + "/script/other/CSDiff/CSDiff.exe\""
@@ -36,7 +16,6 @@ module Utils # Need this, otherwise Rails won't load
   TIME_FORMAT = "%H:%M %d %b %Y"
   
   REMOVE_PATTERN1 = /<script([^\<])*(ContentPageResource|ContentPageSection|ContentPageToolbar|contentPage\.preload|contentPage\.js|ContentPageSubSection|steps\.js|backPath =)([^\<])*<\/script>/mi
-  
  
   def self.notify_cadmin
     Notifier.env_to(User.find_central_admin, session.instance_variable_get("@data"), params, request.env, nil).deliver
@@ -66,60 +45,6 @@ module Utils # Need this, otherwise Rails won't load
       end
       return recipients
     end
-  end
-  
-  # HTML Tidy Configuration Options see http://tidy.sourceforge.net/docs/quickref.html
-  # Ruby Interface on SuSE linux does not seem to work. Causes a segmentation fault.
-  # If this is fixed we can start using it again instead of the current #tidy_file. 
-  # To be able to use this we should add the EPFWIKI_TIDY_PATH environment variable.
-  # Examples:
-  # ENV['EPFWIKI_TIDY_PATH'] = '/usr/lib/libtidy.so'
-  # ENV['EPFWIKI_TIDY_PATH'] = ENV['EPFWIKI_ROOT_DIR'] + "vendor/tidy/bin/tidy.dll"
-  def self.tidy_file_segfaults_on_SuSE_Linux(path)
-    require 'tidy'
-    Tidy.path = ENV['EPFWIKI_TIDY_PATH'] 
-    html = IO.readlines(path).join
-    xml = Tidy.open(:show_warnings=>true) do |tidy|
-      tidy.options.indent = 'auto' # auto won't indent title, li elements
-      tidy.options.quote_ampersand = false # TODO is Tidy ignoring this option
-      tidy.options.output_encoding = 'utf8'
-      tidy.options.input_encoding = 'utf8'
-      tidy.options.char_encoding = 'utf8'
-      tidy.options.output_xhtml = true 
-      tidy.options.vertical_space = 0
-      tidy.options.wrap = 0
-      tidy.options.quote_nbsp = 1
-      tidy.options.tidy_mark = 0
-      tidy.options.doctype = 'omit' # Prevent Tidy from adding some old doctype 
-      
-      # tidy.options.sort_attributes = 'alpha' #
-      # the current version supports sort_attributes but unfortunatly there is no dll distribution, only an exe
-      # TODO integrate new tidy dll when it is available. Note: this will improve generated diffs with xhtmldiff
-      
-      xml = tidy.clean(html)
-      xml
-      outFile = File.new(path, "w")
-      outFile.puts(xml)
-      outFile.close
-      #puts tidy.errors
-      #puts tidy.diagnostics       
-    end
-  end
-  
-  # HTML Tidy Configuration Options see http://tidy.sourceforge.net/docs/quickref.html
-  # Note: tidy_success is false when there are warnings and there are always warnings!
-  # Tidy exists with 1 when there are warnings, 2 when there are errors, 0 when there
-  # are no errors or warnings. 
-  def self.tidy_file_todo_remove(path)
-      cmdline = "tidy -m -config \"#{File.expand_path(Rails.root.to_s)}/config/tidy.cfg\" \"#{path}\""
-      cmdline = "\"#{File.join(Rails.root.to_s,'script','tidy.bat')}\" \"#{File.expand_path(Rails.root.to_s)}/config/tidy.cfg\" \"#{path}\"" if ENV['EPFWIKI_WINDOWS'] == 'Y'
-      Rails.logger.info("HTML Tidy file with command #{cmdline}")
-      o = `#{cmdline}`
-      Rails.logger.info("output:\n#{o}\n----")
-      #tidy_success = system(cmdline) # bug 444
-      Rails.logger.info("Message #{$?.exitstatus}, #{$?.pid}")
-      raise "Error executing command #{cmdline}: #{$?}" unless $?.success?
-      # raise TODO
   end
   
   def self.db_script_version(path2migratefolder)

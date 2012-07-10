@@ -42,7 +42,7 @@ class Update < ActiveRecord::Base
         Notifier.notification(users,subject,introduction, nil).deliver 
     end 
 
-    expire_all_pages
+   Wiki.expire_all_pages
     
     # Notify contributors of harvested stuff
     contributions = Upload.find(:all, :conditions => ['done=? and review_note_send_on is null', 'Y']) + 

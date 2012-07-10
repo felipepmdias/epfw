@@ -67,6 +67,16 @@ class PagesController < ApplicationController
   def edit
     if params[:checkout_id]
       @checkout = Checkout.find(params[:checkout_id])
+      v0 = @checkout.version.previous_version 
+      if v0.version == 0
+        unless File.exists? v0.path(true) # we also want version 0 in TinyMCE format
+          h = v0.html
+          h = h.gsub(Page::BODY_TAG_PATTERN, '<body>') 
+          h = h.gsub(Page::TREEBROWSER_PATTERN, Page::TREEBROWSER_PLACEHOLDER)
+          h = h.gsub(Page::HEAD_PATTERN, '')
+          @version0_html = h
+        end
+      end
       @page = @checkout.page 
       @wiki = @checkout.site
       render :layout => false
@@ -114,6 +124,10 @@ class PagesController < ApplicationController
     @checkout = Checkout.find(params[:checkout_id])
     raise LoginController::FLASH_UNOT_CADMIN if !mine?(@checkout) && !cadmin?
     @checkout.version.html = params[:html]
+    if params[:html_v0] # will only be present when previous version is version 0
+      @version0 = @checkout.version.previous_version
+      @version0.save_tinymce_html(params[:html_v0])    
+    end
     @checkout.version.save
     if params[:action] == 'save'
       redirect_to :action => 'edit', :checkout_id => @checkout.id
@@ -136,6 +150,10 @@ class PagesController < ApplicationController
       @wiki = co.site
       @page = co.page
       co.checkin(session_user, params[:html]) # will create Notification record
+      if params[:html_v0] # will only be present when previous version is version 0
+        @version0 = co.version.previous_version
+        @version0.save_tinymce_html(params[:html_v0])    
+      end      
       raise "Failed to checkin #{checkout.id}" if Checkout.exists?(co.id)
       flash.now['success'] = FLASH_CHECKIN_SUCCESS
       users = (User.find(:all, :conditions => ['notify_immediate=?', 1]) + Notification.find_all_users(@page, Page.name)).uniq

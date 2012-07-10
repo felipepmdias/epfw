@@ -1,0 +1,1250 @@
+
+
+Started POST "/pages/checkin" for 127.0.0.1 at 2012-07-08 08:27:00 +0200
+  Processing by PagesController#checkin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfefvhlEIapOXNyQ2y0rKctRaFr17Zl4ak4BylPBSXI=", "checkout_id"=>"15", "html"=>"<p></p>\r\n<p></p>\r\n<div id=\"breadcrumbs\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\"><a name=\"Top\"></a>\r\n<div id=\"page-guid\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitle\" nowrap=\"nowrap\">Supporting Material Template</td>\r\n<td width=\"100%\">\r\n<div align=\"right\" id=\"contentPageToolbar\"></div>\r\n</td>\r\n<td align=\"right\" class=\"expandCollapseLink\" width=\"100%\"><a href=\"./../../../index.htm\" name=\"mainIndex\"></a>\r\n<div id=\"treebrowser_tag_placeholder\"></div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitleSeparator\"><img alt=\"\" height=\"1\" src=\"./../../../images/shim.gif\" title=\"\" /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div class=\"overview\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 97%;\">\r\n<tbody>\r\n<tr>\r\n<td width=\"50\"><img alt=\"\" src=\"./../../../images/supportingmaterial.gif\" title=\"\" /></td>\r\n<td>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"overviewTable\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">Supporting material is a generic type of guidance containing information not specifically covered by the other guidance types.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Relationships</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Related Elements</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n<li>dfdfd</li>\r\n<li><a href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li>jshjdhsjd</li>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Main Description</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\">\r\n<td class=\"sectionTableSingleCell\">\r\n<p>&lt;main_description&gt;</p>\r\n<p>Roles</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/roles/role_template_7AC2901C.html\">Role Template</a></li>\r\n</ul>\r\n<p>Tasks</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n</ul>\r\n<p>Work Products</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n</ul>\r\n<p>Guidance</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/supportingmaterials/supporting_material_template_D3F13112.html\">Supporting Material Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/practices/practice_template_1888BA7B.html\">Practice Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n</ul>\r\n<p>Standard Catogories</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesetgroupings/role_set_grouping_template_508EE24F.html\">Role Set Grouping Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesets/role_set_template_1CC30616.html\">Role Set Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">More Information</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Checklists</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Concepts</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Examples</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Guidelines</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Reusable Assets</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Tool Mentors</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Whitepapers</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<p>Copyright (c) 1987, 2006 IBM Corp. and others. All Rights Reserved.<br /> This program and the accompanying materials are made available under the<br /><a href=\"http://www.eclipse.org/org/documents/epl-v10.php\" target=\"_blank\">Eclipse Public License v1.0</a> which accompanies this distribution.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<script language=\"JavaScript\" type=\"text/javascript\">// <![CDATA[\r\n\t\t\t\tcontentPage.onload();\r\n// ]]></script>"}
+Finding checkout with id 15
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 15 LIMIT 1[0m
+  [1m[35mVersion Load (0.4ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 96 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mWiki Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+Checkin of version /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Finding current version of page Supporting Material Template
+  [1m[35mVersion Load (0.6ms)[0m  SELECT `versions`.* FROM `versions` WHERE (page_id=101 and current = 1) LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE (page_id=101 and version is not null) ORDER BY version DESC LIMIT 1[0m
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 95 LIMIT 1
+Finding or creating notification for Onno for Supporting Material Template and type Page
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT `notifications`.* FROM `notifications` WHERE (page_id=101 and notification_type='Page' and user_id=1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT MAX(`versions`.`version`) AS max_id FROM `versions` WHERE (page_id=101 and wiki_id = 4)[0m
+Moving version file from /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_v3.html
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mUPDATE `versions` SET `version` = 3, `rel_path` = 'new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_v3.html', `updated_on` = '2012-07-08 06:27:01' WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`id` = 96[0m
+  [1m[35m (34.7ms)[0m  COMMIT
+No head or html element found, adding head element
+Removing EPF Wiki Javascript library includes
+Saving HTML to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_v3.html
+Writing html to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html
+Writing html to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `checkouts` WHERE `checkouts`.`id` = 15
+  [1m[36m (32.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT 1 FROM `checkouts` WHERE `checkouts`.`id` = 15 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (notify_immediate=1)[0m
+  [1m[35mNotification Load (0.4ms)[0m  SELECT `notifications`.* FROM `notifications` WHERE (page_id=101 and notification_type='Page')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mNotification Load (0.4ms)[0m  SELECT `notifications`.* FROM `notifications` WHERE (page_id=4 and notification_type='Immediate')
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE (admin='C') LIMIT 1
+Rendered notifier/_header.html.erb (0.1ms)
+Rendered notifier/_footer.html.erb (0.3ms)
+Rendered notifier/notification.html.erb (1.6ms)
+
+Sent mail to  (11ms)
+Date: Sun, 08 Jul 2012 08:27:01 +0200
+From: no-reply@epwiki.net
+Message-ID: <4ff928352abce_6efc5f245f448897@onno-top.mail>
+Subject: [EPF Wiki - Development Environment] New version created of
+ Supporting Material Template
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<style>
+<!--
+
+* {    font-size:    9pt;    font-family:    arial, helvetica, sans-serif; line-height: 1.7em; }
+p { margin: 10px;}
+th {background-color:#EEEEEE}
+table {border: 0px;
+empty-cells: show;}
+.header{background-color:#98B1C4; color: white;}
+#header {
+    background:#9999CC;
+    color:#FFFFFF;
+    }
+#header .pageTitle {
+    color: #ffffff;
+    font-size: 12pt;
+    font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #9999cc; text-align: left;
+    border-bottom: 1px solid black;
+}
+
+.sectionHeading
+{
+	/*background-color: #98b1c4;*/
+	background-color: #FFFFFF;
+	color: #000000;
+	cursor: hand;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-top: 2px;
+	text-decoration: none;
+	border: 0px;
+}
+-->
+</style>
+<div id="header"><h1 class="pageTitle"></h1></div>
+<p>**This message was generated by a server. Don't reply to this address.**</p>
+
+
+<p>User Onno created a version of <a href="http://localhost:3000/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html">Supporting Material Template</a> in site mywiki2<br></p>
+<p>To unsubscribe from receiving notifications, edit your user details at &lt;a href=&quot;http://localhost:3000/users/account&quot;&gt;EPF Wiki - Development Environment&lt;/a&gt;</p>
+<p>If you have questions regarding EPF Wiki - Development Environment or this e-mail, please contact <a href="mailto:onno.van.der.straaten@gmail.com">Onno</a></p>
+
+Rendered pages/checkin.html.erb within layouts/wiki (1.6ms)
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], checkin
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], checkin
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], checkin
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], checkin
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], checkin
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (9.9ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 466ms (Views: 86.1ms | ActiveRecord: 85.7ms)
+
+
+Started GET "/mywiki2/101/edit" for 127.0.0.1 at 2012-07-08 08:32:07 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+Redirected to http://localhost:3000/pages/checkout?id=101&site_folder=mywiki2
+Completed 302 Found in 2ms
+
+
+Started GET "/pages/checkout?id=101&site_folder=mywiki2" for 127.0.0.1 at 2012-07-08 08:32:07 +0200
+  Processing by PagesController#checkout as HTML
+  Parameters: {"id"=>"101", "site_folder"=>"mywiki2"}
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCheckout Load (0.5ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1
+Finding current version of page Supporting Material Template
+  [1m[36mVersion Load (0.3ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE (page_id=101 and current = 1) LIMIT 1[0m
+  [1m[35mVersion Load (0.3ms)[0m  SELECT `versions`.* FROM `versions` WHERE (page_id=101 and version is not null) ORDER BY version DESC LIMIT 1
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 96 LIMIT 1[0m
+  [1m[35mUserVersion Load (0.6ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)
+  [1m[36mBaselineProcessVersion Load (0.7ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mBaselineProcess Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('BaselineProcess') AND `sites`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/checkout.html.erb within layouts/wiki (151.3ms)
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], checkout
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], checkout
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], checkout
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], checkout
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], checkout
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.0ms)
+Rendered pages/_header.html.erb (3.8ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 317ms (Views: 158.8ms | ActiveRecord: 12.3ms)
+
+
+Started HEAD "/mywiki2/101/edit" for 127.0.0.1 at 2012-07-08 08:32:09 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+No session, redirecting to login
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started HEAD "/login" for 127.0.0.1 at 2012-07-08 08:32:09 +0200
+  Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/login/login
+Completed 302 Found in 1ms
+
+
+Started HEAD "/login/login" for 127.0.0.1 at 2012-07-08 08:32:09 +0200
+  Processing by LoginController#login as HTML
+  [1m[36mWiki Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND (obsolete_on is null)[0m
+  [1m[35mAdminMessage Load (0.6ms)[0m  SELECT `da_texts`.* FROM `da_texts` WHERE `da_texts`.`type` IN ('AdminMessage') AND `da_texts`.`guid` = 'Login' LIMIT 1
+Cookie not found, or user not found with id in cookie: #<ActionDispatch::Cookies::CookieJar:0xb51b9fa8 @secret="f9f94888c1f2740b6dd83c4eaa5f9656083365eea6e1f667a00b6a37c77872b6cb73dc53a97a3dc67e5011e46425aa3d53b8fee79297c7a4bf91d6d6d964eba3", @set_cookies={}, @delete_cookies={}, @host="localhost", @secure=false, @closed=false, @cookies={"_EPFWiki_Rails3_session"=>"BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTRhNTViMzIxM2JjMTllNmU0MmJjMWI4M2I0M2QyYzE1BjsAVEkiDnJldHVybl90bwY7AEZJIhYvbXl3aWtpMi8xMDEvZWRpdAY7AEY=--abc4ddf0e13a9b35601488bc09633622169a63a1"}, @signed=#<ActionDispatch::Cookies::SignedCookieJar:0xb51b9800 @parent_jar=#<ActionDispatch::Cookies::CookieJar:0xb51b9fa8 ...>, @verifier=#<ActiveSupport::MessageVerifier:0xb51b9788 @secret="f9f94888c1f2740b6dd83c4eaa5f9656083365eea6e1f667a00b6a37c77872b6cb73dc53a97a3dc67e5011e46425aa3d53b8fee79297c7a4bf91d6d6d964eba3", @digest="SHA1">>>, cookies['epfwiki_id']: , User.exists?(cookies[:epfwiki_id]): false
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (admin='C') LIMIT 1[0m
+Cadmin found, displaying the login form
+Rendered login/login.html.erb within layouts/management (80.9ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 150ms (Views: 87.4ms | ActiveRecord: 7.3ms)
+
+
+Started HEAD "/mywiki2/101/edit" for 127.0.0.1 at 2012-07-08 08:32:11 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+No session, redirecting to login
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started HEAD "/login" for 127.0.0.1 at 2012-07-08 08:32:12 +0200
+  Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/login/login
+Completed 302 Found in 1ms
+
+
+Started HEAD "/login/login" for 127.0.0.1 at 2012-07-08 08:32:12 +0200
+  Processing by LoginController#login as HTML
+  [1m[35mWiki Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND (obsolete_on is null)
+  [1m[36mAdminMessage Load (0.5ms)[0m  [1mSELECT `da_texts`.* FROM `da_texts` WHERE `da_texts`.`type` IN ('AdminMessage') AND `da_texts`.`guid` = 'Login' LIMIT 1[0m
+Cookie not found, or user not found with id in cookie: #<ActionDispatch::Cookies::CookieJar:0xbe8f3a4 @secret="f9f94888c1f2740b6dd83c4eaa5f9656083365eea6e1f667a00b6a37c77872b6cb73dc53a97a3dc67e5011e46425aa3d53b8fee79297c7a4bf91d6d6d964eba3", @set_cookies={}, @delete_cookies={}, @host="localhost", @secure=false, @closed=false, @cookies={"_EPFWiki_Rails3_session"=>"BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTRhNTViMzIxM2JjMTllNmU0MmJjMWI4M2I0M2QyYzE1BjsAVEkiDnJldHVybl90bwY7AEZJIhYvbXl3aWtpMi8xMDEvZWRpdAY7AEZJIhBfY3NyZl90b2tlbgY7AEZJIjFQQXBSNzVrRTBTLzd1OVh1UzJialNJbU5CWTlLeUdiWmh1TjRDRXQ5SkFrPQY7AEY=--535c3dc0c459a6f89dad2f838711c8ce1b7c3486"}, @signed=#<ActionDispatch::Cookies::SignedCookieJar:0xbe8e0bc @parent_jar=#<ActionDispatch::Cookies::CookieJar:0xbe8f3a4 ...>, @verifier=#<ActiveSupport::MessageVerifier:0xbe8df2c @secret="f9f94888c1f2740b6dd83c4eaa5f9656083365eea6e1f667a00b6a37c77872b6cb73dc53a97a3dc67e5011e46425aa3d53b8fee79297c7a4bf91d6d6d964eba3", @digest="SHA1">>>, cookies['epfwiki_id']: , User.exists?(cookies[:epfwiki_id]): false
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (admin='C') LIMIT 1
+Cadmin found, displaying the login form
+Rendered login/login.html.erb within layouts/management (20.1ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 27.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/mywiki2/101/edit" for 127.0.0.1 at 2012-07-08 08:32:13 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+Redirected to http://localhost:3000/pages/checkout?id=101&site_folder=mywiki2
+Completed 302 Found in 1ms
+
+
+Started GET "/pages/checkout?id=101&site_folder=mywiki2" for 127.0.0.1 at 2012-07-08 08:32:13 +0200
+  Processing by PagesController#checkout as HTML
+  Parameters: {"id"=>"101", "site_folder"=>"mywiki2"}
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+Finding current version of page Supporting Material Template
+  [1m[35mVersion Load (0.4ms)[0m  SELECT `versions`.* FROM `versions` WHERE (page_id=101 and current = 1) LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE (page_id=101 and version is not null) ORDER BY version DESC LIMIT 1[0m
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 96 LIMIT 1
+  [1m[36mUserVersion Load (0.6ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)[0m
+  [1m[35mBaselineProcessVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101
+  [1m[36mWiki Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mBaselineProcess Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('BaselineProcess') AND `sites`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/checkout.html.erb within layouts/wiki (161.1ms)
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], checkout
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], checkout
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], checkout
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], checkout
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], checkout
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.0ms)
+Rendered pages/_header.html.erb (3.8ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 299ms (Views: 168.8ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/pages/checkout" for 127.0.0.1 at 2012-07-08 08:32:15 +0200
+  Processing by PagesController#checkout as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfefvhlEIapOXNyQ2y0rKctRaFr17Zl4ak4BylPBSXI=", "user_version"=>{"note"=>"", "version_id"=>"96"}, "commit"=>"Continue"}
+Creating new checkout using params {"note"=>"", "version_id"=>"96"}
+  [1m[35mVersion Load (0.3ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 96 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Before validation on create of checkout for Supporting Material Template
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+Creating version for checkout
+  [1m[35mWiki Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+Saving HTML to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html
+validate_on_create
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `versions` (`baseline_process_id`, `created_on`, `current`, `done`, `note`, `page_id`, `rel_path`, `review_note`, `review_note_send_on`, `reviewer_id`, `type`, `update_id`, `updated_on`, `user_id`, `version`, `version_id`, `wiki_id`) VALUES (NULL, '2012-07-08 06:32:16', NULL, 'N', '', 101, 'new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html', NULL, NULL, NULL, 'UserVersion', NULL, '2012-07-08 06:32:16', 1, NULL, 96, 4)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `checkouts` (`created_on`, `page_id`, `site_id`, `updated_on`, `user_id`, `version_id`) VALUES ('2012-07-08 06:32:16', 101, 4, '2012-07-08 06:32:16', 1, 97)
+  [1m[36m (50.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pages/edit?checkout_id=16
+  [1m[35mUserVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)
+  [1m[36mBaselineProcessVersion Load (0.6ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101[0m
+Completed 302 Found in 343ms
+
+
+Started GET "/pages/edit?checkout_id=16" for 127.0.0.1 at 2012-07-08 08:32:16 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"16"}
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1[0m
+  [1m[35mWiki Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (164.4ms)
+Rendered pages/_tinymce.html.erb (250.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (252.6ms)
+Completed 200 OK in 358ms (Views: 252.7ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/pages/edit?checkout_id=16" for 127.0.0.1 at 2012-07-08 08:32:26 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"16"}
+  [1m[36mCheckout Load (0.5ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.4ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1
+  [1m[36mWiki Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (127.3ms)
+Rendered pages/_tinymce.html.erb (261.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (263.7ms)
+Completed 200 OK in 289ms (Views: 261.5ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/pages/edit?checkout_id=16" for 127.0.0.1 at 2012-07-08 08:32:48 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"16"}
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1[0m
+  [1m[35mWiki Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (143.0ms)
+Rendered pages/_tinymce.html.erb (276.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (278.4ms)
+Completed 200 OK in 304ms (Views: 277.3ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/pages/edit?checkout_id=16" for 127.0.0.1 at 2012-07-08 08:32:55 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"16"}
+  [1m[36mCheckout Load (0.5ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1
+  [1m[36mWiki Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (58.4ms)
+Rendered pages/_tinymce.html.erb (178.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (180.0ms)
+Completed 200 OK in 205ms (Views: 177.9ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/pages/edit?checkout_id=16" for 127.0.0.1 at 2012-07-08 08:33:19 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"16"}
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (138.2ms)
+Rendered pages/_tinymce.html.erb (198.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (200.4ms)
+Completed 200 OK in 226ms (Views: 199.0ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/mywiki2/101/edit" for 127.0.0.1 at 2012-07-08 08:33:31 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+Redirected to http://localhost:3000/pages/checkout?id=101&site_folder=mywiki2
+Completed 302 Found in 1ms
+
+
+Started GET "/pages/checkout?id=101&site_folder=mywiki2" for 127.0.0.1 at 2012-07-08 08:33:32 +0200
+  Processing by PagesController#checkout as HTML
+  Parameters: {"id"=>"101", "site_folder"=>"mywiki2"}
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mCheckout Load (0.5ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+Redirected to http://localhost:3000/pages/edit?checkout_id=16
+  [1m[35mUserVersion Load (0.8ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)
+  [1m[36mBaselineProcessVersion Load (0.7ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101[0m
+Completed 302 Found in 155ms
+
+
+Started GET "/pages/edit?checkout_id=16" for 127.0.0.1 at 2012-07-08 08:33:32 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"16"}
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (126.3ms)
+Rendered pages/_tinymce.html.erb (185.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (187.8ms)
+Completed 200 OK in 216ms (Views: 188.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/pages/edit?checkout_id=16" for 127.0.0.1 at 2012-07-08 08:33:37 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"16"}
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1
+  [1m[36mWiki Load (0.8ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (159.1ms)
+Rendered pages/_tinymce.html.erb (218.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (221.4ms)
+Completed 200 OK in 252ms (Views: 222.7ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/pages/undocheckout" for 127.0.0.1 at 2012-07-08 08:34:18 +0200
+  Processing by PagesController#undocheckout as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfefvhlEIapOXNyQ2y0rKctRaFr17Zl4ak4BylPBSXI=", "checkout_id"=>"16", "html"=>"<p></p>\r\n<p></p>\r\n<p></p>\r\n<div id=\"breadcrumbs\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\"><a name=\"Top\"></a>\r\n<div id=\"page-guid\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitle\" nowrap=\"nowrap\">Supporting Material Template</td>\r\n<td width=\"100%\">\r\n<div align=\"right\" id=\"contentPageToolbar\"></div>\r\n</td>\r\n<td align=\"right\" class=\"expandCollapseLink\" width=\"100%\"><a href=\"./../../../index.htm\" name=\"mainIndex\"></a>\r\n<div id=\"treebrowser_tag_placeholder\"></div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitleSeparator\"><img alt=\"\" height=\"1\" src=\"./../../../images/shim.gif\" title=\"\" /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div class=\"overview\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 97%;\">\r\n<tbody>\r\n<tr>\r\n<td width=\"50\"><img alt=\"\" src=\"./../../../images/supportingmaterial.gif\" title=\"\" /></td>\r\n<td>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"overviewTable\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">Supporting material is a generic type of guidance containing information not specifically covered by the other guidance types.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Relationships</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Related Elements</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n<li>dfdfd</li>\r\n<li><a href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li>jshjdhsjd</li>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Main Description</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\">\r\n<td class=\"sectionTableSingleCell\">\r\n<p>&lt;main_description&gt;</p>\r\n<p>Roles</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/roles/role_template_7AC2901C.html\">Role Template</a></li>\r\n</ul>\r\n<p>Tasks</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n</ul>\r\n<p>Work Products</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n</ul>\r\n<p>Guidance</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/supportingmaterials/supporting_material_template_D3F13112.html\">Supporting Material Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/practices/practice_template_1888BA7B.html\">Practice Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n</ul>\r\n<p>Standard Catogories</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesetgroupings/role_set_grouping_template_508EE24F.html\">Role Set Grouping Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesets/role_set_template_1CC30616.html\">Role Set Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">More Information</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Checklists</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Concepts</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Examples</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Guidelines</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Reusable Assets</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Tool Mentors</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Whitepapers</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<p>Copyright (c) 1987, 2006 IBM Corp. and others. All Rights Reserved.<br /> This program and the accompanying materials are made available under the<br /><a href=\"http://www.eclipse.org/org/documents/epl-v10.php\" target=\"_blank\">Eclipse Public License v1.0</a> which accompanies this distribution.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<script language=\"JavaScript\" type=\"text/javascript\">// <![CDATA[\r\n\t\t\t\tcontentPage.onload();\r\n// ]]></script>"}
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Undo of checkout 16
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 97 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mWiki Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+Before Destroy: deleting file /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`id` = 97[0m
+  [1m[35m (60.1ms)[0m  COMMIT
+  [1m[36mUserVersion Load (0.8ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)[0m
+  [1m[35mBaselineProcessVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `checkouts` WHERE `checkouts`.`id` = 16
+  [1m[36m (94.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT 1 FROM `checkouts` WHERE `checkouts`.`id` = 16 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT 1 FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Redirected to http://localhost:3000/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html
+Completed 302 Found in 529ms
+
+
+Started GET "/pages/view/_development_wikis_mywiki2_new_guidances_supportingmaterials_supporting_material_template_D3F13112_html.js?url=http://localhost:3000/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html" for 127.0.0.1 at 2012-07-08 08:34:20 +0200
+  Processing by PagesController#view as JS
+  Parameters: {"url"=>"http://localhost:3000/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html", "id"=>"_development_wikis_mywiki2_new_guidances_supportingmaterials_supporting_material_template_D3F13112_html"}
+params[:url]:http://localhost:3000/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html
+Finding wiki by folder development_wikis
+  [1m[36mWiki Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`folder` = 'mywiki2' LIMIT 1[0m
+  [1m[35mWikiPage Load (0.7ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`type` IN ('WikiPage') AND `pages`.`rel_path` = 'new/guidances/supportingmaterials/supporting_material_template_D3F13112.html' AND `pages`.`site_id` = 4 LIMIT 1
+Page found
+Finding current version of page Supporting Material Template
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE (page_id=101 and current = 1) LIMIT 1[0m
+  [1m[35mVersion Load (0.4ms)[0m  SELECT `versions`.* FROM `versions` WHERE (page_id=101 and version is not null) ORDER BY version DESC LIMIT 1
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 96 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `da_texts`.* FROM `da_texts` WHERE `da_texts`.`type` IN ('Comment') AND (page_id=101 and site_id=4) ORDER BY created_on ASC
+  [1m[36mCheckout Load (0.2ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+@version: #<UserVersion id: 96, version: 3, type: "UserVersion", note: "", done: "N", current: nil, review_note: nil, review_note_send_on: nil, user_id: 1, page_id: 101, wiki_id: 4, baseline_process_id: nil, version_id: 95, update_id: nil, created_on: "2012-07-08 06:18:19", updated_on: "2012-07-08 06:27:01", reviewer_id: nil, rel_path: "new/guidances/supportingmaterials/supporting_materi...">
+  [1m[35mUserVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `da_texts`.* FROM `da_texts` WHERE `da_texts`.`type` IN ('Comment') AND (page_id=101) ORDER BY created_on ASC
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], view
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], view
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], view
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], view
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], view
+Rendered other/_img.html.erb (0.0ms)
+Rendered pages/_header.html.erb (6.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/_footer.html.erb (1.3ms)
+Rendered pages/view.js.erb (9.0ms)
+Completed 200 OK in 232ms (Views: 15.6ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/mywiki2/101/edit" for 127.0.0.1 at 2012-07-08 08:34:22 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+Redirected to http://localhost:3000/pages/checkout?id=101&site_folder=mywiki2
+Completed 302 Found in 1ms
+
+
+Started GET "/pages/checkout?id=101&site_folder=mywiki2" for 127.0.0.1 at 2012-07-08 08:34:23 +0200
+  Processing by PagesController#checkout as HTML
+  Parameters: {"id"=>"101", "site_folder"=>"mywiki2"}
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+Finding current version of page Supporting Material Template
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE (page_id=101 and current = 1) LIMIT 1
+  [1m[36mVersion Load (0.8ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE (page_id=101 and version is not null) ORDER BY version DESC LIMIT 1[0m
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 96 LIMIT 1
+  [1m[36mUserVersion Load (0.8ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)[0m
+  [1m[35mBaselineProcessVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101
+  [1m[36mWiki Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mBaselineProcess Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('BaselineProcess') AND `sites`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/checkout.html.erb within layouts/wiki (138.8ms)
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], checkout
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], checkout
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], checkout
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], checkout
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], checkout
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (4.3ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 381ms (Views: 228.6ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/pages/checkout" for 127.0.0.1 at 2012-07-08 08:34:25 +0200
+  Processing by PagesController#checkout as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfefvhlEIapOXNyQ2y0rKctRaFr17Zl4ak4BylPBSXI=", "user_version"=>{"note"=>"", "version_id"=>"96"}, "commit"=>"Continue"}
+Creating new checkout using params {"note"=>"", "version_id"=>"96"}
+  [1m[35mVersion Load (0.3ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 96 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Before validation on create of checkout for Supporting Material Template
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+Creating version for checkout
+  [1m[35mWiki Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+Saving HTML to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html
+validate_on_create
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `versions` (`baseline_process_id`, `created_on`, `current`, `done`, `note`, `page_id`, `rel_path`, `review_note`, `review_note_send_on`, `reviewer_id`, `type`, `update_id`, `updated_on`, `user_id`, `version`, `version_id`, `wiki_id`) VALUES (NULL, '2012-07-08 06:34:26', NULL, 'N', '', 101, 'new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html', NULL, NULL, NULL, 'UserVersion', NULL, '2012-07-08 06:34:26', 1, NULL, 96, 4)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `checkouts` (`created_on`, `page_id`, `site_id`, `updated_on`, `user_id`, `version_id`) VALUES ('2012-07-08 06:34:26', 101, 4, '2012-07-08 06:34:26', 1, 98)
+  [1m[36m (39.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pages/edit?checkout_id=17
+  [1m[35mUserVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)
+  [1m[36mBaselineProcessVersion Load (0.6ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101[0m
+Completed 302 Found in 428ms
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:34:26 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.3ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (127.6ms)
+Rendered pages/_tinymce.html.erb (197.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (199.9ms)
+Completed 200 OK in 231ms (Views: 199.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:34:38 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.4ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (158.9ms)
+Rendered pages/_tinymce.html.erb (237.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (239.2ms)
+Completed 200 OK in 278ms (Views: 240.0ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:35:50 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.5ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (134.4ms)
+Rendered pages/_tinymce.html.erb (260.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (262.6ms)
+Completed 200 OK in 306ms (Views: 260.1ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:35:54 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.9ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (69.5ms)
+Rendered pages/_tinymce.html.erb (201.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (204.6ms)
+Completed 200 OK in 233ms (Views: 204.0ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:35:59 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.6ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (150.9ms)
+Rendered pages/_tinymce.html.erb (211.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (213.8ms)
+Completed 200 OK in 240ms (Views: 213.3ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:36:06 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.5ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.7ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (62.6ms)
+Rendered pages/_tinymce.html.erb (192.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (195.5ms)
+Completed 200 OK in 228ms (Views: 195.9ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:36:09 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (154.3ms)
+Rendered pages/_tinymce.html.erb (225.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (228.0ms)
+Completed 200 OK in 257ms (Views: 229.6ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:36:11 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (125.5ms)
+Rendered pages/_tinymce.html.erb (183.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (185.7ms)
+Completed 200 OK in 280ms (Views: 252.3ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/mywiki2/101/edit" for 127.0.0.1 at 2012-07-08 08:36:15 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+Redirected to http://localhost:3000/pages/checkout?id=101&site_folder=mywiki2
+Completed 302 Found in 1ms
+
+
+Started GET "/pages/checkout?id=101&site_folder=mywiki2" for 127.0.0.1 at 2012-07-08 08:36:15 +0200
+  Processing by PagesController#checkout as HTML
+  Parameters: {"id"=>"101", "site_folder"=>"mywiki2"}
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCheckout Load (0.5ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1
+Redirected to http://localhost:3000/pages/edit?checkout_id=17
+  [1m[36mUserVersion Load (0.9ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)[0m
+  [1m[35mBaselineProcessVersion Load (0.6ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101
+Completed 302 Found in 171ms
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:36:16 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (61.1ms)
+Rendered pages/_tinymce.html.erb (184.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (186.3ms)
+Completed 200 OK in 211ms (Views: 184.4ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:36:41 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (133.1ms)
+Rendered pages/_tinymce.html.erb (193.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (195.1ms)
+Completed 200 OK in 222ms (Views: 194.0ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:36:50 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.6ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (127.4ms)
+Rendered pages/_tinymce.html.erb (197.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (199.3ms)
+Completed 200 OK in 229ms (Views: 197.8ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:37:05 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.6ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (125.3ms)
+Rendered pages/_tinymce.html.erb (186.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (188.7ms)
+Completed 200 OK in 216ms (Views: 186.9ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:37:40 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.6ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (1.7ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (135.9ms)
+Rendered pages/_tinymce.html.erb (202.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (203.8ms)
+Completed 200 OK in 302ms (Views: 201.8ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:38:22 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (140.4ms)
+Rendered pages/_tinymce.html.erb (289.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (292.3ms)
+Completed 200 OK in 318ms (Views: 294.0ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/pages/save" for 127.0.0.1 at 2012-07-08 08:38:47 +0200
+  Processing by PagesController#save as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfefvhlEIapOXNyQ2y0rKctRaFr17Zl4ak4BylPBSXI=", "checkout_id"=>"17", "html"=>"<p></p>\r\n<p></p>\r\n<p></p>\r\n<div id=\"breadcrumbs\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\"><a name=\"Top\"></a>\r\n<div id=\"page-guid\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitle\" nowrap=\"nowrap\">Supporting Material Template</td>\r\n<td width=\"100%\">\r\n<div align=\"right\" id=\"contentPageToolbar\"></div>\r\n</td>\r\n<td align=\"right\" class=\"expandCollapseLink\" width=\"100%\"><a href=\"./../../../index.htm\" name=\"mainIndex\"></a>\r\n<div id=\"treebrowser_tag_placeholder\"></div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitleSeparator\"><img alt=\"\" height=\"1\" src=\"./../../../images/shim.gif\" title=\"\" /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div class=\"overview\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 97%;\">\r\n<tbody>\r\n<tr>\r\n<td width=\"50\"><img alt=\"\" src=\"./../../../images/supportingmaterial.gif\" title=\"\" /></td>\r\n<td>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"overviewTable\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">Supporting material is a generic type of guidance containing information not specifically covered by the other guidance types.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Relationships</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Related Elements</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n<li>dfdfd</li>\r\n<li><a href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li>jshjdhsjd</li>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Main Description</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\">\r\n<td class=\"sectionTableSingleCell\">\r\n<p>&lt;main_description&gt;</p>\r\n<p>Roles</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/roles/role_template_7AC2901C.html\">Role Template</a></li>\r\n</ul>\r\n<p>Tasks</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n</ul>\r\n<p>Work Products</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n</ul>\r\n<p>Guidance</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/supportingmaterials/supporting_material_template_D3F13112.html\">Supporting Material Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/practices/practice_template_1888BA7B.html\">Practice Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n</ul>\r\n<p>Standard Catogories</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesetgroupings/role_set_grouping_template_508EE24F.html\">Role Set Grouping Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesets/role_set_template_1CC30616.html\">Role Set Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">More Information</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Checklists</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Concepts</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Examples</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Guidelines</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Reusable Assets</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Tool Mentors</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Whitepapers</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<p>Copyright (c) 1987, 2006 IBM Corp. and others. All Rights Reserved.<br /> This program and the accompanying materials are made available under the<br /><a href=\"http://www.eclipse.org/org/documents/epl-v10.php\" target=\"_blank\">Eclipse Public License v1.0</a> which accompanies this distribution.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<script language=\"JavaScript\" type=\"text/javascript\">// <![CDATA[\r\n\t\t\t\tcontentPage.onload();\r\n// ]]></script>"}
+  [1m[36mCheckout Load (0.5ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+Saving HTML to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/pages/edit?checkout_id=17
+Completed 302 Found in 221ms
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:38:48 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.8ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.6ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.7ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (168.8ms)
+Rendered pages/_tinymce.html.erb (238.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (241.3ms)
+Completed 200 OK in 270ms (Views: 239.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:39:49 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (152.4ms)
+Rendered pages/_tinymce.html.erb (222.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (224.6ms)
+Completed 200 OK in 256ms (Views: 224.8ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/pages/save" for 127.0.0.1 at 2012-07-08 08:40:01 +0200
+  Processing by PagesController#save as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfefvhlEIapOXNyQ2y0rKctRaFr17Zl4ak4BylPBSXI=", "checkout_id"=>"17", "html"=>"<p></p>\r\n<p></p>\r\n<p></p>\r\n<div id=\"breadcrumbs\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\"><a name=\"Top\"></a>\r\n<div id=\"page-guid\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitle\" nowrap=\"nowrap\">Supporting Material Template</td>\r\n<td width=\"100%\">\r\n<div align=\"right\" id=\"contentPageToolbar\"></div>\r\n</td>\r\n<td align=\"right\" class=\"expandCollapseLink\" width=\"100%\"><a href=\"./../../../index.htm\" name=\"mainIndex\"></a>\r\n<div id=\"treebrowser_tag_placeholder\"></div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitleSeparator\"><img alt=\"\" height=\"1\" src=\"./../../../images/shim.gif\" title=\"\" /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div class=\"overview\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 97%;\">\r\n<tbody>\r\n<tr>\r\n<td width=\"50\"><img alt=\"\" src=\"./../../../images/supportingmaterial.gif\" title=\"\" /></td>\r\n<td>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"overviewTable\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">Supporting material is a generic type of guidance containing information not specifically covered by the other guidance types.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Relationships</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Related Elements</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n<li>dfdfd</li>\r\n<li><a href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li>jshjdhsjd</li>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Main Description</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\">\r\n<td class=\"sectionTableSingleCell\">\r\n<p>&lt;main_description&gt;</p>\r\n<p>Roles</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/roles/role_template_7AC2901C.html\">Role Template</a></li>\r\n</ul>\r\n<p>Tasks</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n</ul>\r\n<p>Work Products</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n</ul>\r\n<p>Guidance</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/supportingmaterials/supporting_material_template_D3F13112.html\">Supporting Material Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/practices/practice_template_1888BA7B.html\">Practice Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n</ul>\r\n<p>Standard Catogories</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesetgroupings/role_set_grouping_template_508EE24F.html\">Role Set Grouping Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesets/role_set_template_1CC30616.html\">Role Set Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">More Information</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Checklists</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Concepts</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Examples</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Guidelines</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Reusable Assets</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Tool Mentors</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Whitepapers</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<p>Copyright (c) 1987, 2006 IBM Corp. and others. All Rights Reserved.<br /> This program and the accompanying materials are made available under the<br /><a href=\"http://www.eclipse.org/org/documents/epl-v10.php\" target=\"_blank\">Eclipse Public License v1.0</a> which accompanies this distribution.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<script language=\"JavaScript\" type=\"text/javascript\">// <![CDATA[\r\n\t\t\t\tcontentPage.onload();\r\n// ]]></script>", "html2"=>"<p></p>\r\n<p></p>\r\n<p></p>\r\n<div id=\"breadcrumbs\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\"><a name=\"Top\"></a>\r\n<div id=\"page-guid\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitle\" nowrap=\"nowrap\">Supporting Material Template</td>\r\n<td width=\"100%\">\r\n<div align=\"right\" id=\"contentPageToolbar\"></div>\r\n</td>\r\n<td align=\"right\" class=\"expandCollapseLink\" width=\"100%\"><a href=\"./../../../index.htm\" name=\"mainIndex\"></a>\r\n<div id=\"treebrowser_tag_placeholder\"></div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitleSeparator\"><img alt=\"\" height=\"1\" src=\"./../../../images/shim.gif\" title=\"\" /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div class=\"overview\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 97%;\">\r\n<tbody>\r\n<tr>\r\n<td width=\"50\"><img alt=\"\" src=\"./../../../images/supportingmaterial.gif\" title=\"\" /></td>\r\n<td>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"overviewTable\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">Supporting material is a generic type of guidance containing information not specifically covered by the other guidance types.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Relationships</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Related Elements</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n<li>dfdfd</li>\r\n<li><a href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li>jshjdhsjd</li>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Main Description</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\">\r\n<td class=\"sectionTableSingleCell\">\r\n<p>&lt;main_description&gt;</p>\r\n<p>Roles</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/roles/role_template_7AC2901C.html\">Role Template</a></li>\r\n</ul>\r\n<p>Tasks</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n</ul>\r\n<p>Work Products</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n</ul>\r\n<p>Guidance</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/supportingmaterials/supporting_material_template_D3F13112.html\">Supporting Material Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/practices/practice_template_1888BA7B.html\">Practice Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n</ul>\r\n<p>Standard Catogories</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesetgroupings/role_set_grouping_template_508EE24F.html\">Role Set Grouping Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesets/role_set_template_1CC30616.html\">Role Set Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">More Information</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Checklists</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Concepts</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Examples</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Guidelines</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Reusable Assets</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Tool Mentors</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Whitepapers</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<p>Copyright (c) 1987, 2006 IBM Corp. and others. All Rights Reserved.<br /> This program and the accompanying materials are made available under the<br /><a href=\"http://www.eclipse.org/org/documents/epl-v10.php\" target=\"_blank\">Eclipse Public License v1.0</a> which accompanies this distribution.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<script language=\"JavaScript\" type=\"text/javascript\">// <![CDATA[\r\n\t\t\t\tcontentPage.onload();\r\n// ]]></script>"}
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+Saving HTML to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/pages/edit?checkout_id=17
+Completed 302 Found in 227ms
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:40:01 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.5ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (71.9ms)
+Rendered pages/_tinymce.html.erb (200.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (202.5ms)
+Completed 200 OK in 228ms (Views: 202.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:42:26 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.5ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (163.1ms)
+Rendered pages/_tinymce.html.erb (227.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (228.9ms)
+Completed 200 OK in 267ms (Views: 230.9ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/pages/save" for 127.0.0.1 at 2012-07-08 08:42:46 +0200
+  Processing by PagesController#save as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfefvhlEIapOXNyQ2y0rKctRaFr17Zl4ak4BylPBSXI=", "checkout_id"=>"17", "html"=>"<p></p>\r\n<p></p>\r\n<p></p>\r\n<div id=\"breadcrumbs\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\"><a name=\"Top\"></a>\r\n<div id=\"page-guid\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitle\" nowrap=\"nowrap\">Supporting Material Template</td>\r\n<td width=\"100%\">\r\n<div align=\"right\" id=\"contentPageToolbar\"></div>\r\n</td>\r\n<td align=\"right\" class=\"expandCollapseLink\" width=\"100%\"><a href=\"./../../../index.htm\" name=\"mainIndex\"></a>\r\n<div id=\"treebrowser_tag_placeholder\"></div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitleSeparator\"><img alt=\"\" height=\"1\" src=\"./../../../images/shim.gif\" title=\"\" /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div class=\"overview\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 97%;\">\r\n<tbody>\r\n<tr>\r\n<td width=\"50\"><img alt=\"\" src=\"./../../../images/supportingmaterial.gif\" title=\"\" /></td>\r\n<td>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"overviewTable\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">Supporting material is a generic type of guidance containing information not specifically covered by the other guidance types.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Relationships</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Related Elements</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n<li>dfdfd</li>\r\n<li><a href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li>jshjdhsjd</li>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Main Description</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\">\r\n<td class=\"sectionTableSingleCell\">\r\n<p>&lt;main_description&gt;</p>\r\n<p>Roles</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/roles/role_template_7AC2901C.html\">Role Template</a></li>\r\n</ul>\r\n<p>Tasks</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n</ul>\r\n<p>Work Products</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n</ul>\r\n<p>Guidance</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/supportingmaterials/supporting_material_template_D3F13112.html\">Supporting Material Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/practices/practice_template_1888BA7B.html\">Practice Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n</ul>\r\n<p>Standard Catogories</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesetgroupings/role_set_grouping_template_508EE24F.html\">Role Set Grouping Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesets/role_set_template_1CC30616.html\">Role Set Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">More Information</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Checklists</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Concepts</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Examples</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Guidelines</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Reusable Assets</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Tool Mentors</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Whitepapers</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<p>Copyright (c) 1987, 2006 IBM Corp. and others. All Rights Reserved.<br /> This program and the accompanying materials are made available under the<br /><a href=\"http://www.eclipse.org/org/documents/epl-v10.php\" target=\"_blank\">Eclipse Public License v1.0</a> which accompanies this distribution.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<script language=\"JavaScript\" type=\"text/javascript\">// <![CDATA[\r\n\t\t\t\tcontentPage.onload();\r\n// ]]></script>", "html2"=>"<p></p>\r\n<p></p>\r\n<p></p>\r\n<div id=\"breadcrumbs\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\"><a name=\"Top\"></a>\r\n<div id=\"page-guid\"></div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitle\" nowrap=\"nowrap\">Supporting Material Template</td>\r\n<td width=\"100%\">\r\n<div align=\"right\" id=\"contentPageToolbar\"></div>\r\n</td>\r\n<td align=\"right\" class=\"expandCollapseLink\" width=\"100%\"><a href=\"./../../../index.htm\" name=\"mainIndex\"></a>\r\n<div id=\"treebrowser_tag_placeholder\"></div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">\r\n<tbody>\r\n<tr>\r\n<td class=\"pageTitleSeparator\"><img alt=\"\" height=\"1\" src=\"./../../../images/shim.gif\" title=\"\" /></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div class=\"overview\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 97%;\">\r\n<tbody>\r\n<tr>\r\n<td width=\"50\"><img alt=\"\" src=\"./../../../images/supportingmaterial.gif\" title=\"\" /></td>\r\n<td>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"overviewTable\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">Supporting material is a generic type of guidance containing information not specifically covered by the other guidance types.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Relationships</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Related Elements</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n<li>dfdfd</li>\r\n<li><a href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li>jshjdhsjd</li>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">Main Description</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\">\r\n<td class=\"sectionTableSingleCell\">\r\n<p>&lt;main_description&gt;</p>\r\n<p>Roles</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/roles/role_template_7AC2901C.html\">Role Template</a></li>\r\n</ul>\r\n<p>Tasks</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/tasks/task_template_ED53CFBD.html\">Task Template</a></li>\r\n</ul>\r\n<p>Work Products</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/artifact_template_DD8261A6.html\">Artifact Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/deliverable_template_7EA8A93C.html\">Deliverable Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducts/outcome_template_AA50135B.html\">Outcome Template</a></li>\r\n</ul>\r\n<p>Guidance</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reports/report_template_FE7EF7A.html\">Report Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/templates/template_template_EC43C259.html\">Template Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/supportingmaterials/supporting_material_template_D3F13112.html\">Supporting Material Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/practices/practice_template_1888BA7B.html\">Practice Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/estimationconsiderations/estimation_considerations_template_B4A03FE9.html\">Estimation Considerations Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/roadmaps/roadmap_template_D9F407FC.html\">Roadmap Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/guidances/termdefinitions/term_definition_template_A1183691.html\">Term Definition Template</a></li>\r\n</ul>\r\n<p>Standard Catogories</p>\r\n<ul>\r\n<li><a class=\"elementLink\" href=\"./../../../new/disciplines/discipline_template_60AAB347.html\">Discipline Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/domains/domain_template_94552340.html\">Domain Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/workproducttypes/work_product_kind_template_62D3502F.html\">Work Product Kind Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesetgroupings/role_set_grouping_template_508EE24F.html\">Role Set Grouping Template</a></li>\r\n<li><a class=\"elementLink\" href=\"./../../../new/rolesets/role_set_template_1CC30616.html\">Role Set Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<div class=\"sectionHeading\">More Information</div>\r\n<div class=\"sectionContent\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"sectionTable\">\r\n<tbody>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Checklists</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/checklists/checklist_template_B4AA0F4B.html\">Checklist Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Concepts</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/concepts/concept_template_EA422F43.html\">Concept Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Examples</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/examples/example_template_5E41AF53.html\">Example Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Guidelines</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/guidelines/estimating_guideline_templae_BA401F96.html\">Estimating Guideline Template</a></li>\r\n<li><a href=\"./../../../new/guidances/guidelines/guideline_template_B677C878.html\">Guideline Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Reusable Assets</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/reusableassets/reusable_asset_template_C8D712C3.html\">Reusable Asset Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Tool Mentors</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/toolmentors/toolmentor_template_E9930C53.html\">Toolmentor Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr valign=\"top\"><th class=\"sectionTableHeading\" scope=\"row\">Whitepapers</th>\r\n<td class=\"sectionTableCell\">\r\n<ul>\r\n<li><a href=\"./../../../new/guidances/whitepapers/whitepaper_template_F95FB626.html\">Whitepaper Template</a></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"copyright\">\r\n<tbody>\r\n<tr>\r\n<td class=\"copyright\">\r\n<p>Copyright (c) 1987, 2006 IBM Corp. and others. All Rights Reserved.<br /> This program and the accompanying materials are made available under the<br /><a href=\"http://www.eclipse.org/org/documents/epl-v10.php\" target=\"_blank\">Eclipse Public License v1.0</a> which accompanies this distribution.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<script language=\"JavaScript\" type=\"text/javascript\">// <![CDATA[\r\n\t\t\t\tcontentPage.onload();\r\n// ]]></script>"}
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+Saving HTML to /home/ostraaten/workspace/epfw-github/public/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html_EPFWIKI_co.html
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/pages/edit?checkout_id=17
+Completed 302 Found in 207ms
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:42:47 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[36mCheckout Load (0.5ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mVersion Load (0.3ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1
+  [1m[36mWiki Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (67.2ms)
+Rendered pages/_tinymce.html.erb (199.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered pages/edit.html.erb (258.1ms)
+Completed 200 OK in 284ms (Views: 257.7ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/pages/edit?checkout_id=17" for 127.0.0.1 at 2012-07-08 08:43:12 +0200
+  Processing by PagesController#edit as HTML
+  Parameters: {"checkout_id"=>"17"}
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`id` = 17 LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mWiki Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1[0m
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], edit
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], edit
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], edit
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], edit
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (76.8ms)
+Rendered pages/_tinymce.html.erb (218.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered pages/edit.html.erb (220.3ms)
+Completed 200 OK in 248ms (Views: 219.1ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/mywiki2/101/history" for 127.0.0.1 at 2012-07-08 08:45:41 +0200
+  Processing by PagesController#history as HTML
+  Parameters: {"site_folder"=>"mywiki2", "id"=>"101"}
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mWiki Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`folder` = 'mywiki2' LIMIT 1
+  [1m[36mUserVersion Load (0.7ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('UserVersion') AND `versions`.`page_id` = 101 AND (version is not null)[0m
+  [1m[35mBaselineProcessVersion Load (0.6ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`type` IN ('BaselineProcessVersion') AND `versions`.`page_id` = 101
+  [1m[36mCheckout Load (0.4ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 98 LIMIT 1[0m
+  [1m[35mVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE (wiki_id<>4 and page_id=101) ORDER BY wiki_id, version ASC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mNotification Load (0.7ms)[0m  SELECT `notifications`.* FROM `notifications` WHERE (user_id=1 and page_id=101 and notification_type='Page') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE (page_id=101) LIMIT 1[0m
+  [1m[35mWiki Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mBaselineProcess Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('BaselineProcess') AND `sites`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 87 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 87 LIMIT 1[0m
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 91 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mVersion Load (0.5ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 91 LIMIT 1[0m
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 95 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 95 LIMIT 1[0m
+  [1m[35mCheckout Load (0.2ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 96 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 96 LIMIT 1[0m
+  [1m[35mCheckout Load (0.3ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 98 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered versions/_versions_list.html.erb (48.6ms)
+  [1m[35mNotification Load (0.4ms)[0m  SELECT `notifications`.* FROM `notifications` WHERE (page_id=101 and notification_type='Page')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `notifications`.* FROM `notifications` WHERE (user_id=1 and page_id=101 and notification_type='Page') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mWikiPage Load (0.7ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`type` IN ('WikiPage') AND (rel_path = 'new/guidances/supportingmaterials/supporting_material_template_D3F13112.html' and id <> 101)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `versions` WHERE (page_id =101 and baseline_process_id is null)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `versions` WHERE (page_id =101 and baseline_process_id is null)
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`type` IN ('WikiPage') AND (rel_path = 'new/guidances/supportingmaterials/supporting_material_template_D3F13112.html' and id <> 101)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `da_texts` WHERE `da_texts`.`type` IN ('Comment') AND (page_id =101)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `da_texts` WHERE `da_texts`.`type` IN ('Comment') AND (page_id =101)[0m
+Rendered pages/_relationships.html.erb (26.0ms)
+Rendered pages/history.html.erb within layouts/wiki (277.5ms)
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], history
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], history
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], history
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], history
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], history
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (6.6ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 465ms (Views: 279.6ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/versions/87" for 127.0.0.1 at 2012-07-08 08:45:44 +0200
+  Processing by VersionsController#show as HTML
+  Parameters: {"id"=>"87"}
+  [1m[35mVersion Load (0.3ms)[0m  SELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 87 LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`id` = 101 LIMIT 1[0m
+  [1m[35mSite Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 4 LIMIT 1
+  [1m[36mVersion Load (0.6ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE (wiki_id = 4 and page_id=101 and version=0) LIMIT 1[0m
+  [1m[35mVersion Load (0.7ms)[0m  SELECT `versions`.* FROM `versions` WHERE (page_id=101 and version is not null) ORDER BY version DESC LIMIT 1
+Finding current version of page Supporting Material Template
+  [1m[36mVersion Load (0.4ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE (page_id=101 and current = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `versions`.* FROM `versions` WHERE (page_id=101 and version is not null) ORDER BY version DESC LIMIT 1
+  [1m[36mCheckout Load (0.3ms)[0m  [1mSELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 96 LIMIT 1[0m
+  [1m[35mCheckout Load (0.4ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 87 LIMIT 1
+  [1m[36mVersion Load (0.6ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 95 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `checkouts`.* FROM `checkouts` WHERE `checkouts`.`version_id` = 96 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `versions`.* FROM `versions` WHERE `versions`.`id` = 95 LIMIT 1[0m
+  [1m[35mBaselineProcess Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('BaselineProcess') AND `sites`.`id` = 1 LIMIT 1
+  [1m[36mWiki Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`type` IN ('Wiki') AND `sites`.`id` = 4 LIMIT 1[0m
+Rendered versions/show.html.erb within layouts/wiki (140.8ms)
+Creating menulink ["View", "/development_wikis/mywiki2/new/guidances/supportingmaterials/supporting_material_template_D3F13112.html"], Baseline Process Version V0
+Creating menulink ["Discussion", {:controller=>"pages", :action=>"discussion", :site_folder=>"mywiki2", :id=>101}], Baseline Process Version V0
+Creating menulink ["Edit", {:controller=>"pages", :action=>"edit", :id=>101, :site_folder=>"mywiki2"}], Baseline Process Version V0
+Creating menulink ["New", {:controller=>"pages", :action=>"new", :id=>101, :site_folder=>"mywiki2"}], Baseline Process Version V0
+Creating menulink ["History", {:controller=>"pages", :action=>"history", :id=>101, :site_folder=>"mywiki2"}], Baseline Process Version V0
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Rendered other/_img.html.erb (0.1ms)
+Rendered pages/_header.html.erb (80.7ms)
+Rendered other/_img.html.erb (0.0ms)
+Completed 200 OK in 404ms (Views: 226.4ms | ActiveRecord: 12.7ms)
